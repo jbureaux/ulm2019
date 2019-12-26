@@ -1,12 +1,16 @@
-\documentclass[a4paper]{article}
+\documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}         % encodage entrée
 \usepackage[T1]{fontenc}            % encodage sortie
 \usepackage{lmodern}                % meilleur rendu sur écran
 \usepackage{hyperref}               % lien hypertextes
 \usepackage[french]{babel}          % francisation
+\usepackage{geometry}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsfonts}
+
+\newtheorem*{lemme}{Lemme}
 
 \author{Bureaux, Julien\\
 \texttt{julien.bureaux@normalesup.org}
@@ -23,5 +27,7 @@ Munnier, Vincent\\
 \begin{document}
 
 \maketitle
+
+\input{planche1.tex}
 
 \end{document}

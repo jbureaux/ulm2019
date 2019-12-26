@@ -1,0 +1,109 @@
+\chapter{Planche 1}
+
+\section{Sujet}
+
+On lance une pièce équilibrée jusqu'à ce que le nombre de « piles » soit égal au double du nombre de « faces ». Quelle est la probabilité qu'on ne s'arrête jamais ?
+
+\section{Solution}
+
+%\subsection{Le modèle}
+
+Considérons une suite infinie de lancers de la pièce, mutuellement indépendants. Posons $S_0 = 0$ puis, pour tout $n \in \mathbb N^*$, notons $S_n$ la différence entre le nombre de piles et le double du nombre de faces parmi les $n$ premiers lancers. Les variables aléatoires $X_n = S_n - S_{n-1}$ sont mutuellement indépendantes et suivent la loi uniforme sur $\{1,-2\}$. L'exercice demande de calculer la probabilité $p$ définie par :
+\[
+p = P\left(\bigcap_{n=1}^{+\infty} (S_n \neq 0)\right) = \lim_{N\to+\infty} P\left(\bigcap_{n=1}^N (S_n \neq 0)\right).
+\]
+
+%\subsection{Une relation de récurrence}
+On introduit dans ce but, pour tout $x \in \mathbb Z$, la probabilité $u(x)$ que la suite $S$ n'atteigne jamais la valeur $x$ :
+\[
+u(x) = P\left(\bigcap_{n=0}^{+\infty} (S_n \neq x)\right) = \lim_{N\to\infty} P\left(\bigcap_{n=0}^N (S_n \neq x)\right).
+\]
+Puisque $S_0=0$, on a trivialement $u(0) = 0$. De plus, on va exprimer $p$ à l'aide de $u$ en distinguant les deux valeurs possibles de $X_1$. Pour tout $n \in \mathbb N$, notons $\tilde S_n$ la variable aléatoire $S_{n+1} - X_1 = X_2 + \cdots + X_{n+1}$. En observant que les $(X_i)_{i\in\mathbb N^*}$ sont indépendantes et de même loi, on obtient pour tout $N \in \mathbb N^*$ :
+\[
+P\left(\bigcap_{n=1}^N (S_n \neq 0)\mid (X_1 = 1)\right) = P\left(\bigcap_{n=0}^{N-1} (\tilde S_n \neq -1)\right) = P\left(\bigcap_{n=0}^{N-1} (S_n \neq -1)\right),
+\]
+car on dispose d'une même fonction $\varphi$ telle que $(S_0,\dots,S_{N-1}) = \varphi(X_1,\dots,X_{N-1})$ et $(\tilde S_0,\dots,\tilde S_{N-1}) = \varphi(X_2,\dots,X_N)$. 
+Pareillement :
+\[
+P\left(\bigcap_{n=1}^N (S_n \neq 0)\mid (X_1 = -2)\right) = P\left(\bigcap_{n=0}^{N-1} (S_n \neq 2)\right).
+\]
+La formule des probabilités totales conduit alors, lorsque $N \to \infty$, à la relation :
+\[
+p= \frac12 u(-1) + \frac12 u(2),
+\]
+et le même raisonnement permet d'établir les relations de récurrence suivantes :
+\[
+\forall x \in \mathbb Z^*,\quad
+u(x) = \frac12 u(x-1) + \frac12 u(x+2).
+\]
+
+%\subsection{Deux suites récurrentes linéaires}
+Les suites $(u(x))_{x \geq 0}$ et $(u(x))_{x \leq 1}$ sont donc récurrentes linéaires d'ordre $3$, de même équation caractéristique
+$t^3 - 2t + 1 = 0$, qui admet trois racines distinctes :
+\[
+r = \frac{\sqrt 5 - 1}{2},
+\qquad
+s = - \frac{\sqrt 5 + 1}{2}
+\qquad\text{et}\qquad
+1.
+\]
+Il existe donc des réels $(\alpha,\beta,\gamma) \in \mathbb R^3$ tels que :
+$$
+\forall x\geq 0,\quad
+u(x) = \alpha r^x + \beta s^x + \gamma.
+$$
+Lorsque $x \to +\infty$, on observe que $r^x \to 0$ et $|s^x| \to +\infty$, donc on a nécessairement $\beta= 0$ car $u$ est à valeurs dans $[0;1]$. De plus $u(0) = 0$ entraîne que $\alpha = -\gamma$, d'où :
+$$
+\forall x\geq 0,\quad
+u(x) = \gamma(1 - r^x).
+$$
+En raisonnant de même avec $(u(x))_{x \leq 1}$ lorsque $x \to -\infty$, on établit l'existence d'un réel $\delta \in \mathbb R$ tel que :
+$$
+\forall x \leq 1,\quad
+u(x) = \delta(1-s^x).
+$$
+Puisque les deux suites coïncident en $1$, on sait de plus que $\gamma(1-r) = \delta (1-s).$
+On admet pour l'instant le résultat suivant, donc on proposera une démonstration élémentaire dans un second temps.
+
+\begin{lemme}
+$\gamma = \lim\limits_{x\to +\infty} u(x) = 1$.
+\end{lemme}
+
+D'après ce qui précède, ceci détermine aussi la valeur de $\delta$ et donc tout la fonction $u$. Calculs faits, on obtient $u(2) = r$ et $u(-1) = 2r-1$, d'où finalement :
+\[
+{p = \dfrac{3r-1}{2} = \dfrac{3\sqrt 5 - 5}{4}}.
+\]
+
+
+Démontrons maintenant le lemme. Soient $x \in \mathbb N$ et $n \in \mathbb N$. On va simplement majorer $P(S_n = x)$ par $P(S_n \geq x)$ et utiliser l'inégalité de Markov suivante :
+$$
+\forall t > 0,\quad P(S_n \geq x) = P(e^{t S_n} \geq e^{tx}) \leq e^{-tx} E(e^{t S_n}),
+$$
+avec par indépendance $E(e^{tS_n}) = E(e^{tX_1})^n$. Lorsque $t \to 0$,
+$$
+E(e^{tX_1}) = \frac12 e^t + \frac12 e^{-2t} = 1 - \frac t2 + o(t),
+$$
+donc on peut disposer de deux réels $t > 0$ et $0 < c < 1$ tels que :
+$$
+\forall x\in \mathbb N,\forall n \in \mathbb N,\quad P(S_n \geq x) \leq e^{-tx} c^n.
+$$
+L'inégalité de Boole conduit alors à la majoration suivante :
+$$
+P\left(\bigcup_{n=0}^{+\infty} (S_n = x)\right) \leq \sum_{n=0}^{+\infty} P(S_n = x) \leq \frac{e^{-tx}}{1-c}.
+$$
+En passant au complémentaire, on obtient $u(x) = 1 -O(e^{-tx})$ lorsque $x \to +\infty$, ce qui suffit largement pour conclure.
+
+
+\section{Remarque au sujet du lemme}
+
+Ce résultat est en fait immédiat lorsqu'on connaît la loi forte des grands nombres (théorème hors-programme) qui établit ici la convergence presque sûre :
+\[
+P\left(\frac{S_n}{n} \xrightarrow[n\to\infty]{} E(X_1)\right) = 1.
+\]
+Puisque $E(X_1) < 0$, ce résultat implique que, presque sûrement, la suite $S$ est majorée. Par continuité croissante, on a alors
+\[
+\lim_{x\to+\infty} P(\sup S < x) = P(\sup S < +\infty) = 1,
+\]
+puis on conclut en remarquant que $P(\sup S < x) \leq u(x)$ pour tout $x \geq 1$.
+
+

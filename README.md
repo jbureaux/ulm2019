@@ -1,9 +1,9 @@
-# ulm2019
+# Oraux Ulm 2019
 
 ## Références
 
-[Sujets posés avec indications](https://www.ens.fr/sites/default/files/2019_mathsulm_sujets-1.pdf)
-[Lien de secours](http://www.normalesup.org/~bureaux/ulm2019/2019_mathsulm_sujets-1.pdf)
+- [Sujets posés avec indications](https://www.ens.fr/sites/default/files/2019_mathsulm_sujets-1.pdf)
+- [Lien de secours](http://www.normalesup.org/~bureaux/ulm2019/2019_mathsulm_sujets-1.pdf)
 
 ## Conventions typographiques
 
