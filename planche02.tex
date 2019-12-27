@@ -1,3 +1,5 @@
+\chapter{Planche 2}
+
 \section{Sujet}
 
 \paragraph{Exercice}
@@ -23,12 +25,12 @@ $$
 \frac{f_n r^n}{f_{n+1}r^{n+1}} \xrightarrow[n\to\infty]{} \frac{r_f}{r} \in \left]0;1\right[,
 $$
 la suite $(f_n r^n)_{n\in\mathbb N}$ est croissante à partir d'un certain rang. Elle admet en particulier un minimum (qui est strictement positif).
-Par ailleurs, la suite $(g_n R^n)_{n\in\mathbb N}$ est majorée par définition du rayon de convergence. Compte tenu de ce qui précède, on en déduit l'existence du réel :
+Par ailleurs, la suite $(g_n R^n)_{n\in\mathbb N}$ est majorée par définition du rayon de convergence. Compte tenu de ce qui précède, on en déduit l'existence d'un réel $a > 0$ tel que :
 $$
-a = \sup_{n\in\mathbb N} \frac{g_n R^n}{f_n r^n} \in \left]0;+\infty\right[.
+a = \sup_{n\in\mathbb N} \frac{g_n R^n}{f_n r^n}.
 $$
 Enfin, on dispose bien d'un réel $b > 0$ tel que $r/R = e^{-b}$ puisque $0 < r < R$.
 Le résultat demandé est alors établi.
 
 \paragraph{Remarque}
-Puisqu'on peut prendre $r$ et $R$ arbitrairement proches de $r_f$ et $r_g$, on constate que l'ensemble des $b > 0$ tels que $\sup_n (e^{bn} g_n/f_n) < \infty$ admet pour borne supérieure $\ln(r_g/r_f)$.
+Puisqu'on peut prendre $r$ et $R$ arbitrairement proches de $r_f$ et $r_g$ respectivement, on constate que l'ensemble des $b > 0$ tels que $\sup_n (e^{bn} g_n/f_n) < \infty$ admet pour borne supérieure $\ln(r_g/r_f)$.

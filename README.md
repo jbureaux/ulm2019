@@ -18,27 +18,26 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 1.
 
-- énoncé et solution complets (JB)
 - à relire
 
 ### Planche 2.
 
-- énoncé et solution du deuxième exercice (JB)
-- à relire
-- manque l'énoncé et la solution du premier exercice
+- manque le premier exercice
+- deuxième exercice à relire
 
 ### Planche 3.
 
-- énoncé.
+- manque le premier exercice
+- deuxième exercice à relire
 
 ### Planche 4.
 
-
 ### Planche 5.
-
 
 ### Planche 6.
 
+- manque le premier exercice
+- deuxième exercice à relire
 
 ### Planche 7.
 
@@ -51,12 +50,16 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 10.
 
+- solution de l'exercice à compléter, notamment avec une preuve élémentaire du lemme (sans convergence monotone, dominée, Fubini, ...)
+- manque le deuxième exercice
 
 ### Planche 11.
 
 
 ### Planche 12.
 
+- solution de l'exercice à compléter avec des figures
+- manque le deuxième exercice
 
 ### Planche 13.
 
@@ -68,7 +71,9 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 16.
-- énoncé (recentrer?).
+- (recentrer?).
+- relire l'exercice
+- manque le deuxième exercice
 
 ### Planche 17.
 
@@ -120,11 +125,17 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 33.
 
+- complet mais à relire
+
 
 ### Planche 34.
 
+- solution de l'exercice à compléter ?
+- manque le deuxième exercice
 
 ### Planche 35.
 
+- exercice à relire
+- manque le deuxième exercice
 
 ### Planche 36.

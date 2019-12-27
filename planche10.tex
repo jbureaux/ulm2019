@@ -13,15 +13,25 @@ nombre impair de « piles » suivi d'un « face ».
 Soit $p \in \left]0;1\right[$ la probabilité d'obtenir « pile » lors d'un lancer.
 Considérons la suite de variables aléatoires $(R_k)_{k \geq 1}$ définie par
 les rangs successifs des lancers à l'issue desquels la séquence de « piles » en
-cours a une longueur impaire. En notant $T$ le plus petit entier $k$ tel que le lancer de rang $1 + R_k$ donne « face », le nombre recherché est $E(1 + R_T)$.
+cours a une longueur impaire. En notant $T$ le plus petit entier $k$ tel que le lancer de rang $1 + R_k$ donne « face », le nombre moyen recherché est $E(1 + R_T)$.
 
 Il est clair que $T$ suit la loi $\mathcal G(1-p)$, tandis que $G_1 = R_1$ suit la loi $\mathcal G(p)$.
 De plus, pour tout $k \in \mathbb N^*$, la variable aléatoire $G_{k+1} = R_{k+1} - R_k - 1$ suit la même loi que $G_1$.
 Par télescopage, on obtient alors :
-$1 + R_T = \sum_{k=1}^{T} (1 + G_k).$
+\[
+1 + R_T = \sum_{k=1}^{T} (1 + G_k).
+\]
 
-En remarquant que $T$ est indépendant des $(G_k)$, on conclut classiquement (lemme de Wald) :
-$$
+En remarquant que $T$ est indépendante de chacune des variables $(G_k)$, on conclut à l'aide du lemme classique suivant dont la démonstration est rappelée brièvement ci-dessous.
+\[
 E(1 + R_T) =
 E(T)E(1 + G_1) = \frac1{1-p}\left(1+\frac1p\right).
-$$
+\]
+
+\begin{lemme}[Formule de Wald]
+Soient $(X_k)_{k\geqslant 1}$ une suite de variables aléatoires de même espérance finie $m$, et $N$ une variable aléatoire à valeur dans $\mathbb N$ d'espérance finie et indépendante de chacune des variables $(X_k)_{k\geqslant 1}$. Alors la variable aléatoire définie par :
+\[
+S = \sum_{k=1}^N X_k
+\]
+est d'espérance finie et $E(S) = E(N)\,m$.
+\end{lemme}

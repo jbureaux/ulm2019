@@ -8,14 +8,12 @@ On lance une pièce équilibrée jusqu'à ce que le nombre de « piles » soit �
 
 \section{Solution}
 
-%\subsection{Le modèle}
-
 Considérons une suite infinie de lancers de la pièce, mutuellement indépendants. Posons $S_0 = 0$ puis, pour tout $n \in \mathbb N^*$, notons $S_n$ la différence entre le nombre de piles et le double du nombre de faces parmi les $n$ premiers lancers. Les variables aléatoires $X_n = S_n - S_{n-1}$ sont mutuellement indépendantes et suivent la loi uniforme sur $\{1,-2\}$. L'exercice demande de calculer la probabilité $p$ définie par :
 \[
-p = P\left(\bigcap_{n=1}^{+\infty} (S_n \neq 0)\right) = \lim_{N\to+\infty} P\left(\bigcap_{n=1}^N (S_n \neq 0)\right).
+p = P\left(\bigcap_{n=1}^{+\infty} (S_n \neq 0)\right) = \lim_{N\to+\infty} P\left(\bigcap_{n=1}^N (S_n \neq 0)\right),
 \]
+le passage à la limite étant justifié par continuité décroissante de $P$.
 
-%\subsection{Une relation de récurrence}
 On introduit dans ce but, pour tout $x \in \mathbb Z$, la probabilité $u(x)$ que la suite $S$ n'atteigne jamais la valeur $x$ :
 \[
 u(x) = P\left(\bigcap_{n=0}^{+\infty} (S_n \neq x)\right) = \lim_{N\to\infty} P\left(\bigcap_{n=0}^N (S_n \neq x)\right).

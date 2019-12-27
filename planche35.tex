@@ -13,8 +13,8 @@ Pour $\varepsilon > 0$, calculer
 \paragraph{Deuxième exercice}
 
 \section{Solution de l'exercice}
-Soit $\varepsilon > 0$.
-Il suffit de montrer que, lorsque $n \to \infty$, la probabilité de l'évènement $(|S_n| \geq \varepsilon n)$ est négligeable par rapport à celle de l'évènement $(S_{2n} = 0)$ par lequel on conditionne. En effet, tous évènements $A,B$ avec $\mathbb P(B) \neq 0$ vérifient l'inégalité grossière :
+Vérifions que cette limite est nulle.
+Il suffit pour cela de montrer que, lorsque $n \to \infty$, la probabilité de l'évènement $(|S_n| \geq \varepsilon n)$ est négligeable par rapport à celle de l'évènement $(S_{2n} = 0)$, par lequel on conditionne. En effet, tous évènements $A,B$ avec $\mathbb P(B) \neq 0$ vérifient l'inégalité grossière :
 \[
 \mathbb P(A \mid B) \leqslant \frac{\mathbb P(A)}{\mathbb P(B)}.
 \]
@@ -23,7 +23,7 @@ La probabilité de $(S_{2n} = 0)$ se calcule explicitement par dénombrement ou 
 \[
 \mathbb P(S_{2n} = 0) = \frac1{2^{2n}}\binom{2n}{n} \underset{n\to\infty}{\sim} \frac 1{\sqrt{\pi n}},
 \]
-d'après la formule de Stirling. Compte tenu des remarques précédentes, l'inégalité de Bienaymé-Tchebycheff suffit alors pour conclure : puisque $S_n$ est centrée et de variance $n\operatorname{Var}(X_1) = n$,
+l'équivalent découlant de la formule de Stirling. Compte tenu des remarques précédentes, l'inégalité de Bienaymé-Tchebycheff suffit alors pour conclure : puisque $S_n$ est centrée et de variance $n$ par indépendance,
 \[
  \mathbb P\left(|S_n| > \varepsilon n\right) \leqslant \frac{1}{\varepsilon^2 n}.
 \]

@@ -27,19 +27,19 @@ Montrer que $f_1 + \dots + f_n = 0$.
 
 
 On sait que l'ordre d'un produit de cycles à supports disjoints est le p.p.c.m. des longueurs de ces cycles.
-À toute partie finie $L$ de $\mathbb N^*$ telle que $\sum_{\ell\in L} \ell \leq n$, on peut associer un sous-ensemble de $|L|$ cycles de $S_n$ à supports disjoints dont les longueurs sont les éléments de $L$.
+À toute partie finie $L$ de $\mathbb N^*$ telle que $\sum_{\ell\in L} \ell \leqslant n$, on peut associer un sous-ensemble de $|L|$ cycles de $S_n$ à supports disjoints dont les longueurs sont les éléments de $L$.
 En supposant ces longueurs deux à deux premières entre elles, on a alors :
 $$
-g(n) \geq \prod_{\ell \in L} \ell.
+g(n) \geqslant \prod_{\ell \in L} \ell.
 $$
 
 Soit $k \in \mathbb N^*$. Notons $P_k$ l'ensemble des $k$ plus petits nombres premiers.
-Quitte à supposer $n \geq k$, on dispose pour tout $p \in P_k$ d'un plus grand entier naturel $\alpha(p)$ tel que $p^{\alpha(p)} \leq \frac nk$.
-Les $p^{\alpha(p)}$ sont alors deux à deux premiers entre eux et vérifient $\sum_{p\in P_k} p^{\alpha(p)} \leq n$.
+Quitte à supposer $n \geqslant k$, on dispose pour tout $p \in P_k$ d'un plus grand entier naturel $\alpha(p)$ tel que $p^{\alpha(p)} \leqslant \frac nk$.
+Les $p^{\alpha(p)}$ sont alors deux à deux premiers entre eux et vérifient $\sum_{p\in P_k} p^{\alpha(p)} \leqslant n$.
 Pour tout $p \in P_k$, on a de plus $p^{\alpha(p)} > \frac n{kp}$. Donc, d'après ce qui précède,
 $$
-\forall n \geq k,\quad
-g(n) \geq \left(\prod_{p\in P_k} \frac1p\right)\left(\frac nk\right)^k.
+\forall n \geqslant k,\quad
+g(n) \geqslant \left(\prod_{p\in P_k} \frac1p\right)\left(\frac nk\right)^k.
 $$
 Ceci étant vrai quel que soit $k \in \mathbb N^*$, la conclusion s'ensuit.
 
@@ -48,7 +48,7 @@ Ceci étant vrai quel que soit $k \in \mathbb N^*$, la conclusion s'ensuit.
 Montrons par récurrence que, pour tout $n \in \mathbb N^*$, toute somme $f$ de $n$
 fonctions périodiques telle que $\lim_{+\infty} f = 0$ vérifie $f = 0$.
 
--  Si $f$ une fonction périodique telle que $\lim_{+\infty} f = 0$, on
+Si $f$ une fonction périodique telle que $\lim_{+\infty} f = 0$, on
 dispose d'un réel $\tau > 0$ tel que, pour tous $x \in \mathbb R$ et $k \in
 \mathbb N,\ f(x+k\tau) = f(x)$ et donc
 $$
@@ -56,10 +56,10 @@ f(x) = \lim_{k\to +\infty} f(x + k\tau) = 0.
 $$
 Le résultat est donc établi pour $n = 1$.
 
-- Soit $n \in \mathbb N^*$ un entier pour lequel le résultat est
+Soit $n \in \mathbb N^*$ un entier pour lequel le résultat est
   vérifié.
   Considérons $f$ une somme de $n+1$ fonctions périodiques
-  telle que $\lim_{+\infty} f = 0$.  Alors on dispose de $g$,
+  telle que $\lim_{+\infty} f = 0$.  On dispose alors de $g$,
   périodique telle que $f- g$ est somme de $n$ fonctions
   périodiques.  En notant $\tau > 0$ une période de $g$, la fonction
     $$

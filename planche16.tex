@@ -1,5 +1,19 @@
 \chapter{Planche 16}
 
+\section{Sujet}
+
+\paragraph{Exercice}
+On pose $p_{0}=1$, $p_{1} = 1$ et pour $n\geqslant 2$,
+\[
+p_{n}=\int_{0}^{x}dx_{1}\int_{0}^{1-x_{1}}dx_{2}\cdots\int_{0}^{1-x_{n-1}}dx_{n}.
+\]
+Calculer
+\[
+\sum_{n=0}^\infty p_n \left(\frac\pi6\right)^n.
+\]
+
+\paragraph{Deuxième exercice}
+
 \section{Solution de l'exercice}
 
 On définit pour $x\in[0,1],$ $$p_{0}(x)=1;p_{1}(x)=x$$et pour tout $n\geq 2,$ $$p_{n}(x)=\int_{0}^{x}dx_{1}\int_{0}^{1-x_{1}}dx_{2}\ldots\int_{0}^{1-x_{n-1}}dx_{n}.$$
@@ -8,7 +22,7 @@ On a par le caractère muet des variables d'intégration, pour tout $x\in[0,1]$ 
 Soit $y$ vérifiant $0<y<1$ (mais on verra à la fin que $\vert y\vert <\frac{\pi}{2}$ convient).
 Pour $x\in[0,1],$ considérons $$\phi_{y}(x)=\sum_{n\geq 0}p_{n}(x)y^{n}.$$
 
-En dérivant termes à termes (car la convergence de la série dérivée en $x$ est normal sur $[0,1]$ à $y$ fixé dans le régime prescrit), 
+En dérivant termes à termes (car la convergence de la série dérivée en $x$ est normale sur $[0,1]$ à $y$ fixé dans le régime prescrit), 
 on obtient pour tout $x\in[0,1],$ $$\phi'_{y}(x)=\sum_{n\geq 0}p'_{n}(x)y^{n}=y\phi_{y}(1-x).$$
 On a alors pour tout $x\in[0,1],$ $$ \phi''_{y}(x)=-y^{2}\phi_{y}(x).$$
 
