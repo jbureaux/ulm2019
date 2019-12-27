@@ -4,6 +4,7 @@
 
 - [Sujets posés avec indications](https://www.ens.fr/sites/default/files/2019_mathsulm_sujets-1.pdf)
 - [Lien de secours](http://www.normalesup.org/~bureaux/ulm2019/2019_mathsulm_sujets-1.pdf)
+- [Discussion sur les-mathematiques.net](http://www.les-mathematiques.net/phorum/read.php?4,1841908)
 
 ## Conventions typographiques
 
