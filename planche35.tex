@@ -1,0 +1,35 @@
+\chapter{Planche 35}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soient $(X_i)_{i\geqslant 1}$ des variables aléatoires i.i.d. telles que que $\mathbb P(X_i = 1) = \mathbb P(X_i = -1) = \frac12.$
+On pose $S_n = X_1 + \cdots + X_n$.
+Pour $\varepsilon > 0$, calculer
+\[
+\lim_{n\to\infty} \mathbb P\left(\left|\frac{S_n}n\right| > \varepsilon \mid S_{2n} = 0\right).
+\]
+
+\paragraph{Deuxième exercice}
+
+\section{Solution de l'exercice}
+Soit $\varepsilon > 0$.
+Il suffit de montrer que, lorsque $n \to \infty$, la probabilité de l'évènement $(|S_n| \geq \varepsilon n)$ est négligeable par rapport à celle de l'évènement $(S_{2n} = 0)$ par lequel on conditionne. En effet, tous évènements $A,B$ avec $\mathbb P(B) \neq 0$ vérifient l'inégalité grossière :
+\[
+\mathbb P(A \mid B) \leqslant \frac{\mathbb P(A)}{\mathbb P(B)}.
+\]
+
+La probabilité de $(S_{2n} = 0)$ se calcule explicitement par dénombrement ou bien en remarquant que $\frac12(S_{2n}+{2n})$ suit une loi binomiale de paramètres $2n$ et $\frac12$ :
+\[
+\mathbb P(S_{2n} = 0) = \frac1{2^{2n}}\binom{2n}{n} \underset{n\to\infty}{\sim} \frac 1{\sqrt{\pi n}},
+\]
+d'après la formule de Stirling. Compte tenu des remarques précédentes, l'inégalité de Bienaymé-Tchebycheff suffit alors pour conclure : puisque $S_n$ est centrée et de variance $n\operatorname{Var}(X_1) = n$,
+\[
+ \mathbb P\left(|S_n| > \varepsilon n\right) \leqslant \frac{1}{\varepsilon^2 n}.
+\]
+
+\paragraph{Remarque}
+Une question plus difficile à laquelle les examinateurs ont peut-être pensé serait de calculer :
+\[
+\lim_{n\to\infty} \mathbb P\left(\left|\frac{S_n}{\sqrt n}\right| > \varepsilon \mid S_{2n} = 0\right).
+\]

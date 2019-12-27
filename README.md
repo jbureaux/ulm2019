@@ -17,12 +17,18 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 1.
 
+- énoncé et solution complets (JB)
+- à relire
 
 ### Planche 2.
 
+- énoncé et solution du deuxième exercice (JB)
+- à relire
+- manque l'énoncé et la solution du premier exercice
 
 ### Planche 3.
 
+- énoncé.
 
 ### Planche 4.
 
@@ -61,7 +67,7 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 16.
-
+- énoncé (recentrer?).
 
 ### Planche 17.
 
@@ -88,7 +94,7 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 25.
-
+- énoncé.
 
 ### Planche 26.
 

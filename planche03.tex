@@ -1,0 +1,14 @@
+\chapter{Planche 3}
+
+\section{Solution}
+
+Soit $y>0.$
+
+Comme $f$ est dérivable, on a pour $x$ proche de $1$ : 
+$$f(x)=f(1)+(x-1)f'(1)+o(x-1)=1+(x-1)f'(1)+o(x-1)$$ mais aussi $$ f(xy)=f(y)+(x-1)yf'(y)+o(x-1).$$
+Ainsi, on obtient : $$f(x)f(y)-f(xy)=(x-1)\left( f'(1)f(y)-yf'(y) \right)+o(x-1)\leq 0.$$
+En divisant par $(x-1)$ (en traitant les cas $x>1$ et $x<1$) et en faisant tendre $x$ vers $1$, on obtient : $$yf'(y)=f'(1)f(y).$$
+Il vient alors pour tout $y>0,$ $\displaystyle f(y)=y^{f'(1)}$ (car $f(1)=1$).
+Cependant, $f$ doit être dérivable sur $\mathbb{R}^{+}$ donc $f'(1)\geq 1.$
+
+Il est facile de vérifier que les fonctions du type $ f: x\mapsto x^{\lambda}$ où $\lambda\geq 1$ sont dérivables sur $\mathbb{R}^{+}$ et satisfont l'inéquation fonctionnelle.

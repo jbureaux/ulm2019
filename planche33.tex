@@ -1,0 +1,80 @@
+\chapter{Planche 33}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+
+Soit $n \geqslant 2$ un entier.
+On note $S_n$ l'ensemble des permutations de $\{1,2,\dots,n\}$ et $\operatorname{Id}$ la permutation identité.
+On pose
+$$
+g(n) = \max_{\sigma \in S_n} \min \{k \geqslant 1 : \sigma^k = \operatorname{Id}\}.
+$$
+Montrer que pour tout $k \geqslant 1$
+\[\frac{g(n)}{n^k} \to +\infty
+\]
+lorsque $n \to \infty$.
+
+\paragraph{Deuxième exercice}
+
+Soit $n \geqslant 1$ un entier et $f_1,\dots,f_n : \mathbb R \to \mathbb R$ des fonctions périodiques telles que
+$$
+\lim_{x\to+\infty} (f_1(x) + \dots + f_n(x)) = 0.
+$$
+Montrer que $f_1 + \dots + f_n = 0$.
+
+\section{Solution de l'exercice}
+
+
+On sait que l'ordre d'un produit de cycles à supports disjoints est le p.p.c.m. des longueurs de ces cycles.
+À toute partie finie $L$ de $\mathbb N^*$ telle que $\sum_{\ell\in L} \ell \leq n$, on peut associer un sous-ensemble de $|L|$ cycles de $S_n$ à supports disjoints dont les longueurs sont les éléments de $L$.
+En supposant ces longueurs deux à deux premières entre elles, on a alors :
+$$
+g(n) \geq \prod_{\ell \in L} \ell.
+$$
+
+Soit $k \in \mathbb N^*$. Notons $P_k$ l'ensemble des $k$ plus petits nombres premiers.
+Quitte à supposer $n \geq k$, on dispose pour tout $p \in P_k$ d'un plus grand entier naturel $\alpha(p)$ tel que $p^{\alpha(p)} \leq \frac nk$.
+Les $p^{\alpha(p)}$ sont alors deux à deux premiers entre eux et vérifient $\sum_{p\in P_k} p^{\alpha(p)} \leq n$.
+Pour tout $p \in P_k$, on a de plus $p^{\alpha(p)} > \frac n{kp}$. Donc, d'après ce qui précède,
+$$
+\forall n \geq k,\quad
+g(n) \geq \left(\prod_{p\in P_k} \frac1p\right)\left(\frac nk\right)^k.
+$$
+Ceci étant vrai quel que soit $k \in \mathbb N^*$, la conclusion s'ensuit.
+
+\section{Solution du deuxième exercice}
+
+Montrons par récurrence que, pour tout $n \in \mathbb N^*$, toute somme $f$ de $n$
+fonctions périodiques telle que $\lim_{+\infty} f = 0$ vérifie $f = 0$.
+
+-  Si $f$ une fonction périodique telle que $\lim_{+\infty} f = 0$, on
+dispose d'un réel $\tau > 0$ tel que, pour tous $x \in \mathbb R$ et $k \in
+\mathbb N,\ f(x+k\tau) = f(x)$ et donc
+$$
+f(x) = \lim_{k\to +\infty} f(x + k\tau) = 0.
+$$
+Le résultat est donc établi pour $n = 1$.
+
+- Soit $n \in \mathbb N^*$ un entier pour lequel le résultat est
+  vérifié.
+  Considérons $f$ une somme de $n+1$ fonctions périodiques
+  telle que $\lim_{+\infty} f = 0$.  Alors on dispose de $g$,
+  périodique telle que $f- g$ est somme de $n$ fonctions
+  périodiques.  En notant $\tau > 0$ une période de $g$, la fonction
+    $$
+        \tilde f : x\longmapsto f(x+\tau) - f(x)
+    $$
+  est alors somme de $n$ fonctions périodiques et vérifie
+  $\lim_{+\infty} \tilde f =0$,
+  donc $\tilde f$ est nulle par hypothèse de récurrence. Ainsi, $f$ est
+  elle-même $\tau$-périodique et donc $f$ est nulle d'après le cas $n = 1$.
+
+\paragraph{Discussion}
+
+Donner un exemple de deux fonctions périodiques dont la somme
+n'est pas périodique.
+
+Il suffit de considérer les fonctions $u = \mathbf 1_{\mathbb Z}$ et $v = \mathbf
+1_{\sqrt 2 \mathbb Z}$, qui sont respectivement $1$-périodique et $\sqrt 2$-périodique. En effet, $\sqrt 2$ est irrationnel donc il n'existe aucun réel $\tau \neq 0$ tel que
+$u(\tau) + v(\tau) = u(0) + v(0)$.

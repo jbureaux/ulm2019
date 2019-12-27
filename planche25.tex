@@ -1,0 +1,59 @@
+\chapter{Planche 25}
+
+\section{Solution de l'exercice}
+
+On montre facilement par récurrence sur $k\in\mathbb{N}$ que pour tout $x\in[0,1],$ $$P_{k}(x);Q_{k}(x)\in[0,1].$$ 
+On a également pour tout $k\geq 1,$ $$P_{k}(0)=1;Q_{k}(0)=0.$$
+
+Soit $k\geq 0.$ Considérons $x\in[0,1].$ On a  alors en utilisant les relations de récurrence
+$$P_{k+1}(x)=\left(1-x+\int_{0}^{x}Q_{k}(t)dt\right)=\left(1-\int_{0}^{x}\left(1-\int_{0}^{t}P_{k}(u)du\right)^{2}dt\right)^{2}.$$
+
+On a ainsi en utilisant une identité remarquable (et comme les fonctions $P_{k}$ sont à valeurs dans $[0,1]$) : 
+\begin{align*}
+\vert P_{k+2}(x)-P_{k+1}(x)\vert  & = \left( 2-\int_{0}^{x}\left[ \left( 1-\int_{0}^{t}P_{k+1}(u)du \right)^{2}+\left( 1-\int_{0}^{t}P_{k+1}(u)du \right)^{2}\right]dt\right)\\
+& \mbox{ }\mbox{ }\mbox{ }\mbox{ }\mbox{ }\times \left\vert\int_{0}^{x}\left[ \left( 1-\int_{0}^{t}P_{k+1}(u)du\right)^{2}-\left(1-\int_{0}^{t}P_{k+1}(u)du \right)^{2}\right]dt\right\vert\\
+& \leq 2\int_{0}^{x}\left( 2-\int_{0}^{t}P_{k+1}(u)du-\int_{0}^{t}P_{k+1}(u)du\right)dt\times \int_{0}^{x}\left(\int_{0}^{t}\big\vert P_{k+1}(u)-P_{k}(u)\big\vert du\right)dt \\
+& \mbox{ en appliquant l'inégalité triangulaire intégrale}\\
+& \leq 4\int_{0}^{x}\left(\int_{0}^{t}\big\vert P_{k+1}(u)-P_{k}(u)\big\vert du\right)dt \mbox{ (*) }.
+\end{align*}
+
+De même, on a également en écrivant $\displaystyle x=\int_{0}^{x}1dt,$ 
+\begin{align*}
+\vert P_{k+1}(x)+Q_{k+1}(x)-1\vert & = \big\vert \int_{0}^{x}\left(P_{k}(t)+Q_{k}(t)-1\right)dt \big\vert \times \left(2-x+\int_{0}^{x}(Q_{k}(t)-P_{k}(t))dt\right)\\
+& \leq \left(2-x+\int_{0}^{x}\big\vert Q_{k}(t)-P_{k}(t)\big\vert dt\right)\times \int_{0}^{x}\big\vert P_{k}(t)+Q_{k}(t)-1\big\vert dt\\
+& \mbox{ en appliquant l'inégalité triangulaire intégrale}\\
+& \leq 2\int_{0}^{x}\big\vert P_{k}(t)+Q_{k}(t)-1\big\vert dt \mbox{ (**)}.
+\end{align*}
+
+On montre alors (grâce aux formules $(*)$ et $(**)$) par récurrence sur $k\geq 0,$ $$\forall t\in[0,1] :\mbox{ } \vert P_{k+1}(t)-P_{k}(t)\vert\leq \frac{(2t)^{2k}}{(2k)!}  \mbox{ et } \vert P_{k}(t)+Q_{k}(t)-1\vert \leq \frac{(2t)^{k}}{k!}.$$
+
+Les initialisations sont claires car $\displaystyle P_{0}=0=Q_{0} \mbox{ et } P_{1}(t)=(1-t)^{2}\leq 1.$
+
+Enfin par $(*),$ on a en intégrant en cascade :
+\begin{align*}
+\vert P_{k+2}(x)-P_{k+1}(x)\vert  & \leq 4\int_{0}^{x}\left(\int_{0}^{t}\frac{(2u)^{2k}}{(2k)!}du\right)dt\\
+& \leq \frac{4\times 2^{2k}}{(2k+1)!}\int_{0}^{x}t^{2k+1}dt\\
+& \leq \frac{(2t)^{2k+2}}{(2k+2)!}.
+\end{align*}
+
+Et par $(**),$ on a en intégrant :
+\begin{align*}
+\vert P_{k+1}(x)+Q_{k+1}(x)-1\vert & \leq 2\int_{0}^{x}\frac{(2t)^{k}}{k!}dt\\
+& \leq \frac{(2x)^{k+1}}{(k+1)!}.
+\end{align*}
+
+Ainsi, les séries de terme général respectifs $\displaystyle \|P_{k}-P_{k+1}\|_{\infty,[0,1]}$ et  $\displaystyle \|P_{k+1}+Q_{k+1}-1\|_{\infty,[0,1]}$  sont convergentes et donc la suite $(P_{k})$ converge uniformément vers $P$ sur $[0,1]$ et la suite  $(Q_{k})$ converge uniformément vers $Q$ sur $[0,1]$ (car $\displaystyle \left(\mathcal{C}^{0}([0,1],\mathbb{R}),\|.\|_{\infty,[0,1]}\right)$ est un espace de Banach). 
+
+De plus, on a $$ P+Q=1 \mbox{ sur } [0,1].$$
+
+En passant à la limite, il vient également pour tout $x\in[0,1]$ : $$\displaystyle P(x)=\left(1-x+\int_{0}^{x}Q(t)dt\right)^{2} \mbox{ et } Q(x)=1-\left(1-\int_{0}^{x}P(t)dt\right)^{2}.$$
+
+\textbf{Remarque: } Plutôt que d'utiliser un argument de complétude, on peut dans le programme de prépa remarquer la convergence absolue des séries en jeu à $x$ fixé. Ainsi, il y a convergence simple des suites $(P_{k})$ et $(Q_{k})$ en tout point de $[0,1].$ Les deux dernières relations fonctionnelles s'obtiennent par convergence dominée car les suites de fonctions en jeu sont bornées uniformément, ce qui est une domination valable sur un segment.
+
+La limite cherchée est alors (en utilisant $P+Q=1$ et en passant à la limite) $$ I=\int_{0}^{1}\left(1-x+\int_{0}^{x}Q(t)dt\right)^{3}=\int_{0}^{1}\left(1-\int_{0}^{x}P(t)dt\right)^{3}.$$
+
+Il ne reste plus qu'à déterminer $\displaystyle \phi(x)=\int_{0}^{x}P(t)dt.$
+Or, on sait $$\displaystyle P(x)=\left(1-\int_{0}^{x}P(t)dt\right)^{2} \mbox{ i.e. } \phi'(x)=\left(1-\phi(x)\right)^{2}.$$
+En séparant les variables et en utilisant $\phi(0)=0,$ il vient $$ \frac{1}{1-\phi(x)}-1=x \mbox{ i.e. } \phi(x)=1-\frac{1}{1+x}=\frac{x}{1+x}$$ d'où $\displaystyle P(x)=\frac{1}{(1+x)^{2}}.$
+
+Ainsi, on obtient finalement $$ I=\int_{0}^{1}\frac{dx}{(1+x)^{3}}=\left[\frac{-1}{2(1+x)^{2}}\right]_{0}^{1}=\frac{3}{8}.$$

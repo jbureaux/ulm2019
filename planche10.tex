@@ -1,0 +1,27 @@
+\chapter{Planche 10}
+
+\section{Sujet}
+\paragraph{Exercice}
+Déterminer le nombre de fois qu'il faut, en moyenne, lancer une pièce
+successivement et indépendemment au hasard pour observer une suite d'un
+nombre impair de « piles » suivi d'un « face ».
+
+\paragraph{Deuxième exercice}
+
+\section{Solution de l'exercice}
+
+Soit $p \in \left]0;1\right[$ la probabilité d'obtenir « pile » lors d'un lancer.
+Considérons la suite de variables aléatoires $(R_k)_{k \geq 1}$ définie par
+les rangs successifs des lancers à l'issue desquels la séquence de « piles » en
+cours a une longueur impaire. En notant $T$ le plus petit entier $k$ tel que le lancer de rang $1 + R_k$ donne « face », le nombre recherché est $E(1 + R_T)$.
+
+Il est clair que $T$ suit la loi $\mathcal G(1-p)$, tandis que $G_1 = R_1$ suit la loi $\mathcal G(p)$.
+De plus, pour tout $k \in \mathbb N^*$, la variable aléatoire $G_{k+1} = R_{k+1} - R_k - 1$ suit la même loi que $G_1$.
+Par télescopage, on obtient alors :
+$1 + R_T = \sum_{k=1}^{T} (1 + G_k).$
+
+En remarquant que $T$ est indépendant des $(G_k)$, on conclut classiquement (lemme de Wald) :
+$$
+E(1 + R_T) =
+E(T)E(1 + G_1) = \frac1{1-p}\left(1+\frac1p\right).
+$$

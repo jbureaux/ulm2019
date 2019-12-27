@@ -1,0 +1,22 @@
+\chapter{Planche 34}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soit $n\geqslant 1$ un entier. On note $S_n$ l'ensemble des permutations de $\{1,2,\ldots,n\}$ et $\operatorname{Id}$ la permutation identité. On pose
+\[
+g(n) = \max_{\sigma \in S_n} \min\{k \geqslant 1 : \sigma^k = \operatorname{Id}\}.
+\]
+Trouver les entiers $n \geqslant 1$ tels que $g(n)$ soit impair.
+
+\paragraph{Deuxième exercice}
+
+\section{Solution de l'exercice}
+
+Soit $n$ un entier. Pour tout $p$ premier, notons $\nu(p)$ l'exposant de $p$ dans la factorisation de $g(n)$. Considérons un élément de $\mathfrak S_n$ d'ordre $g(n)$. Ses cycles ont des longueurs dont le p.p.c.m. vaut $g(n)$ et la somme vaut $n$. Ainsi, tout $p^{\nu(p)}$ divise la longueur d'au moins un des cycles et $\sum_{p\mid g(n)} p^{\nu(p)} \leq n$ car la longueur d'un cycle majore la somme des $p^{\nu(p)}$ qui la divisent. On peut donc construire un élément de $\mathfrak S_n$ d'ordre $g(n)$ tel que chaque cycle non trivial est de longueur $p^{\nu(p)}$ associée à un diviseur premier de $g(n)$.
+
+On suppose $g(n)$ impair. Soit $p$ un facteur premier de $g(n)$. On va chercher à remplacer le cycle de longueur $p^{\nu(p)}$ par deux cycles à supports disjoints de longueurs respectives $p^{\nu(p)-1}$ et $2^\alpha$, sans augmenter le support. C'est possible à condition que $2^\alpha \leq (p-1) p^{\nu(p)-1}$ et on dispose bien d'un tel $\alpha \geq 1$ qui vérifie de plus $(p-1)p^{\nu(p)-1} < 2^{\alpha+1}$. Par maximalité de $g(n)$, supposé impair, on a nécessairement $2^\alpha p^{\nu(p)-1} < p^{\nu(p)}$, d'où $2^\alpha \leq p - 1$ et donc $p^{\nu(p)-1} < 2$. Conclusion : tout facteur premier $p$ de $g(n)$ apparait avec multiplicité $\nu(p)=1$.
+
+En raisonnant de même, on montre que tout facteur premier $p \geq 11$ vérifie nécessairement $p \leq 23$ (sinon on remplacerait avantageusement le cycle de longueur $p$ par deux cycles de longueurs respectives $3^2$ et $2^\alpha$). Ceci donne déjà une majoration de $g(n)$, et donc de $n$, par des constantes.
+
+On peut affiner la recherche avec le même type d'arguments pour aboutir à l'ensemble des solutions $\{1, 3,8,15\}$. Par exemple : si $g(n)$ est impair et n'est pas divisible par un nombre premier $p \geq 3$, alors il n'a aucun facteur premier $q > p$.
