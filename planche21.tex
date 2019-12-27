@@ -16,3 +16,29 @@ $$
 \paragraph{Deuxième exercice}
 
 \section{Solution de l'exercice}
+
+Notons $q(x) = P(X \geqslant x)$ la queue de distribution. Les variables $X,Y$ sont à valeurs positives, donc la probabilité de l'évènement $(X + Y \geqslant x)$ est supérieure ou égale à celle de $(X\geqslant x) \cup (Y \geqslant x)$, qui vaut :
+\[
+P(X\geqslant x) + P(Y \geqslant x) - P((X\geqslant x) \cap (Y \geqslant x)) = 2q(x) - q(x)^2.
+\]
+Ces deux probabilités sont donc toutes deux équivalentes à $2q(x)$ lorsque $x \to \infty$ car $q(x) \to 0$. Autrement dit, la probabilité
+\[
+P((X + Y \geqslant x) \cap (X < x) \cap (Y < x)) 
+\]
+est négligeable par rapport à $q(x)$ et il en va en particulier de même pour
+\[
+P((X + Y \geqslant x) \cap (X < x) \cap (Y = a)),
+\]
+quel que soit l'entier $a$. Ceci revient à dire que
+\[
+P((X+Y \geqslant x) \cap (Y = a)) = P((X \geqslant x) \cap (Y = a)) + o(q(x)).
+\]
+Puisque $(X+Y \geqslant x) \cap (Y=a) = (X \geqslant x - a) \cap (Y=a)$, on obtient
+\[
+q(x-a)\,P(Y = a) = q(x) P(Y = a) + o(q(x)),
+\]
+par indépendance de $X$ et $Y$. S'il existe un entier $a \geqslant 1$ tel que $P(Y = a) \neq 0$, on obtient $q(x - a) \sim q(x)$ et le résultat en découle facilement car
+\[
+q(x) \leqslant q(x-1) \leqslant q(x-a).
+\]
+Sinon, les variables $X,Y$ sont presque sûrement égales à $0$ et le résultat est trivial.

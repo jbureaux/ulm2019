@@ -2,8 +2,7 @@
 
 ## Références
 
-- [Sujets posés avec indications](https://www.ens.fr/sites/default/files/2019_mathsulm_sujets-1.pdf)
-- [Lien de secours](http://www.normalesup.org/~bureaux/ulm2019/2019_mathsulm_sujets-1.pdf)
+- [Sujets posés avec indications](https://www.ens.fr/sites/default/files/2019_mathsulm_sujets-1.pdf), [lien de secours](http://www.normalesup.org/~bureaux/ulm2019/2019_mathsulm_sujets-1.pdf)
 - [Discussion sur les-mathematiques.net](http://www.les-mathematiques.net/phorum/read.php?4,1841908)
 
 ## Conventions typographiques
@@ -88,6 +87,9 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 21.
+
+- exercice à relire
+- deuxième exercice manquant
 
 
 ### Planche 22.
