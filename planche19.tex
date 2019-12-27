@@ -1,0 +1,63 @@
+\chapter{Planche 19}
+
+
+\section{Sujet}
+
+\paragraph{Deuxième exercice}
+Montrer qu'il n'existe pas de fonction $f : \mathbb R \to \mathbb R$ de classe $\mathscr C^1$ qui vérifie $f(f'(x)) = x$ pour tout $x \in \mathbb R$.
+Y a-t-il une fonction $f : \mathopen]0,\infty\mathclose[ \to \mathopen]0,\infty\mathclose[$ de classe $\mathscr C^1$ qui vérifie la même équation pour $x > 0$ ?
+
+\section{Solution du deuxième exercice}
+
+\underline{Le premier cas est non.}
+
+Supposons par l'absurde qu'il existe $f : \mathbb{R} \rightarrow \mathbb{R}$ de classe $\mathcal{C}^{1}$ telle que $$\forall x\in\mathbb{R},\mbox{ } f\circ f'(x)=x.$$
+
+On voit que $f'$ est injective sur $\mathbb{R}$. 
+
+Etant continue, $f'$ est strictement monotone sur $\mathbb{R}.$
+
+On suppose que $f'$ est strictement croissante (le cas $f'$ strictement décroissante se traite de la même manière).
+
+Notons $\displaystyle l=\lim_{x\rightarrow +\infty}f'(x).$ Supposons que $l<+\infty.$
+
+On a alors par continuité de $f$ et par unicité de la limite : $\displaystyle f(l)=+\infty,$ une contradiction! 
+
+Ainsi, $l=+\infty$ (on procède de même pour montrer que $\displaystyle \lim_{x\rightarrow -\infty}f'(x)=-\infty.$
+
+Ainsi, $f'$ réalise une bijection de $\mathbb{R}$ sur $\mathbb{R}.$
+
+Montrons alors $f$ est injective sur $\mathbb{R}.$
+
+Soit $x,y\in\mathbb{R}$ tels que $f(x)=f(y).$ 
+
+On a alors $a,b\in\mathbb{R}$ tels que $x=f'(a);y=f'(b).$
+
+On obtient donc $a=f\circ f'(a)=f(x)=f(y)=f\circ f'(b)=b,$ et ainsi, $x=y.$ 
+
+Ainsi, $f$ étant continue sur $\mathbb{R},$ $f$ est strictement monotone sur $\mathbb{R}$ également.
+
+On suppose alors $f$ strictement croissante (le cas $f$ strictement décroissante se traite de la même manière).
+
+Ainsi, pour tout $x\in\mathbb{R},$ $\displaystyle f'(x)\geq 0,$ contredisant le fait que $f'$ est surjective...\\
+
+\underline{ Le deuxième cas est oui.}
+
+On peut chercher $f :x \mapsto ax^{b}$ sur $\mathbb{R}^{+*}$ pour des bonnes constantes $a$ et $b$... On trouve alors $\displaystyle b=\frac{(1+\sqrt{5})}{2} \mbox{ et } a=\exp(-\frac{b\ln(b)}{b+1}).$
+
+%Supposons qu'il existe $f : \mathbb{R}^{+*} \rightarrow \mathbb{R}^{+*}$ $\mathcal{C}^{1}$ telle que $\forall x\in\mathbb{R}^{+},\mbox{ } f\circ f'(x)=x.$
+
+%Nécessairement, $f'$ est à valeurs dans $\mathbb{R}^{+*}.$ Ainsi, $f$ est strictement croissante sur $\mathbb{R}^{+*}.$
+
+%Comme $f'$ est strictement monotone sur $\mathbb{R}^{+*}$ (par la première partie de la solution précédente), alors $f'$ est strictement croissante (compte-tenu de la relation $\displaystyle f\circ f'=\mbox{Id}_{\mathbb{R}^{+*}}$).
+
+%On a comme précédemment : $\displaystyle \lim_{x\rightarrow +\infty}f'(x)=+\infty.$
+
+%Supposons que $\displaystyle \lim_{x\rightarrow 0^{+}}f'(x)=l>0.$
+%On a alors par continuité de $f,$ $f(l)=0,$ une contradiction!
+
+%Ainsi, $f'$ réalise une bijection de $\mathbb{R}^{+*}$ sur $\mathbb{R}^{+*}.$
+
+%Montrons alors que $f^{-1}=f'.$
+
+%Soit $x>0.$ On a $a(x)>0$ tel que $f'(a(x))=x$ mais alors en composant par $f$, il vient $f(x)=a(x)$ i.e. $f'\circ f(x)=x.$

@@ -10,8 +10,6 @@ Pour $\varepsilon > 0$, calculer
 \lim_{n\to\infty} \mathbb P\left(\left|\frac{S_n}n\right| > \varepsilon \mid S_{2n} = 0\right).
 \]
 
-\paragraph{Deuxième exercice}
-
 \section{Solution de l'exercice}
 Vérifions que cette limite est nulle.
 Il suffit pour cela de montrer que, lorsque $n \to \infty$, la probabilité de l'évènement $(|S_n| \geq \varepsilon n)$ est négligeable par rapport à celle de l'évènement $(S_{2n} = 0)$, par lequel on conditionne. En effet, tous évènements $A,B$ avec $\mathbb P(B) \neq 0$ vérifient l'inégalité grossière :
@@ -33,3 +31,39 @@ Une question plus difficile à laquelle les examinateurs ont peut-être pensé s
 \[
 \lim_{n\to\infty} \mathbb P\left(\left|\frac{S_n}{\sqrt n}\right| > \varepsilon \mid S_{2n} = 0\right).
 \]
+
+\paragraph{Deuxième exercice}
+
+\begin{itemize}
+\item Pour $c<0,$ la fonction $\displaystyle f: x\mapsto e^{x}$ satisfait les inéquations différentielles.
+\item Pour $c=0,$ les fonctions $\displaystyle f_{\lambda} :x \mapsto e^{\lambda x}$ où $\lambda>1$ satisfont les inéquations différentielles.
+\item Pour $c>0,$ il n'y a pas de fonction $\mathcal{C}^{2}$ qui vérifie les deux inéquations différentielles.
+Par l'absurde, supposons qu'il existe une telle fonction $f$...
+\end{itemize}
+
+L'idée est la suivante, on a va voir que les inégalités forcent $f'$ et $f$ à être négatives dans un voisinage de $-\infty.$
+Mais alors $f$ est décroissante dans ce voisinage de $-\infty$ et tend vers $+\infty$ en $-\infty,$ contredisant sa négativité!
+\\
+
+Par la méthode de la variation de la constante, on a pour tout $x\in\mathbb{R},$
+\begin{align*}
+f'(x) & =e^{x}\int_{0}^{x}\left(f''(t)-f'(t)\right)e^{-t}dt+f'(0)e^{x}\\
+\mbox{ et } f(x) & =e^{x}\int_{0}^{x}\left(f'(t)-f(t)\right)e^{-t}dt+f(0)e^{x}.
+\end{align*}
+
+Il vient alors par croissance de l'intégrale et pour tout $x\leq 0,$ \begin{align*}
+f'(x) & \leq ce^{x}\int_{x}^{0}-e^{-t}dt+f'(0)e^{x} = c(e^{x}-1)+f'(0)e^{x}\\
+\mbox{ et } f(x)& \leq ce^{x}\int_{x}^{0}-e^{-t}dt+f(0)e^{x} = c(e^{x}-1)+f(0)e^{x}.
+\end{align*}
+En particulier, on a $\displaystyle \limsup_{x\rightarrow +\infty} f(x) \leq -c<0.$ 
+
+\textbf{Remarque : } Une autre façon d'écrire ceci est de remarquer que le membre de droite tend vers $-c$ en $-\infty$ et donc $f'$ est négative dans un voisinage de $-\infty.$ Ainsi, $f$ est décroissante dans un voisinage de $-\infty$ et donc admet une limite en $-\infty$ qui est strictement négative en passant à la limite dans la deuxième inégalité.
+\\
+
+Finalement, en intégrant entre $x$ et $0$ la première inégalité (lorsque $x\leq 0$), il vient : 
+\begin{align*}
+f(0)-f(x) & \leq (c+f'(0))(1-e^{x})+cx\\
+\mbox{ i.e. } f(x) & \geq f(0)-(c+f'(0))(1-e^{x})-cx.
+\end{align*}
+
+Par comparaison, on obtient $\displaystyle \lim_{x\rightarrow -\infty} f(x)=+\infty$ alors que $f$ est négative dans un voisinage de $-\infty,$ ce qui constitue la contradiction recherchée!

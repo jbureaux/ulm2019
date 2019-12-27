@@ -1,0 +1,36 @@
+\chapter{Planche 5}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soit $G$ un groupe, $\delta > 0$ et $f : G \to \mathbb C$ une fonction telle que
+\[
+\forall x,y \in G,\quad |f(xy)-f(x)f(y)| \leqslant \delta.
+\]
+Montrer qu'il existe $C > 0$ tel que $|f(x)| \leqslant C$ pour tout $x \in G$ ou $f(xy) = f(x)f(y)$ pour tous $x,y \in G$.
+Trouver la plus petite valeur de $C$ possible.
+
+\section{Solution de l'exercice}
+
+Soit $f$ un quasi-morphisme multiplicatif (quasi-caractère?) de $G$ dans $\mathbb{C}.$\\
+
+\begin{itemize}
+\item Ou il existe une constante $C>0$ telle que pour tout $x\in \mathbb{G},$ $\displaystyle \vert f(x) \vert \leq C.$
+\item Ou il existe une suite d'éléments de $G$ : $\displaystyle (x_{n})\in G^{\mathbb{N}}$ telle que $\displaystyle \lim_{n\rightarrow +\infty} \vert f(x_{n})\vert =+\infty.$
+\end{itemize}
+
+Soit $x,y\in G.$ 
+
+On note alors pour $n\gg 1,$ $a_{n}=\vert f(x_{n})\vert.$
+On a alors d'une part pour $n\gg1,$ $$B_{n}:=\left \vert \frac{f(xyx_{n})}{f(x_{n})}-f(xy) \right\vert =\frac{ \vert f(xyx_{n})-f(xy)f(x_{n}) \vert }{a_{n}}\leq \frac{\delta}{a_{n}}\longrightarrow_{n\rightarrow +\infty} 0.$$
+
+Et d'autre part, on a également pour $n\gg 1,$ 
+\begin{align*}
+C_{n}:=\left\vert \frac{f(xyx_{n})}{f(x_{n})}-f(x)f(y) \right\vert & \leq \frac{ \vert f(xyx_{n})-f(x)f(yx_{n})\vert }{a_{n}}+ \left\vert \frac{f(x)f(yx_{n})}{f(x_{n})}-f(x)f(y) \right\vert\\
+& \leq \frac{\delta}{a_{n}}+ \frac{\vert f(x) \vert }{a_{n}}\vert f(yx_{n})-f(y)f(x_{n})\vert\\
+& \leq \frac{\delta(1+\vert f(x) \vert )}{a_{n}}\longrightarrow_{n\rightarrow +\infty} 0.
+\end{align*}
+
+Ainsi, par l'inégalité triangulaire, on a $$\vert f(xy)-f(x)f(y)\vert \leq B_{n}+C_{n}\longrightarrow_{n\rightarrow +\infty}0.$$
+
+D'où le fait que $f$ est un morphisme multiplicatif (caractère) de $G$ i.e. $\displaystyle f(xy)=f(x)f(y).$

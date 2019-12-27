@@ -89,14 +89,14 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 ### Planche 21.
 
 - exercice à relire
-- deuxième exercice manquant
+- autre preuve (plus quantitative ajouté).
 
 
 ### Planche 22.
 
 
 ### Planche 23.
-
+- preuve rapide? ou remarques et méthodes pour traiter ce type de problèmes (avec biblio à l'appui?).
 
 ### Planche 24.
 

@@ -1,0 +1,110 @@
+\chapter{Planche 23}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soit $(X_i)_{i\geqslant 0}$ des variables aléatoires indépendantes de loi uniforme sur $\{-1,1\}$. On fixe $\alpha \in \mathopen]0,1\mathclose[$.
+Montrer que la fonction
+\[
+\begin{array}{cccc}
+F \ :  &\mathbb R & \longrightarrow & [0,1]\\
+& t & \longmapsto & \displaystyle\mathbb P\left(\sum_{k=0}^\infty \alpha^k X_k \leqslant t\right)
+\end{array}
+\]
+est continue.
+
+
+\section{Solution de l'exercice}
+
+Soit $\alpha\in]0,1[.$
+
+Notons $\displaystyle Z_{\alpha}=\sum_{k\geq 0}\alpha^{k}X_{k}$ où les $(X_{k})$ sont une suite de Rademacher i.i.d.
+
+Ensuite, on note $\displaystyle F_{\alpha}$ la fonction de répartition de $Z_{\alpha}.$
+
+On note également $\mu_{\alpha}$ la loi de $Z_{\alpha}$ et on introduit $$K_{\alpha}=\left\{ \sum_{k\geq 0}\alpha^{k}\varepsilon_{k}\mbox{ }|\mbox{ } \forall k\geq 0,\mbox{ } \varepsilon_{k}\in\{-1,1\}  \right\}$$ le support de $\mu_{\alpha}$, qui est un compact de $\displaystyle [-\frac{1}{1-\alpha},\frac{1}{1-\alpha}]$ (en procédant par extraction diagonale).
+
+\begin{enumerate}
+\item \underline{Montrons que tout élément de $K_{\alpha}$ s'écrit de manière unique si $0<\alpha<\frac{1}{2}.$}
+    
+(on peut montrer en calculant la transformée de Fourier de $\mu_{\frac{1}{2}}$ -i.e. la fonction caractéristique de $Z_{\alpha}$- que $\mu_{\frac{1}{2}}$ est la mesure de Lebesgue sur $[-2,2]$ et donc $K_{\frac{1}{2}}=[-2;2]$).
+
+Soit $t\in K_{\alpha}.$ 
+
+Supposons qu'il existe deux suites $\varepsilon,\tilde{\varepsilon}\in\{-1,1\}^\mathbb{N}$ telles que $\varepsilon\neq \tilde{\varepsilon}$ vérifiant $\displaystyle \sum_{k\geq 0}\alpha^{k}\varepsilon_{k}=t=\sum_{k\geq 0}\alpha^{k}\tilde{\varepsilon_{k}}.$
+
+Notons $k_{0}=\min\left\{ k\geq 0\mbox{ }|\mbox{ } \varepsilon_{k}\neq \tilde{\varepsilon_{k}} \right\}.$ On a alors $\displaystyle \alpha^{k_{0}}\vert \varepsilon_{k_{0}}-\tilde{\varepsilon_{k_{0}}}\vert =\big\vert \sum_{k\geq k_{0}+1}\alpha^{k}\left(\varepsilon_{k}-\tilde{\varepsilon_{k}}\right)\big\vert.$
+
+Par l'inégalité triangulaire, il vient $\displaystyle 2\alpha^{k_{0}}\leq 2\sum_{k\geq k_{0}+1}\alpha^{k} \mbox{ i.e. } 2\alpha^{k_{0}}\leq \frac{2\alpha^{k_{0}+1}}{1-\alpha}.$
+On a ainsi $\displaystyle 1\leq \frac{\alpha}{1-\alpha}$ ce qui donne $\alpha\geq \frac{1}{2}.$ Ceci est impossible compte-tenu du choix de $\alpha.$\\
+
+\textbf{Remarque :} Ceci démontre que $F_{\alpha}$ est continue si $\alpha<\frac{1}{2}.$\\
+
+En effet, soit $0<\alpha<1/2.$ 
+
+Soit $t=\sum\limits_{k\geq 0}\varepsilon_{k}\alpha^{k}\in K_{\alpha}.$
+
+Cette écriture étant unique, on a : $$\mathbb{P}(Z_{\alpha}=t)=\mathbb{P}\left( \bigcap_{k\geq 0}\{X_{k}=\varepsilon_{k}\} \right)=0.$$
+
+Ainsi, pour tout $t\in\mathbb{R}$ (dinstinguer les cas $t\in K_{\alpha}$ et $t\notin K_{\alpha}$) : $$\lim_{x\rightarrow t^{+}}F_{\alpha}(x)-\lim_{x\rightarrow t^{-}}F_{\alpha}(x)=P(Z_{\alpha}=t)=0$$ et $F_{\alpha}$ est ainsi continue. 
+
+%[spoiler]
+%Pour une preuve plus directe, on peut aussi procéder ainsi.
+
+%**[u]Continuité de $F_{\alpha}$ lorsque $\alpha\in]0,\alpha_{0}[$[/u] où $0<\alpha_{0}<\frac{1}{2}$ est à déterminer!
+
+%[b]Remarque :[/b] Le point clé est d'obtenir la continuité des $F_{\alpha}$ lorsque $\alpha\in]0,l[$ pour un certain $0<l<1.$
+
+%Soit $t\in\mathbb{R}.$
+
+%[u]ou $t\notin K_{\alpha}$[/u] : vu que $K_{\alpha}$ est compact alors $\displaystyle d(t,K_{\alpha})>0$ et alors il existe $0<\varepsilon\ll1$ tel que $\displaystyle [t-\varepsilon,t+\varepsilon]\cap K_{\alpha}=\emptyset.$
+%Ainsi, pour tout $\vert h\vert \leq \varepsilon,$ on a $\displaystyle F_{\alpha}(t+h)=F_{\alpha}(t)$ et donc $F_{\alpha}$ est continue en $t$ (car localement constante dans un voisinage de $t$).
+
+%[u]ou $t\in K_{\alpha}$[/u] : Soit $l\gg1.$ On écrit alors $\displaystyle t=\sum_{k\geq 0}\alpha^{k}\varepsilon_{k}=\sum_{k=0}^{l}\alpha^{k}\varepsilon_{k}+\sum_{k\geq l+1}\alpha^{k}\varepsilon_{k}:=\tilde{t}+\sum_{k\geq l+1}\alpha^{k}\varepsilon_{k}$ où pour tout $k\geq 0,$ $\varepsilon_{k}\in\{-1,1\}.$
+
+%Soit $\displaystyle \vert h \vert \leq \frac{\alpha^{l+1}}{1-\alpha}.$ On a alors : 
+%\begin{align*}
+%\vert F_{\alpha}(t+h)-F_{\alpha}(t)\vert & \leq \mathbb{P}\left( \vert X_{\alpha} -t\vert \leq \frac{\alpha^{l+1}}{1-\alpha} \right)\\
+%& \leq \mathbb{P}\left( \vert X_{\alpha}-\tilde{t}\vert \leq \frac{2\alpha^{l+1}}{1-\alpha} \right) \mbox{ par l'inégalité triangulaire, en majorant le reste } \vert t-\tilde{t}\vert\\
+%& := \mathbb{P}(A_{l}).
+%\end{align*}
+
+%-Montrons que $\displaystyle A_{l}\subset \bigcap_{k=0}^{l}\{ X_{k}=\varepsilon_{k} \}$. 
+
+%Supposons que ce ne soit pas le cas. Il existe alors une réalisation $\omega\in A_{l}$ et un indice $k\in\{0,\ldots,l\}$ tel que $X_{k}(\omega)\neq \varepsilon_{k}(\omega).$ On note alors $k_{0}$ l'indice minimal vis à vis de cette dernière propriété.
+%On obtient alors par l'inégalité triangulaire inversée, la chaîne suivante d'inégalités :
+%$$2\alpha^{k_{0}}-\frac{2\alpha^{k_{0}+1}}{1-\alpha}\leq \vert X_{\alpha}(\omega)-\tilde{t}\vert \leq \frac{2\alpha^{l+1}}{1-\alpha}.$$
+%Il vient alors en simplifiant $\displaystyle \alpha^{l+1-k_{0}}\geq 1-2\alpha.$
+%Comme $k_{0}\in\{0,\ldots,l\},$ on a la minoration suivante : $\displaystyle \alpha^{l+1-k_{0}}\leq \alpha$ (vu que $\alpha\in]0,1[).$
+%Mais alors, on obtient $\displaystyle 3\alpha-1\geq 0.$ Ceci est impossible, si on pose $\alpha_{0}:=\frac{1}{3}$ et si on choisit $\alpha\in]0,\alpha_{0}[.$
+
+%-On obtient  ainsi
+%\begin{align*}
+%\vert F_{\alpha}(t+h)-F_{\alpha}(t)\vert & \leq   \mathbb{P}\left( \bigcap_{k=0}^{l-1}\{ X_{k}=\varepsilon_{k} \} \right)\\
+%& \leq \frac{1}{2^{l}} \mbox{ par indépendance des va en jeu.}
+%\end{align*}
+
+%Ainsi, $F_{\alpha}$ est continue en $t$ (il est alors aisé à ce stade de vérifier la définition de la continuité de $F_{\alpha}$ au point $t$).
+
+%Ainsi, $F_{\alpha}$ est continue sur $\mathbb{R}$ et donc $\mu_{\alpha}$ est sans atomes.
+
+%[b]Remarque  :[/b] Enfin, on peut optimiser la preuve précédente pour la faire fonctionner pour tout $\alpha<\frac{1}{2}$ (et pas seulement dans un voisinage de $0$).
+%Avec mes notations, il suffit de prouver l'inclusion $\displaystyle A_{l}\subset \bigcap_{k=0}^{l+1-B}\{X_{k}=\varepsilon_{k}\}$ où $B$ est un entier suffisamment grand de manière à avoir $\displaystyle\alpha^{B}\leq \varepsilon$ alors que $\displaystyle \alpha\leq \frac{1-\varepsilon}{2}.$
+%[/spoiler]
+
+\item \underline{Astuce de convolution}
+
+On a écrit alors : $$Z_{\alpha}=\sum_{k\geq 0}(\alpha^{2})^{k}X_{2k}+\alpha\sum_{k\geq 0}(\alpha^{2})^{k}X_{2k+1}=Z_{1,\alpha^{2}}+\alpha Z_{2,\alpha^{2}}$$ où $Z_{1,\alpha^{2}}$ et $Z_{2,\alpha^{2}}$ sont des copies indépendantes et de même loi que $Z_{\alpha^{2}}.$
+
+Ainsi, $\mu_{\alpha}$ se présente comme la convolution de deux mesures qui sont sans atomes si $\alpha^{2}<\frac{1}{2}$ (par le premier point de la preuve). Ainsi, $\mu_{\alpha}$ est également sans atomes si $\alpha^{2}<\frac{1}{2}$ et donc $F_{\alpha}$ est continue sur $\mathbb{R}$ si $\alpha^{2}<\frac{1}{2}.$
+
+Par une récurrence directe, on obtient alors que pour tout $\alpha\in]0,1[,$ $F_{\alpha}$ est continue sur $\mathbb{R}.$
+
+\end{enumerate}
+
+%[spoiler]
+%[b]Remarque :[/b] C'est un problème ouvert et difficile, connu comme étant une conjecture d'Erdös de savoir si la loi de $Z_{\alpha}$ (pour$\alpha\geq \frac{1}{2}$) est absolument continue par rapport à Lebesgue sauf éventuellement lorsque $\alpha$ est l'inverse d'un nombre de Pisot.
+
+%On peut se référer au papier suivant pour voir l'état de l'art : http://u.math.biu.ac.il/~solomyb/RESEARCH/sixty.pdf
+%Enfin, il est à noter qu'un résultat récent montre que le support de $Z_{\alpha}$ est de dimension de Hausdorff $1$ pour tout nombre transcendant $\alpha\in]\frac{1}{2},1[.$ Voici la référence : http://export.arxiv.org/pdf/1810.08905
+%[/spoiler]

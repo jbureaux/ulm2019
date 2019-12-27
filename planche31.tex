@@ -1,0 +1,41 @@
+\chapter{Planche 31}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soit $m \geqslant 1$. Trouver tous les nombres complexes $a_1,\dots,a_m$ de module égal à $1$ tels que
+\[
+\sum_{j=1}^m a_j^n
+\]
+a une limite quand $n \to \infty$.
+
+
+\section{Solution de l'exercice}
+
+ On procède par récurrence sur $m\geq 1.$
+ 
+Pour le cas $m=1,$ on note $a_{1}=e^{i\theta}.$
+
+Par hypothèse, on a $$\vert e^{i\theta}-1\vert =\vert e^{in\theta}-e^{i(n+1)\theta}\vert \longrightarrow_{n\rightarrow +\infty} 0.$$ On trouve alors $\theta=0\mbox{ }[2\pi]$ i.e. $a_{1}=1.$\\
+
+
+Supposons que la suite $\displaystyle\left(A_{n}:=\sum_{k=1}^{m+1}a_{k}^{n}\right)_{n\geq 0}$ (où chacun des $a_{k}\in\mathbb{T}$) converge pour un certain $m\geq 1.$
+
+Cette suite converge nécessairement vers $m+1.$ Montrons donc que $m+1$ est une valeur d'adhérence de cette suite.
+
+Quitte à extraire en cascade et à numéroter de nouveau les termes de la suite, il existe une extraction $(\phi(n))$ telle que pour tout $k,$ $(a_{k}^{\phi(n)})$ converge (disons vers $l_{k}\in\mathbb{T}$) et telle que la suite $(\phi(n+1)-\phi(n))$ est strictement croissante.
+
+Ainsi, $$A_{\phi_{n+1}-\phi(n)}\longrightarrow_{n\rightarrow +\infty} \sum_{k=1}^{m+1}l_{k}\overline{l_{k}}=\sum_{k=1}^{m+1}1=(m+1).$$ 
+Prenons une valeur d'adhérence de la suite $(a_{1}^{n})$ que l'on note $l_{1}\in\mathbb{T}.$
+
+Quitte à extraire en cascade, il existe une extraction $(\phi(n))$ telle que pour tout $k,$ $(a_{k}^{\phi(n)})$ converge (disons vers $l_{k}\in\mathbb{T}$).
+
+On a alors en passant à la limite : $\displaystyle \sum_{k=1}^{m+1}l_{k}=m+1.$
+
+Mais alors, par le cas d'égalité de l'inégalité triangulaire, on obtient pour tout $k\in\{1,\ldots,n\},$ $l_{k}=l_{1}$ (comme tous les nombres en jeu sont de module $1$) et donc $l_{1}=1.$
+
+Ainsi, la suite $(a_{1}^{n})$  est convergente (vers $1$) et le premier pas de la récurrence nous indique que $a_{1}=1.$
+
+On conclut par récurrence car la suite $\displaystyle \left(\sum_{k=2}^{m+1}a_{k}^{n}\right)_{n\geq 0}$ est convergente (vers $m$).
+
+Ainsi, $\displaystyle \forall k\in \{1,\ldots,m+1\},\mbox{ } a_{k}=1.$

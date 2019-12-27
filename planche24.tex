@@ -1,0 +1,88 @@
+\chapter{Planche 24}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soit $G$ un groupe et $M : G \to \mathbb R$ une fonction. On dit que :
+\begin{itemize}
+    \item $M$ est un quasi-morphisme si $\sup_{g,h \in G} |M(g) + M(h) - M(gh)| < \infty$ ;
+    \item $M$ est un quasi-caractère si $\forall g \in G,\forall n\in \mathbb Z,\ M(g^n) = nM(g).$
+\end{itemize}
+Supposons que $M$ soit un quasi-morphisme. Montrer qu'il existe une unique fonction $Q : G \to \mathbb R$ qui soit à la fois un quasi-morphisme et un quasi-caractère tel que
+\[
+\sup_{g\in G} |M(g) - Q(g)| < \infty.
+\]
+
+\section{Solution de l'exercice}
+\begin{enumerate}
+\item \underline{Construisons $Q$ et montrons sa proximité avec $M.$}\\
+
+Soit $g\in G.$
+
+En notant pour $n\geq 0,$ $\displaystyle u_{n}=M(g^{2^{n}}) \mbox{ et } v_{n}=\frac{u_{n}}{2^{n}},$ on a pour une certaine constante $C>0$ $$\vert u_{n+1}-2u_{n}\vert  \leq C \mbox{ et } \vert v_{n+1}-v_{n}\vert \leq \frac{C}{2^{n}}.$$
+La série de terme général $v_{n+1}-v_{n}$ converge absolument (dans le programme de prépa, on doit invoquer ce type d'argument car la notion de suite de Cauchy n'est pas au programme...) et donc $(v_{n})$ a une limite que l'on note $Q(g).$
+
+On remarque également 
+$$\vert v_{N+1}-v_{0}\vert \leq \sum_{k=0}^{N}\vert v_{k+1}-v_{k}\vert\leq \sum_{k=0}^{N}\frac{C}{2^{k}}=2C,$$     
+
+et donc en passant à limite : $\displaystyle \vert Q(g)-M(g)\vert \leq 2C,$ d'où la propriété désirée de $Q$ "en passant l'inégalité au $\sup$ sur $G.$"
+
+Cette dernière propriété montre d'ailleurs que $Q$ est également un quasi-morphisme. 
+
+Il suffit d'écrire : 
+\begin{align*}
+\vert Q(g)+Q(h)-Q(gh)\vert & \leq \vert M(g)+M(h)-M(gh)\vert +\vert Q(g)-M(g)\vert \\
+& +\vert Q(h)-M(h)\vert +\vert Q(gh)-M(gh)\vert.    
+\end{align*}
+
+\item \underline{Montrons que $Q$ est un quasi-caractère.}\\
+
+Soit $g\in G.$ Notons $e$ le neutre de $G$.
+
+Soit $n\in \mathbb{N}$ et considérons $k\in \mathbb{Z}.$
+
+\begin{itemize}
+\item \underline{ou $k\in \mathbb{N}.$}\\
+
+On a alors pour tout $k\geq 1,$ $\displaystyle \vert M(g^{k})-kM(g) \vert \leq (k-1)C.$
+
+En effet, l'initialisation est claire et par l'inégalité triangulaire, on a : $$\vert M(g^{k+1})-(k+1)M(g) \vert \leq \vert M(g^{k+1})-M(g)-M(g^{k})\vert +\vert M(g^{k})-kM(g)\vert \leq kC.$$
+
+En appliquant l'inégalité précédente à $g$ remplacé par $g^{2^{n}}$, il vient alors pour $k\geq 1,$ $$\vert \frac{M((g^{k})^{2^{n}})}{2^{n}}-k\frac{M(g^{2^{n}})}{2^{n}}\vert \leq \frac{(k-1)C}{2^{n}}.$$ 
+Ainsi, en passant à la limite, on obtient $\displaystyle Q(g^{k})=kQ(g).$
+
+Comme $\displaystyle M(e^{2^{n}})=M(e),$ il vient également $\displaystyle Q(g^{0})=Q(e)=0=0Q(g).$\\
+
+\item \underline{ou $k\in \mathbb{Z}^{-*}.$}\\
+
+En écrivant que $\displaystyle g^{k}=(g^{-1})^{-k},$ on obtient par le premier point $\displaystyle Q(g^{k})=-kQ(g^{-1}).$
+
+Cependant, comme pour tout $n\geq 0,$ $\displaystyle \vert M(g^{2^{n}})+M((g^{-1})^{2^{n}})-M(e)\vert \leq C,$ il vient en divisant par $2^{n}$ et en faisant tendre $n$ vers $+\infty,$
+
+$\displaystyle Q(g)=-Q(g^{-1}).$
+
+Et finalement, $\displaystyle Q(g^{k})=kQ(g).$
+ 
+Ainsi, $Q$ est bien un quasi-caractère.
+\end{itemize}
+
+\item \underline{Montrons que $Q$ est l'unique quasi-caractère qui est à distance bornée de $M.$}
+
+Soit $Q_{1}$ un autre quasi-caractère à distance bornée de $M.$
+
+Soit $g\in G.$
+
+En notant $\tilde{Q}:=Q-Q_{1},$ on a alors par l'inégalité triangulaire (pour une certaine constante absolue $C>0$) : $$ \vert \tilde{Q}(g)\vert \leq \vert Q(g)-M(g)\vert + \vert Q_{1}(g)-M(g)\vert \leq C.$$ 
+
+Mais $\tilde{Q}$ est également un quasi-caractère et donc pour $n\gg1,$ $$\vert \tilde{Q}(g) \vert = \frac{\vert \tilde{Q}(g^{n}) \vert }{n}\leq \frac{C}{n}\longrightarrow_{n\rightarrow +\infty} 0.$$
+
+Ainsi, $\tilde{Q}=0$ et $Q=Q_{1}.$
+
+\end{enumerate}
+
+
+
+
+
+
+

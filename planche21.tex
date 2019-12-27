@@ -13,8 +13,6 @@ $$
 P(X \geqslant x) \underset{x\to\infty}\sim P(X \geqslant x-1).
 $$
 
-\paragraph{Deuxième exercice}
-
 \section{Solution de l'exercice}
 
 Notons $q(x) = P(X \geqslant x)$ la queue de distribution. Les variables $X,Y$ sont à valeurs positives, donc la probabilité de l'évènement $(X + Y \geqslant x)$ est supérieure ou égale à celle de $(X\geqslant x) \cup (Y \geqslant x)$, qui vaut :
@@ -25,11 +23,11 @@ Ces deux probabilités sont donc toutes deux équivalentes à $2q(x)$ lorsque $x
 \[
 P((X + Y \geqslant x) \cap (X < x) \cap (Y < x)) 
 \]
-est négligeable par rapport à $q(x)$ et il en va en particulier de même pour
+est négligeable par rapport à $q(x)$ et \textit{a fortiori} il en va de même pour
 \[
 P((X + Y \geqslant x) \cap (X < x) \cap (Y = a)),
 \]
-quel que soit l'entier $a$. Ceci revient à dire que
+quel que soit l'entier naturel $a$. Ceci revient à dire que
 \[
 P((X+Y \geqslant x) \cap (Y = a)) = P((X \geqslant x) \cap (Y = a)) + o(q(x)).
 \]
@@ -41,4 +39,95 @@ par indépendance de $X$ et $Y$. S'il existe un entier $a \geqslant 1$ tel que $
 \[
 q(x) \leqslant q(x-1) \leqslant q(x-a).
 \]
-Sinon, les variables $X,Y$ sont presque sûrement égales à $0$ et le résultat est trivial.
+Sinon, les variables $X,Y$ sont presque sûrement égales à $0$ et le résultat est trivial.\\
+
+
+\textbf{Remarque : } pour une variante plus quantitative du résultat...\\
+
+Il suffit de prouver le résultat pour des $x$ entiers car les variables aléatoires en jeu sont à valeurs dans $\mathbb{N}^{*}.$
+
+On a clairement pur tout $n\gg1,$ $$\mathbb{P}(X\geq n+1)\leq \mathbb{P}(X\geq n).$$
+
+\begin{enumerate}
+    \item \underline{ On va d'abord supposer que $X$ et $Y$ sont à valeurs dans $\mathbb{N}^{*}.$}
+
+
+Soit $\varepsilon>0$ tel que $\varepsilon\ll1.$
+
+Pour tout $n\gg1,$ on a alors $$\mathbb{P}(X+Y\geq n+1)\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) \mbox{ et } \mathbb{P}(X\geq n)\leq \varepsilon.$$ 
+
+Ensuite, on a en conditionnant pour tout $n\gg1$ :
+\begin{align*}
+\mathbb{P}(X\geq n) & =\mathbb{P}(X\geq n;Y\in\{1,\ldots,n-1\})+\mathbb{P}(X\geq n;Y\geq n)\\
+\mbox{ et } \mathbb{P}(Y\geq n) & =\mathbb{P}(Y\geq n;X\in\{1,\ldots,n-1\})+\mathbb{P}(Y\geq n;X\geq n).
+\end{align*}
+
+Comme les Va $X$ et $Y$ sont i.i.d, il vient par somme des deux relations précédentes et pour tout $n\gg1$ :
+\begin{align*}
+2\mathbb{P}(X\geq n) & = \mathbb{P}\big([X\geq n;Y\in\{1,\ldots,n-1\}]\cup[Y\geq n;X\in\{1,\ldots,n-1\}] \big)\\
+&+2\mathbb{P}^{2}(X\geq n)\\
+& \leq \mathbb{P}(X+Y\geq n+1)+2\mathbb{P}^{2}(X\geq n)\\
+& \mbox{ car l'union des évènements en jeu est incluse dans } [X+Y\geq n+1]\\ 
+&\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) +2\varepsilon \mathbb{P}(X\geq n).
+\end{align*}
+
+Il vient alors pour tout $n\gg 1,$ $$\mathbb{P}(X\geq n)\leq \frac{1+\varepsilon}{1-\varepsilon}\mathbb{P}(X\geq n+1).$$
+
+Et ainsi, on a effectivement $\displaystyle \mathbb{P}(X\geq n)\sim_{n\rightarrow +\infty} \mathbb{P}(X\geq n+1).$
+
+\item \underline{Il reste maintenant à traiter le cas où $X,Y$ sont à valeurs dans $\mathbb{N}.$}
+
+Il s'agit juste d'observer dans la preuve précédente une "sorte de compensation" (bootstrap).
+
+Soit $\varepsilon>0$ tel que $\varepsilon\ll1$ tel que $\displaystyle P(X=0):=c<1-\varepsilon$ (ce qui est possible si $X$ n'est pas supposée constante ce qui est un cas immédiat!).
+
+On note alors $\displaystyle l=1-c-\varepsilon>0.$
+
+Pour tout $n\gg1,$ on a alors $$\mathbb{P}(X+Y\geq n+1)\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) \mbox{ et } \mathbb{P}(X\geq n)\leq \varepsilon.$$ 
+
+Ensuite, on a en conditionnant pour tout $n\gg1$ :
+\begin{align*}
+\mathbb{P}(X\geq n) & =\mathbb{P}([X\geq n;Y\in\{1,\ldots,n-1\}]\cup[X\geq n+1;Y=0])\\
+& +\mathbb{P}(X=n;Y=0)+\mathbb{P}(X\geq n;Y\geq n)\\
+\mbox{ et } \mathbb{P}(Y\geq n) & =\mathbb{P}([Y\geq n;X\in\{1,\ldots,n-1\}]\cup[Y\geq n+1;X=0])\\
+& +\mathbb{P}(Y=n;X=0)+\mathbb{P}(Y\geq n;X\geq n).
+\end{align*}
+
+Comme les Va $X$ et $Y$ sont i.i.d, il vient par somme des deux relations précédentes et pour tout $n\gg1$ :
+\begin{align*}
+2\mathbb{P}(X\geq n) & \leq \mathbb{P}(X+Y\geq n+1)+2c\mathbb{P}(X=n)+2\mathbb{P}^{2}(X\geq n)\\
+& \mbox{ car l'union des deux évènements incompatibles apparaissant dans chacun }\\
+& \mbox{ des deux premiers termes est incluse dans } [X+Y\geq n+1]\\ 
+&\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) +2\varepsilon \mathbb{P}(X\geq n)+2c\mathbb{P}(X=n).
+\end{align*}
+
+Il vient alors pour tout $n\gg 1,$ $$ (1-\varepsilon)\mathbb{P}(X\geq n)\leq (1+\varepsilon)\mathbb{P}(X\geq n+1)+c\mathbb{P}(X=n).$$
+
+Comme $\displaystyle \mathbb{P}(X\geq n)-\mathbb{P}(X\geq n+1)=\mathbb{P}(X=n),$ on obtient ainsi pour tout $n\gg1,$ $$ (1-\varepsilon)\mathbb{P}(X=n)\leq 2\varepsilon\mathbb{P}(X\geq n+1)+c\mathbb{P}(X=n).$$
+
+Il vient alors pour tout $n\gg 1,$ $$ \mathbb{P}(X=n)\leq \frac{2\varepsilon}{l}\mathbb{P}(X\geq n+1).$$
+
+En écrivant $$\mathbb{P}(X\geq n)=\mathbb{P}(X=n)+\mathbb{P}(X\geq n+1)\leq \left(1+\frac{2\varepsilon}{l}\right)\mathbb{P}(X\geq n+1),$$ on obtient effectivement $$\mathbb{P}(X\geq n)\sim_{n\rightarrow +\infty} \mathbb{P}(X\geq n+1).$$
+\end{enumerate}
+
+\paragraph{Deuxième exercice}
+
+L'exercice fait appel au caractère multiplicatif des fonctions arithmétiques en jeu (cette idée est très utile pour mieux \emph{dévisser} certains problèmes).\\
+
+Notons pour $n\geq 1,$ $\displaystyle g(n)=\sum_{d|n}f(d).$ 
+
+La fonction $g$ est multiplicative i.e. si $a,b\geq 1$ et vérifie $a\wedge b=1$ alors $\displaystyle g(ab)=g(a)g(b)$ (ceci découle du lemme de Gauss).
+
+Soit $p\in \mathbb{P}.$ 
+
+Pour $\alpha\geq 1,$ il suffit alors de calculer $g(p^{\alpha})$ pour déterminer complètement $g$ sur $\mathbb{N}^{*}.$
+
+Or, par définition, on a :
+\begin{align*}
+g(p^{\alpha}) & =\sum_{k=0}^{\alpha}(-1)^{f(p^{k})}\\
+& =\sum_{k=0}^{\alpha}(-1)^{k}\\
+& =0 \mbox{ si } \alpha=1 [2] \mbox{ et } 1 \mbox{ si } \alpha=0 [2].
+\end{align*}
+
+Ainsi, $g(n)=0$ si l'une des valuations $p$-adiques de $n$ est impair et sinon $g(n)=1$ (si tous les valuations $p$-adiques de $n$ sont pairs).
+

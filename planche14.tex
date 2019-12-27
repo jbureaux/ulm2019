@@ -1,0 +1,45 @@
+Dans les deux preuves, on va procéder par récurrence sur le degré $n\geq 1$ de $P.$
+\chapter{Planche 14}
+
+\section{Sujet}
+
+\paragraph{Deuxième exercice}
+Soit $P(z) = (z-\alpha_1)\cdots(z-\alpha_n)$ avec $\alpha_i$ des nombres complexes avec $|\alpha_i| < 1$.
+On suppose que $|P(z)| \leqslant 1$ pour tout $z$ de module $1$.
+Trouver $P$.
+
+\section{Solution du deuxième exercice}
+
+Le cas $n=1$ est rapide car alors $$\|P\|_{\infty}:=\sup_{z\in\mathbb{T}}\vert P(z)\vert=1+\vert \alpha_{1} \vert$$ et comme $\|P\|_{\infty}\leq 1,$ il vient $\alpha_{1}=0$ et donc $P(z)=z.$\\
+
+\textbf{Première preuve :}
+
+On applique Gauss-Lucas pour avoir que les racines de $P'$ vivent encore dans $\displaystyle \mathbb{D}=\left\{z\in\mathbb{C}\mbox{ }|\mbox{ } \vert z\vert <1\right\}.$
+On écrit alors $$ P'(z)=n\prod_{k=1}^{n-1}(z-\beta_{k}):=nQ(z)$$ où pour tout $k,$ $\beta_{k}\in\mathbb{D}.$
+
+Mais alors par l'inégalité de Bernstein, on a $\displaystyle \|P'\|_{\infty}\leq n\|P\|_{\infty}\leq n.$
+
+Ainsi, $\|Q\|_{\infty}\leq 1.$
+
+Par hypothèse de récurrence, il vient alors $Q(z)=z^{n-1}$ et en intégrant, on a alors $\displaystyle P(z)=z^{n}-\alpha_{1}^{n}$ (par exemple).
+
+Comme $\displaystyle \|P\|_{\infty}=1+\vert \alpha_{1}\vert^{n}\leq 1,$ il vient alors $\alpha_{1}=0$ et donc $P(z)=z^{n}.$\\
+
+\textbf{Deuxième preuve :} (plus "self-contained")
+
+Soit $n\geq 1.$ Premièrement, si $\displaystyle P(z)=\sum_{k=0}^{n}a_{k}z^{k}$ avec $a_{n}\neq 0$ alors $$\|P\|_{\infty}\geq \vert a_{0} \vert + \vert a_{n}\vert.$$
+
+En effet, considérons $\lambda\in\mathbb{T}$ et $\omega=e^{\frac{2i\pi}{n}}.$
+On a alors par un calcul direct :  $$\sum_{k=1}^{n}P(\lambda\omega^{k})=n(\lambda^{n}a_{n}+a_{0}).$$
+En appliquant l'inégalité triangulaire et en choisissant convenablement $\lambda\in\mathbb{T},$ il vient $$\|P\|_{\infty}\geq \vert a_{0} \vert + \vert a_{n}\vert.$$
+
+On a alors l'inégalité suivante : $$ 1+\prod_{k=1}^{n}\vert \alpha_{k} \vert \leq \|P\|_{\infty} \leq 1.$$
+Ainsi, l'une des racines $\alpha_{k}$ du polynôme $P$ est nulle.
+
+Quitte à renommer les racines de $P,$ on a alors $\alpha_{1}=0.$ 
+
+On écrit alors $$P(z)=z\prod_{k=2}^{n}(z-\alpha_{k}):=zQ(z).$$
+
+Mais alors, on a $\displaystyle \|Q\|_{\infty}\leq 1.$
+
+On conclut par récurrence que $Q(z)=z^{n-1}$ et donc $P(z)=z^{n}.$
