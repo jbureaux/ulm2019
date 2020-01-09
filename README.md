@@ -31,17 +31,21 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 4.
 
-### Planche 5.
-
-### Planche 6.
-
 - manque le premier exercice
 - deuxième exercice à relire
 
-### Planche 7.
+### Planche 5.
 
+- deuxième exercice à compléter
+
+### Planche 6.
+
+
+### Planche 7.
+- à relire
 
 ### Planche 8.
+- exo 2 : à faire (je m'y colle?)
 
 
 ### Planche 9.
@@ -54,20 +58,21 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 11.
 
+- compléter la solution du 2e exercice : équivalent, développement asymptotique ?
 
 ### Planche 12.
 
 - solution de l'exercice à compléter avec des figures
-- manque le deuxième exercice
+
 
 ### Planche 13.
 
 
 ### Planche 14.
-
+- à relire!
 
 ### Planche 15.
-
+- correction à finaliser (je suis en cours)
 
 ### Planche 16.
 - (recentrer?).
@@ -78,18 +83,20 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 18.
+- exo intéressant : je m'y colle?
 
 
 ### Planche 19.
 
 
 ### Planche 20.
+- exo 2 : à finaliser
 
 
 ### Planche 21.
 
 - exercice à relire
-- autre preuve (plus quantitative ajouté).
+- autre preuve (plus quantitative ajoutée).
 
 
 ### Planche 22.
@@ -105,6 +112,7 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 - énoncé.
 
 ### Planche 26.
+- référence d'une preuve rapide ajoutée (je n'ai fait que traduire le papier)
 
 
 ### Planche 27.
@@ -123,21 +131,19 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 32.
+- la réponse pour l'exo 2 : il n'y pas de condition... 
 
 
 ### Planche 33.
-
 - complet mais à relire
 
 
 ### Planche 34.
-
 - solution de l'exercice à compléter ?
 - manque le deuxième exercice
 
 ### Planche 35.
-
 - exercice à relire
-- manque le deuxième exercice
+
 
 ### Planche 36.

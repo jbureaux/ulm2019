@@ -19,23 +19,23 @@ Notons $q(x) = P(X \geqslant x)$ la queue de distribution. Les variables $X,Y$ s
 \[
 P(X\geqslant x) + P(Y \geqslant x) - P((X\geqslant x) \cap (Y \geqslant x)) = 2q(x) - q(x)^2.
 \]
-Ces deux probabilités sont donc toutes deux équivalentes à $2q(x)$ lorsque $x \to \infty$ car $q(x) \to 0$. Autrement dit, la probabilité
+Puisque $P(X+Y \geqslant x) \sim 2q(x)$ et $q(x) \to 0$  lorsque $x \to \infty$, ces deux probabilités sont donc toutes deux équivalentes à $2q(x)$. Autrement dit, la différence des deux 
 \[
 P((X + Y \geqslant x) \cap (X < x) \cap (Y < x)) 
 \]
-est négligeable par rapport à $q(x)$ et \textit{a fortiori} il en va de même pour
+est négligeable par rapport à $q(x)$. Il en va de même \textit{a fortiori} pour
 \[
 P((X + Y \geqslant x) \cap (X < x) \cap (Y = a)),
 \]
-quel que soit l'entier naturel $a$. Ceci revient à dire que
+quel que soit l'entier naturel $a$. Ceci revient à dire que, lorsque $x \to \infty$,
 \[
 P((X+Y \geqslant x) \cap (Y = a)) = P((X \geqslant x) \cap (Y = a)) + o(q(x)).
 \]
-Puisque $(X+Y \geqslant x) \cap (Y=a) = (X \geqslant x - a) \cap (Y=a)$, on obtient
+Or $(X+Y \geqslant x) \cap (Y=a) = (X \geqslant x - a) \cap (Y=a)$, donc par indépendance :
 \[
-q(x-a)\,P(Y = a) = q(x) P(Y = a) + o(q(x)),
+q(x-a)\,P(Y = a) = q(x) P(Y = a) + o(q(x)).
 \]
-par indépendance de $X$ et $Y$. S'il existe un entier $a \geqslant 1$ tel que $P(Y = a) \neq 0$, on obtient $q(x - a) \sim q(x)$ et le résultat en découle facilement car
+S'il existe un entier $a \geqslant 1$ tel que $P(Y = a) \neq 0$, on obtient $q(x - a) \sim q(x)$ et le résultat en découle facilement car
 \[
 q(x) \leqslant q(x-1) \leqslant q(x-a).
 \]
@@ -126,8 +126,11 @@ Or, par définition, on a :
 \begin{align*}
 g(p^{\alpha}) & =\sum_{k=0}^{\alpha}(-1)^{f(p^{k})}\\
 & =\sum_{k=0}^{\alpha}(-1)^{k}\\
-& =0 \mbox{ si } \alpha=1 [2] \mbox{ et } 1 \mbox{ si } \alpha=0 [2].
+& =\left\{ \begin{array}{l}
+0 \mbox{ si } \alpha=1 [2]\\
+1 \mbox{ si } \alpha=0 [2].
+\end{array}\right.
 \end{align*}
 
-Ainsi, $g(n)=0$ si l'une des valuations $p$-adiques de $n$ est impair et sinon $g(n)=1$ (si tous les valuations $p$-adiques de $n$ sont pairs).
+Ainsi, $g(n)=0$ si l'une des valuations $p$-adiques de $n$ est impair et sinon, $g(n)=1$ (si tous les valuations $p$-adiques de $n$ sont pairs i.e. $n$ est un carré parfait).
 

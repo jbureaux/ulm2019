@@ -1,4 +1,4 @@
-\chapter{Planche 12}
+\chapter{Fonction linéairement monotone} 
 
 \section{Sujet}
 
@@ -35,3 +35,29 @@ Considérons maintenant $D$ et $H$ les directions vectorielles respectives de $\
 Le projecteur sur $D$ parallèlement à $H$ est de la forme $\pi : x \mapsto \phi(x)u$ où $\phi$ est une forme linéaire de noyau $H$ et $u$ est un vecteur directeur de $D$.
 D'après tout ce qui précède, on sait que $f = f \circ \pi$.
 L'application $h : t \mapsto f(tu)$, qui est monotone par hypothèse sur $f$, vérifie donc bien l'égalité $f = h \circ \phi$.
+
+\section{Solution du deuxième exercice}
+
+Soit $x\gg 1.$
+
+On utilise l'encadrement (qui s'obtient à l'aide d'une petite étude de fonction) suivant :
+$$\forall n\geq 1, \mbox{ } \frac{e^{-n}}{n!}\leq \frac{1}{n^{n}}\leq \frac{e^{-(n-1)}}{(n-1)!}.$$
+
+Ainsi, on obtient d'une part en utilisant la majoration précédente puis par un changement d'indices : 
+\begin{align*}
+S(x) & := \left(\sum_{n=1}^{+\infty}\frac{x^{n}}{n^{n}}\right)^{\frac{1}{x}}\\
+& \leq \exp\left( \frac{1}{x}\ln\left( \sum_{n\geq 0}\frac{(\frac{x}{e})^{n}}{n!}\right)\right)\\
+& \leq \exp\left( \frac{1}{x}\ln(e^{\frac{x}{e}})\right)\\
+& \leq e^{\frac{1}{e}}.
+\end{align*}
+
+On obtient d'autre part en utilisant cette fois-ci la minoration précédente : 
+\begin{align*}
+S(x) & \geq \exp\left( \frac{1}{x}\ln\left( \sum_{n\geq 1}\frac{(\frac{x}{e})^{n}}{n!}\right)\right)\\
+& \geq \exp\left( \frac{1}{x}\ln(e^{\frac{x}{e}}-1)\right)\\
+& \geq e^{\frac{1}{e}}\times \exp\left( \frac{1}{x}\ln(1-e^{-\frac{x}{e}})\right).
+\end{align*}
+
+Il vient alors par le théorème d'encadrement : $$\lim_{x\rightarrow +\infty} S(x)=e^{\frac{1}{e}}.$$
+
+

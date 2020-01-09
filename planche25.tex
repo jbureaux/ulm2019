@@ -59,3 +59,43 @@ Or, on sait $$\displaystyle P(x)=\left(1-\int_{0}^{x}P(t)dt\right)^{2} \mbox{ i.
 En séparant les variables et en utilisant $\phi(0)=0,$ il vient $$ \frac{1}{1-\phi(x)}-1=x \mbox{ i.e. } \phi(x)=1-\frac{1}{1+x}=\frac{x}{1+x}$$ d'où $\displaystyle P(x)=\frac{1}{(1+x)^{2}}.$
 
 Ainsi, on obtient finalement $$ I=\int_{0}^{1}\frac{dx}{(1+x)^{3}}=\left[\frac{-1}{2(1+x)^{2}}\right]_{0}^{1}=\frac{3}{8}.$$
+
+\section{Solution du deuxième exercice}
+
+\boxed{i) \Longrightarrow ii)}\\
+
+On suppose que $P$ n'a pas de racine réelle.
+
+On factorise alors $P$ dans $\mathbb{R}[X].$ On écrit donc $$P(X)=\lambda\prod_{j=1}^{N}(X^{2}+\alpha_{j}X+\beta_{j})^{\gamma_{j}}$$ où $\lambda\in \mathbb{R}^{*}$ et pour tout $j\in\{1,\ldots,N\},$ $$\alpha_{j}^{2}-4\beta_{j}<0 \mbox{ et } \gamma_{j}\in \mathbb{N}^{*}.$$
+
+Soit $A\in M_{2}(\mathbb{R})$ telle que $\mbox{det}(P(A))=0.$
+
+Ainsi, il existe $j\in\{1,\ldots,N\}$ telle que $B_{j}:=A^{2}+\alpha_{j}A+\beta I_{2}$ est non injective.
+
+Soit $x\neq 0$ appartenant à $\mbox{Ker}(B_{j}).$
+
+Alors la famille $(x,A(x))$ est une base de $\mathbb{R}^{2}$ sur laquelle la matrice de l'endomorphisme canoniquement associé à $A$ est : $$\left( \begin{array}{ll}
+0 & -\beta_{j}\\
+1 & -\alpha_{j}
+\end{array}\right).$$
+
+Le polynôme caractéristique de $A$ est alors $\displaystyle \chi_{A}(X)=X^{2}+\alpha_{j}X+\beta_{j}.$
+
+Par Cayley-Hamilton, on obtient alors $\displaystyle P(A)=0.$\\
+
+\boxed{ii) \Longrightarrow i)}\\
+
+Supposons que $P$ ait une racine réelle, disons $a\in\mathbb{R}.$
+
+Considérons pour $b\in\mathbb{R} \mbox{ et } b\neq a,$ $$A=\left( \begin{array}{ll}
+a & 0\\
+0 & b
+\end{array}\right).$$
+
+On sait alors que $P(A)$ est non injective i.e. $\displaystyle \mbox{det}(P(A))=0$ et alors, par hypothèse, $\displaystyle P(A)=0.$
+
+Ainsi, on a : $\displaystyle \{a,b\}=\mbox{Sp}(A)\subset \mbox{Z}(P).$
+
+Ainsi, $P$ a une infinité de racines et est le polynôme nul (ce qui est proscrit par l'énoncé!).
+
+Finalement, $P$ n'a pas de racines réelles.

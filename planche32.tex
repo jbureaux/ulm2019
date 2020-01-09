@@ -1,0 +1,117 @@
+\chapter{Planche 32}
+
+\section{Sujet}
+
+\section{Solution de l'exercice}
+
+On fixe $x\in \mathbb{R}.$
+
+Soit $a\in \mathbb{R}.$
+
+On a (a priori localement, au voisinage de $x$) comme $f$ est analytique sur $\mathbb{R}$
+$$f(a)=\sum_{k\geq 0}\frac{f^{(k)}(x)}{k!}(a-x)^{k}.$$
+
+\textbf{Remarque :} On peut remarquer que la série précédente est absolument convergente pour tout $a\in \mathbb{R},$ car : $$\vert \frac{f^{(k)}(x)}{k!}(a-x)^{k}\vert \sim \frac{\vert g(x) \vert }{k!}\vert x-a\vert^{k},$$ qui est manifestement le terme général d'une série convergente. 
+
+Ainsi, $f$ est DSE en tout point et le rayon de convergence de sa série de Taylor est infini en tout point (et la somme de sa série de Taylor ne peut être que $f$). Ce dernier point n'est d'ailleurs pas si immédiat et nécessite à ma connaissance l'utilisation du théorème de Baire : cette remarque constitue un théorème du à Pringsheim dont une preuve rapide (due à W. Rudin) est fondée sur une variante affaiblie d'un théorème de Bernstein (cf planche 6).
+
+Ainsi, on note encore la limite de la série de Taylor notée (a priori) abusivement $f.$\\
+
+Soit $\varepsilon>0.$
+
+Par hypothèse, on a pour $k\geq k_{0}\gg 1,$ : $$\vert g(x)-f^{(k)}(x)\vert \leq \varepsilon.$$
+
+Ainsi, il vient pour $a\gg 1$
+\begin{align*}
+f(a)-g(x)e^{a-x} & =\sum_{0\leq k< k_{0}}\frac{f^{(k)}(x)-g(x)}{k!}(a-x)^{k}+\sum_{k\geq k_{0}}\frac{f^{(k)}(x)-g(x)}{k!}(a-x)^{k}\\
+\mbox{ et donc, } \vert e^{-a}f(a)-g(x)e^{-x}\vert & \leq M(k_{0},x)\vert a-x\vert^{k_{0}}e^{-a}+\varepsilon e^{-x}.
+\end{align*}
+
+En faisant tendre $a$ vers $+\infty,$ il vient par croissances comparées :  $$\limsup_{a\rightarrow +\infty}\vert e^{-a}f(a)-g(x)e^{-x}\vert\leq \varepsilon e^{-x}.$$
+
+Puis, en faisant tendre $\varepsilon$ vers $0,$ il vient : $$\lim_{a\rightarrow +\infty} e^{-a}f(a)=g(x)e^{-x}.$$
+
+Comme ce raisonnement est vrai pour tout $x,$ on obtient par unicité des limites $$\forall x\in \mathbb{R},\mbox{ } g(x)e^{-x}=g(0) \mbox{ i.e. } g(x)=g(0)e^{x}.$$
+
+\textbf{Remarque : } On peut également traiter un énoncé légèrement modifié où la fonction $f$ est seulement supposée $C^{\infty}$ mais la limite simple $g$ un peu plus régulière...
+
+On va utiliser le lemme de Baire et aussi supposer que $g$ est $C^{1}$... 
+
+\begin{itemize}
+\item Soit $R>0.$
+
+Notons pour $n\geq 1,$ $$A_{n}=\left\{x \in  [-R,R]\mbox{ }|\mbox{ } \forall k\geq 0,\mbox{ } \vert f^{(k)}(x)\vert \leq n \right\}.$$
+
+Par continuité de chacune des applications $f^{(k)},$ $A_{n}$ est donc un fermé de $[-R,R].$
+
+Comme $\displaystyle \bigcup_{n\geq 1}A_{n}=[-R,R],$ il existe $n_{0}$ tel que $A_{n_{0}}$ soit d'intérieur non vide et même, à nouveau par une application du lemme de Baire, $\mathcal{U}:=\displaystyle \bigcup_{n\geq 1}\mbox{Int}(A_{n})$ est un ouvert dense de $[-R,R].$
+
+\item Soit $x\in\mathcal{U}.$ 
+
+Il existe alors $r>0$ tel que $I_{x}:=[x-r,x+r]\subset A_{n}$ pour un certain $n\geq 1.$
+
+Soit $y\in I_{x}.$ 
+
+On a alors pour tout $k\geq 0,$ $$f^{(k)}(y)-f^{(k)}(x-r)=\int_{x-r}^{y}f^{(k+1)}(t)dt.$$ Par convergence dominée, on obtient alors $\displaystyle g(y)-g(x-r)=\int_{x-r}^{y}g(t)dt.$
+
+Il vient alors en dérivant la relation précédente : $g'(y)=g(y).$ 
+
+\item On a alors $g'=g$ sur $\mathcal{U}.$ Comme $g$ est $C^{1}$ et que l'ouvert $\mathcal{U}$ est dense dans $[-R,R],$ on obtient $g'=g$ sur $[-R,R].$
+
+Le raisonnement précédent étant valide pour tout $R>0,$ on a alors $g'=g$ sur $\mathbb{R}.$
+
+Et ainsi, il existe $\lambda\in \mathbb{C}$ tel que pour tout $x\in\mathbb{R},$ $\displaystyle g(x)=\lambda e^{x}.$
+\end{itemize}
+
+\section{Solution du deuxième exercice}
+
+Voici une preuve d'algèbre linéaire "intrinsèque."\\
+
+Comme $B$ est un projecteur (i.e. $B^{2}=B$), on a la décomposition en somme directe : $\displaystyle E=E_{0}\bigoplus E_{1}$ où $E_{0}$ désigne le noyau de $B$ et $E_{1}$ l'ensemble des points fixes de $B.$
+
+On décompose alors $A$ en $A=P+Q$ où $P : E\rightarrow E_{0}$ et $Q : E\rightarrow E_{1}.$
+
+Soit $(u,v)\in E_{0}\times E_{1}.$
+
+On a alors 
+\begin{align*}
+(AB-BA)(u+v) & = AB(u+v)-BA(u+v)\\
+& = Av-Q(u+v)\\
+& = (A-Q)v-Qu\\
+& =Pv-Qu.
+\end{align*}
+
+Ainsi, l'image de $AB-BA$ est $\displaystyle P(E_{1})\bigoplus Q(E_{0}).$
+
+De même, on obtient : 
+
+\begin{align*}
+(AB+BA)(u+v) & = AB(u+v)+BA(u+v)\\
+& = Av+Q(u+v)\\
+& = (P+2Q)v+Qu.
+\end{align*}
+
+Ainsi, l'image de $AB+BA$ est $\displaystyle (P+2Q)(E_{1})+Q(E_{0}).$
+
+Considérons alors une famille finie $(v_{i})_{i\in I}$ de vecteurs de $E_{1}$ telle que $(P(v_{i}))_{i\in I}$ soit une base de $P(E_{1}).$
+
+Et, considérons également une famille finie $(u_{j})_{j\in J}$ de vecteurs de $E_{0}$ telle que $(Q(u_{j}))_{j\in J}$ soit une base de $Q(E_{0}).$
+
+Alors, la famille $\{((P+2Q)(v_{i})_{i\in I};(Q(u_{j}))_{j\in J}\}$ est une famille libre de $E.$
+
+Et ainsi, $\boxed{\displaystyle \mbox{Rg}(AB+BA)\geq \mbox{Rg}(AB-BA).}$
+
+En effet, soit $(\alpha_{i})_{i\in I}$ et $(\beta_{j})_{j\in J}$ tels que $$\sum_{i\in I}\alpha_{i}(P+2Q)(v_{i})+\sum_{j\in J}\beta_{j}Q(u_{j})=0.$$
+
+En projetant cette relation sur $E_{0},$ il vient $\displaystyle \sum_{i\in I}\alpha_{i}P(v_{i})=0.$ 
+
+Et donc, $$\forall i\in I,\mbox{ } \alpha_{i}=0,$$ car $(P(v_{i}))_{i\in I}$ est une base de $P(E_{1}).$
+
+Ainsi, on obtient : $\displaystyle \sum_{j\in J}\beta_{j}Q(u_{j})=0.$
+
+Mais, comme $Q(u_{j}))_{j\in J}$ est une base de $Q(E_{0}),$ il s'ensuit : $$\forall j\in J,\mbox{ } \beta_{j}=0.$$  
+
+
+
+
+

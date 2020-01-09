@@ -1,0 +1,82 @@
+\chapter{Planche 22}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+
+\section{Solution de l'exercice}
+
+\begin{enumerate}
+\item On écrit par d\'{e}finition du déterminant :
+$$\mbox{det}(A) = \sum_{\sigma\in \mathcal{S}_{n}}\varepsilon(\sigma)\prod_{k=1}^{n}A_{k,\sigma(k)}.$$
+Il vient alors par ind\'{e}pendance des entr\'{e}es de la matrice et par linéarité de l'espérance :
+$$\mathbb{E}[\mbox{det}(A)]= p^{n}\sum_{\sigma\in\mathcal{S}_{n}}\varepsilon(\sigma)=\left\{ \begin{array}{l}
+p \mbox{ si } n=1\\
+0 \mbox{ si } n\geq 2,
+\end{array}\right.$$
+car pour $n\geq 2,$ il y a autant de permutations paires qu'impaires ($A_{n}$ est un sous groupe d'indice $2$ dans $\mathcal{S}_{n}$).\\
+
+\item La deuxième partie de cet exercice est fondée sur des techniques de dénombrement basées sur des méthodes de séries génératrices. 
+
+Il vient par la formule du produit matriciel puis en prenant l'espérance :
+\begin{align*}
+\mathbb{E}[\mbox{det}(A^{2})] & = \sum_{\sigma,\tau\in \mathcal{S}_{n}}\varepsilon(\sigma\tau)\mathbb{E}[\prod_{k=1}^{n}A_{k,\sigma(k)}A_{k,\tau_{k}}]\\
+& =\sum_{\sigma,\tau\in \mathcal{S}_{n}}\varepsilon(\sigma\tau)\prod_{k=1}^{n}\mathbb{E}[A_{k,\sigma(k)}A_{k,\tau_{k}}]\\
+& = n!\sum_{\sigma\in \mathcal{S}_{n}}\varepsilon(\sigma)p^{2n-f(\sigma)}\\
+& \mbox{ où } f(\sigma)=\#\{i\in\{1,\ldots,n\}\mbox{ }|\mbox{ } \sigma(i)=i\}\\
+&  = n!p^{n}\sum_{k=0}^{n}p^{n-k}\left(f_{k}^{+}-f_{k}^{-}\right)\\
+& \mbox{ où } f_{k}^{+}=\#\{\sigma\in \mathcal{A}_{n}\mbox{ }|\mbox{ } f(\sigma)=k\} \mbox{ et } f_{k}^{-}=\#\{\sigma\in \mathcal{S}_{n}\setminus{\mathcal{A}_{n}}\mbox{ }|\mbox{ } f(\sigma)=k\}.
+\end{align*}
+
+On remarque ensuite $$f_{k}^{+}=\binom{n}{k}d_{n-k}^{+} \mbox{ et } f_{k}^{-}=\binom{n}{k}d_{n-k}^{-},$$ où $d_{k}^{+}$ (respectivement $d_{k}^{-}$) désigne les dérangements (permutations sans point fixe) pairs (respectivement impairs) de $\mathcal{S}_{k}$ avec les "conventions" : $\displaystyle d_{0}^{+}=1;d_{0}^{-}=0 \mbox{ et } d_{1}^{+}=0;d_{1}^{-}=0.$ 
+
+Ainsi, on peut écrire par symétrie des coefficients binomiaux : $$\mathbb{E}[\mbox{det}(A^{2})] =  n!p^{n}\sum_{k=0}^{n}\binom{n}{k}p^{k}\left(d_{k}^{+}-d_{k}^{-}\right).$$
+
+Or, pour $n\geq 2,$ on a (car il y autant de permutations paires que de permutations impaires) $$\sum_{k=0}^{n}\binom{n}{k}d_{k}^{+}=\frac{n!}{2}=\sum_{k=0}^{n}\binom{n}{k}d_{k}^{-}.$$
+
+On a alors pour $n\geq 2,$ $$\sum_{k=0}^{n}\frac{1}{(n-k)!}\times \frac{d_{k}^{+}-d_{k}^{-}}{k!}=0.$$
+
+En reconnaissant un produit de Cauchy, il vient (en prenant en compte les termes de bord) 
+$$\exp(z)\times \sum_{k\geq 0}\frac{d_{k}^{+}-d_{k}^{-}}{k!}z^{k}=1+z$$ et donc par inversion, $$\forall k\in\mathbb{N},\mbox{ } d_{k}^{+}-d_{k}^{-}=(-1)^{k-1}(k-1).$$
+
+On a alors :
+\begin{align*}
+\mathbb{E}[\mbox{det}(A^{2})] & =  -n!p^{n}\sum_{k=0}^{n}(-1)^{k}\binom{n}{k}p^{k}(k-1)\\
+& -n!p^{n}\frac{d}{dz}\left(\sum_{k=0}^{n}\binom{n}{k}p^{k}z^{k-1}\right)_{|z=-1}\\
+& = -n!p^{n}\frac{d}{dz}\left(\frac{(1+pz)^{n}}{z}\right)_{|z=-1}\\
+& -np^{n}\left(-np(1-p)^{n-1}-(1-p)^{n}\right)\\
+& =np^{n}(1-p)^{n-1}(np+(1-p))\\
+& = np^{n}q^{n-1}(np+q) \mbox{ où } q=1-p.
+\end{align*}
+
+\end{enumerate}
+
+\section{Solution du deuxième exercice}
+
+\begin{itemize}
+\item Supposons, par l'absurde, qu'il existe $\varepsilon>0$ et une suite strictement croissante $t$ de points de $\mathbb{R}^{+}$ tendant vers $+\infty$ tels que $\displaystyle \vert y'(t_{n}) \vert \geq \varepsilon.$
+
+Quitte à extraire une sous-suite (et quitte à changer $y'$ en $-y'$), on peut supposer : $\displaystyle y'(t_{n})\geq \varepsilon.$
+
+Mais alors, par uniforme continuité de $y'$ (qui est une somme d'applications uniformément continues : une application limitée (finie) en $+\infty$ est uniformément continue), il existe $\delta>0$ tel que $$\forall a,b\in \mathbb{R}^{+},\mbox{ } \vert a-b\vert \leq \delta \Longrightarrow \vert y'(a)-y'(b)\vert \leq \frac{\varepsilon}{2}.$$
+
+En particulier, par l'inégalité triangulaire renversée, on a pour $n\gg1,$ $$\int_{t_{n}-\delta}^{t_{n}+\delta}y'(t)\geq 2\delta\times \frac{\varepsilon}{2}=\delta\varepsilon.$$
+
+\item Comme $y'$ est $C^{0}$ sur $\mathbb{R}^{+}$ et que $y$ est limitée (finie) en $+\infty,$ on obtient que l'intégrale impropre $\displaystyle \int_{0}^{+\infty}y'(t)dt$ est convergente.
+
+En particulier, on sait que pour tout $n\gg 1,$ il existe $N\gg 1$ tel que pour tout $b\geq a \geq N,$ $$\vert \int_{a}^{b}y'(t)dt\vert \leq \frac{1}{2^{n}}.$$
+
+\item Quitte à extraire de nouveau une sous-suite de $t$, on obtient une sous-suite de $t$ vérifiant :
+$$\forall n\geq 1, \int_{t_{\phi(n)}-\delta}^{t_{\phi(n)}+\delta}y'(t)\leq \frac{1}{2^{n}}.$$
+
+Mais alors pour $N\gg 1,$, on obtient la contradiction désirée, à savoir : 
+\begin{align*}
+N\varepsilon \delta & \leq \sum_{n=1}^{N}\int_{t_{\phi(n)}-\delta}^{t_{\phi(n)}+\delta}y'(t)dt\\
+& \leq \sum_{n=1}^{N} \vert \int_{t_{\phi(n)}-\delta}^{t_{\phi(n)}+\delta}y'(t)dt \vert \\
+& \leq \sum_{n=1}^{N}\frac{1}{2^{n}}\\
+& \leq 1.
+\end{align*}
+
+Ainsi, on a montré : $\displaystyle \lim_{t\rightarrow +\infty}y'(t)=0.$
+
+\end{itemize}

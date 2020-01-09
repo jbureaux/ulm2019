@@ -1,0 +1,59 @@
+\chapter{Planche 28}
+
+\section{Sujet}
+
+\section{Solution de l'exercice}
+
+\textbf{Remarque : } La solution proposée ici dépasse largement le niveau du programme de classe préparatoire (les théorèmes limites n'y sont pas enseignés...). Cependant, l'approche proposée ici est plus naturelle (car moins calculatoire mais il existe des preuves plus piétonnes, indiquées entre parenthèses à la fin de chaque cas  à traiter).\\
+
+Tout d'abord introduisons quelques notations.
+
+Notons pour $k\in\{0,\ldots,9\},$ et $n\geq 1$ un entier, $\displaystyle a_{k}(n)$ l'occurence du chiffre $k$ dans l'écriture en base $10$ de l'entier $n$ et $b_{n}$ le nombre de chiffres constituant l'écriture en base $10$  de l'entier $n.$
+
+On note alors pour $\lambda\in]0,1[,$ $$ A_{\lambda}=\{k\geq 1\mbox{ }|\mbox{ }a_{9}(k)\leq \lambda b(k)\}.$$
+
+On introduit alors pour $n\in \mathbb{N}$ : $$ S_{n,\lambda}=\left\{ k\in\{10^{n},\ldots,10^{n+1}-1\}\mbox{ }|\mbox{ } k\in A_{\lambda} \right\}=\left\{ k\in\{10^{n},\ldots,10^{n+1}-1\}\mbox{ }|\mbox{ } a_{9}(k)\leq \lambda n\right\}.$$
+
+Ainsi, on a $$ \sum_{n\geq 0}\frac{\# S_{n,\lambda}}{10^{n+1}}\leq \sum_{k\in A_{\lambda}}\frac{1}{k}\leq \sum_{n\geq 0}\frac{\# S_{n,\lambda}}{10^{n}}.$$
+
+On dénombre alors (en discutant suivant que le chiffre $9$ soit placé en tête du nombre ou non) et on obtient pour $n\geq 1$  : $$\# S_{n,\lambda}=\sum_{k\leq \lambda n}\binom{n-1}{k}8\times 9^{n-1-k} + \sum_{k\leq \lambda n}\binom{n-1}{k-1}9^{n-k}.$$
+
+En utilisant la formule du triangle de Pascal (et à défaut d'une suite géométrique convergente près), on a ainsi pour $n\geq 1$ (pour des constantes absolues) : $$ \frac{\# S_{n,\lambda}}{10^{n}}\approx \sum_{k\leq \lambda n}\binom{n}{k}(\frac{1}{10})^{k}(\frac{9}{10})^{n-k}:=B_{n,\lambda}.$$
+
+Considérons alors $(X_{i})_{i\geq 1}$ une famille de Bernoulli i.i.d, de paramètre $\frac{1}{10}.$
+
+On a ainsi pour $n\geq 1,$ $$ B_{n,\lambda}=\mathbb{P}(\sum_{i=1}^{n}X_{i} \leq n\lambda).$$
+
+On a deux cas : 
+\begin{itemize}
+    \item ou $\displaystyle \lambda\geq \frac{1}{10}.$
+    
+On a $$ B_{n,\lambda}=\mathbb{P}\left( \frac{1}{\sqrt{n}}\sum_{i=1}^{n}\left( X_{i}-\mathbb{E}[X_{i}]\right)\leq (\lambda-\frac{1}{10})\sqrt{n}\right)$$ et une application du TCL donne alors que $$ \lim_{n\rightarrow +\infty} B_{n,\lambda}\geq \frac{1}{2}.$$
+
+Ainsi, la série considérée diverge (cependant, une simple estimée via l'inégalité de Tchebytchev permet également de conclure à la divergence).
+
+\item ou $\displaystyle 0<\lambda<\frac{1}{10}.$
+
+On a $$ B_{n,\lambda}=\mathbb{P}\left( \frac{1}{n}\sum_{i=1}^{n}\left( X_{i}-\mathbb{E}[X_{i}]\right)\leq -(\frac{1}{10}-\lambda)\right)$$ et une application de l'inégalité d'Hoeffding (unilatérale) donne $$B_{n,\lambda}\leq e^{-2\varepsilon^{2}n}$$ où $\displaystyle \varepsilon:=\frac{1}{10}-\lambda>0.$
+
+Ainsi, la série considérée converge (cependant, une simple estimée via la formule de Stirling permet également de conclure au prix de quelques calculs supplémentaires et d'une perte polynomiale...).    
+    
+\end{itemize}
+
+\section{Solution du deuxième exercice}
+
+Comme les matrices $A$ et $B$ commutent, on a par hypothèse : $\displaystyle (AB)^{2019}=I.$
+
+Ainsi, on obtient $\mbox{Sp}(AB)\subset \mathbb{U}_{2019}$ mais aussi que la matrice $AB$ est diagonalisable dans $\mathbb{C}$ (car annule un polynôme scindé à racines simples).
+
+Comme $\mbox{Tr}(AB)=2019,$ il vient par le cas d'égalité de l'inégalité triangulaire : $AB=I \mbox{ i.e. } A=B^{-1}.$
+
+Cependant, $B$ est également diagonalisable sur $\mathbb{C}$ et $\mbox{Spec}(B)\subset \mathbb{U}_{2019}.$ 
+
+On écrit alors $B=P^{-1}DP$ où $D$ est une certaine matrice diagonale (dont les coefficients diagonaux vivent dans $\mathbb{U}_{2019}$).
+
+On remarque alors (compte-tenu de la nature du spectre de la matrice $B$) que $\displaystyle D^{-1}=\overline{D}.$
+
+Il vient alors comme $B$ est une matrice réelle et par invariance de la trace par permutation circulaire $$\mbox{Tr}(A)=\mbox{Tr}(B^{-1})=\mbox{Tr}(\overline{B})=\mbox{Tr}(B).$$
+
+

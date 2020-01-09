@@ -1,0 +1,56 @@
+\chapter{Planche 36}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+
+\section{Solution}
+
+\section{Solution du deuxième exercice}
+
+La réponse est : les applications de la forme $f: \displaystyle M\mapsto \phi(\mbox{Rg}(M))$ où $\displaystyle \phi : \{0,\ldots,n\}\rightarrow \mathbb{R}$ est croissante ($\phi$ est une $n$-liste croissante) sont les seules qui conviennent.
+
+\begin{enumerate}
+\item Soit $P\in \mbox{GL}_{n}(\mathbb{R}).$
+
+On a  alors 
+\begin{align*}
+f(I_{n})=f(P.P^{-1}) & \leq f(P)\wedge f(P^{-1})\\
+& \leq f(P)\\
+\mbox{ et, } f(P)=f(P.I_{n})& \leq f(P)\wedge f(I_{n})\\
+& \leq f(I_{n}).
+\end{align*}
+
+Ainsi, on a prouvé : $\displaystyle f(P)=f(I_{n}).$
+
+\item Considérons $M$ une matrice de rang $r\in \{0,\ldots,n\}.$
+
+On sait alors qu'il existe deux matrices inversibles $P$ et $Q$ telles que  $$M=P\left( \begin{array}{ll}
+I_{r} & O_{r,n-r}\\
+O_{n-r,r} & O_{n-r,n-r}
+\end{array}
+\right) Q:=PM_{r}Q \mbox{ i.e. } M_{r}=P^{-1}MQ^{-1}.$$
+
+Donc, par la relation précédente, il vient : 
+\begin{align*}
+f(M) & \leq f(M_{r})\\
+\mbox{ et, } f(M_{r}) & \leq f(M).
+\end{align*}
+
+Ainsi, on a prouvé : $\displaystyle f(M)=f(M_{r}).$
+
+Et, $f$ est constante sur l'ensemble des matrices de rang fixé.
+
+\item Considérons $r,r'\in \{0,\ldots,n\}$ tels que $r'\geq r.$
+
+On a alors : $$f(M_{r})=f(M_{r}M_{r'})\leq f(M_{r'}).$$
+
+Ainsi, $f$ est croissante en le rang de son argument.
+\item On a alors montré que $f: \displaystyle M\mapsto \phi(\mbox{Rg}(M))$ où $\displaystyle \phi : \{0,\ldots,n\}\rightarrow \mathbb{R}$ est croissante.\\ 
+
+La réciproque est immédiate car, on a toujours $\displaystyle \mbox{Rg}(XY)\leq \mbox{Rg}(X)\wedge\mbox{Rg}(Y).$ 
+
+La croissance de $\phi$ permet alors de conclure.
+\end{enumerate}
+
+

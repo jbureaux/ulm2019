@@ -1,0 +1,121 @@
+ \chapter{Planche 30}
+
+\section{Sujet}
+
+\section{Solution de l'exercice}
+ 
+ \begin{enumerate}
+ 
+\item \textbf{Remarque :} Le résultat est assez fin (car optimal)... La preuve proposée ici bien que technique est naturelle (on procède par réduction et on pousse le crayon jusqu'à temps de résoudre un problème purement technique à la fin) et quantitative (si on fait bien attention, on peut d'estimer le $n$ nécessaire pour réaliser la conclusion désirée).\\
+
+\begin{enumerate}
+\item \underline{Un polynôme qui satisfait les hypothèses de l'énoncé est réel.}
+    
+En effet, soit on utilise des polynômes d"interpolation en des points de $\mathbb{R}^{+}$ soit, comme une limite de fonctions réelles est réelle, les dérivées du polynôme sont réelles sur $\mathbb{R}^{+}$ et une utilisation des formules de Taylor permet de conclure.
+
+\item \underline{On procède à la réduction suivante :}
+
+Un polynôme $P$ qui satisfait les hypothèses de l'énoncé se factorise de la  manière suivante : 
+$$P(X)=\lambda\prod_{i\in I}(X+a_{i})^{\alpha_{i}}\times \prod_{j\in J}(X^{2}+b_{j}+c_{j})^{\beta_{j}}$$ 
+où $\lambda>0$ (prendre un équivalent de $P$ en $+\infty$) et pour tout $i\in I,$ $a_{i}>0$ (ce sont les racines réelles de $P$ qui vivent dans $\mathbb{R}^{-*})$ et pour tout $j\in J,$ $b_{j}^{2}-4c_{j}<0$ avec $c_{j}>0.$
+
+Comme un produit de polynômes à coefficients strictement positifs est encore à coefficients strictement positifs, il suffit de traiter le cas d'un polynôme $P(X)=X^{2}+aX+b$ vérifiant $a^{2}-4b<0$ et $b>0.$
+
+On suppose $P$ de cette forme jusqu'à la fin de cet exercice.
+
+\item Le cas $a\geq 0$ est direct car alors $(1+X)P(X)$ est à coefficients strictement positifs.
+
+On traite alors le cas $a<0.$
+
+Il existe $\varepsilon>0$ (avec $\varepsilon\ll 1$) tel que $-a<2\sqrt{b}(1-\varepsilon).$
+
+\textbf{But :} On veut trouver $n\gg 1$ tel que $$(1+X)^{n}P(X)=\sum_{k=0}^{n+2}b_{k}X^{k}$$ où pour tout  $k\in\{0,\ldots,n+2\},$ $b_{k}>0.$
+
+Cette dernière condition s'écrit également $$ \forall k\in \{0,\ldots,n+2\},\mbox{  } -a\binom{n}{k-1}<\binom{n}{k-2}+b\binom{n}{k}.$$
+
+Pour $k\in\{0,1,n+1,n+2\},$ on doit vérifier $$b>0;\mbox{ }nb>-a;\mbox{ }n>-a \mbox{ et } 1>0,$$ ce qui est manifestement vrai si $n\gg 1$ vu que $b>0.$
+
+Les conditions restantes s'écrivent (après avoir simplifié les coefficients binomiaux et arrangé un peu l'expression) pour $k\in\{2,\ldots,n\},$ $$ -a<(n+1)\left( \frac{b}{k}+\frac{1}{n+2-k}\right)-(b+1):=\phi(k).$$
+
+Montrons donc qu'il existe $n\gg1$ tel que pour tout $x\in[2,n],$ $$\phi(x)\geq 2\sqrt{b}(1-\varepsilon).$$
+
+On a  tout d'abord $$\forall x\in[2,n],\mbox{ } \phi'(x)=(n+1)\frac{\left( x-\sqrt{b}(n+2-x)\right)\times \left( x+\sqrt{b}(n+2-x)\right) } {x^{2}(n+2-x)^{2}}.$$
+
+ Notons $\displaystyle x_{1}=\frac{(n+2)\sqrt{b}}{1+\sqrt{b}}\in[2,n]$ (si $n\gg1,$ plus précisément si $n\geq 2\sqrt{b}$) et  $\displaystyle x_{2}=\frac{(n+2)\sqrt{b}}{\sqrt{b}-1}$ si $b\neq 1.$
+
+Avec ces notations réduites, il vient pour tout $x\in[2,n]$ : \begin{align*}
+\phi'(x) & =\frac{(1-b^{2})(n+1)(x-x_{1})(x-x_{2})}{x^{2}(n+2-x)^{2}} \mbox{ si } b\neq 1\\
+\mbox{ et } \phi'(x) & =\frac{2(n+1)(n+2)(x-x_{1})}{x^{2}(n+2-x)^{2}} \mbox{ si } b=1.    
+\end{align*}
+
+En traitant les trois cas séparément : $\boxed{0<b<1}$ (i.e. $x_{2}<0$ et $1-b^{2}>0$), $\boxed{ b=1} $ et $\boxed{b> 1}$ (i.e. $x_{2}>n$ et $1-b^{2}<0$), on montre que $\phi$ atteint son minimum en le point $x_{1}.$ 
+
+Ce minimum est : $\displaystyle \phi(x_{1})=\frac{(n+1)(1+\sqrt{b})^{2}}{n+2}-(1+b)\longrightarrow 2\sqrt{b}.$
+
+Ainsi, pour $n\gg 1,$ on a bien pour tout $k\in\{2,\ldots,n\},$ $$ \phi(k)\geq  \phi(x_{1}) \geq 2\sqrt{b}(1-\varepsilon)>-a.$$
+
+Toutes les conditions recherchées sont alors satisfaites dès que $n$ est choisi assez grand et la preuve du premier point est ainsi achevée.
+
+\end{enumerate}
+
+\item \textbf{Remarque :} Le résultat suivant découle directement de ce que l'on vient de prouver. Si $P$ est strictement positif sur $\mathbb{R}^{+*}$ alors il existe $n\in\mathbb{N}$ tel que $(1+X)^{n}P(X)$ est à coefficients positifs.
+
+On pourrait s'en servir pour traiter le deuxième point de l'exercice...\\
+
+Le deuxième point découle de la première partie par un changement de variables (homographie).
+
+\begin{enumerate}
+\item Soit $P$ un polynôme strictement positif sur $[-1,1].$ 
+
+Notons $n\geq 1$ le degré de $P$ (si $P$ est constant, le résultat est clair!).
+
+On considère alors le polynôme $$Q(X)=(1+X)^{n}P\left( \frac{1-X}{1+X} \right)$$ qui est de degré $n$ et est strictement positif sur $\mathbb{R}^{+}$ (car l'image de $\mathbb{R}^{+}$ par l'homographie est $]-1,1],$ ensemble sur lequel $P$ est strictement positif).
+
+Par le point $i),$ il existe alors $N\in\mathbb{N}$ tel que $$(1+X)^{N}Q(X)=(1+X)^{n+N}P\left( \frac{1-X}{1+X} \right)=\sum_{k=0}^{n+N}a_{k}X^{k}$$ où pour tout $k\in\{0,\ldots,n+N\},$ $a_{k}>0.$
+
+Ainsi, pour tout $x\in ]-1,1],$ on a $$\left(\frac{2}{1+x}\right)^{n+N}P(x)=\sum_{k=0}^{n+N}a_{k}(1-x)^{k}(1+x)^{-k}.$$
+On a alors pour tout $x\in]-1,1],$ $$P(x)=\sum_{k=0}^{n+N}\frac{a_{k}}{2^{n+N}}(1-x)^{k}(1+x)^{n+N-k}.$$
+
+Ces deux polynômes coïncidant sur une partie infinie, ils sont égaux et on a obtenu la décomposition voulue dans ce cas.
+
+\item Soit $P$ un polynôme strictement positif sur $]-1,1[.$ 
+
+Par continuité, on a $\displaystyle P(-1)\geq 0 \mbox{ et } P(1)\geq 0.$ En factorisant $P$ par les racines éventuelles $-1$ et $1,$ on peut écrire : $\displaystyle P(X)=(1-X)^{\alpha}(1+X)^{\beta}Q(X)$ où $Q$ est strictement positif sur $[-1,1].$ 
+
+Ainsi, en appliquant la première étape, $P$ se décompose bien comme demandé mais ici, les coefficients de la décomposition sont seulement positifs (éventuellement nuls).
+\end{enumerate}
+
+\end{enumerate}
+
+\section{Solution du deuxième exercice}
+
+On procède par densité (en utilisant le théorème de Weierstrass trigonométrique).
+
+\begin{enumerate}
+\item Soit $k\in \mathbb{Z}^{*}.$
+
+Si $\displaystyle g :x \mapsto e^{2\pi ikx},$ alors par le lemme de Riemann-Lebesgue, on a : $$\int_{0}^{1}f(t)g(nt)dt=\int_{0}^{1}f(t)e^{2\pi inkt}dt\longrightarrow_{n\rightarrow +\infty} 0=\int_{0}^{1}f(t)dt\times \int_{0}^{1}g(t)dt.$$
+
+Si $\displaystyle g :x \mapsto 1,$ on a directement : $$\int_{0}^{1}f(t)g(nt)dt=\int_{0}^{1}f(t)dt=\int_{0}^{1}f(t)dt\times \int_{0}^{1}g(t)dt.$$
+
+\item Soit $\varepsilon>0.$
+
+Soit $g$ une fonction continue $1$-périodique. 
+
+Alors par le théorème de Weierstrass trigonométrique, il existe un polynôme trigonométrique $P$ (qui est également une fonction $1$-périodique) tel que $$\|g-P\|_{{\infty},[0,1]}\leq \varepsilon.$$
+
+On a ainsi par l'inégalité triangulaire: 
+\begin{align*}
+\vert \int_{0}^{1}f(t)g(nt)dt-\int_{0}^{1}f(t)dt\times \int_{0}^{1}g(t)dt \vert & \leq \vert \int_{0}^{1}f(t)g(nt)dt-\int_{0}^{1}f(t)P(nt)dt\vert\\
+& \mbox{ }+ \vert \int_{0}^{1}f(t)P(nt)dt-\int_{0}^{1}f(t)dt\times \int_{0}^{1}P(t)dt \vert\\
+& \mbox{ }+ \vert \int_{0}^{1}f(t)dt\left(\int_{0}^{1}P(t)dt-\int_{0}^{1}g(t)dt\right)\vert\\
+& \leq 2\varepsilon\|f\|_{{\infty},[0,1]}\\
+& \mbox{ }+ \vert \int_{0}^{1}f(t)P(nt)dt-\int_{0}^{1}f(t)dt\times \int_{0}^{1}P(t)dt \vert.
+\end{align*}
+
+Par les premiers calculs, il vient alors $$\limsup_{n\rightarrow +\infty}\vert \int_{0}^{1}f(t)g(nt)dt-\int_{0}^{1}f(t)dt\times \int_{0}^{1}g(t)dt \vert \leq 2\varepsilon\|f\|_{{\infty},[0,1]}.$$
+
+On conclut en faisant tendre $\varepsilon$ vers $0,$ $$\lim_{n\rightarrow +\infty}\int_{0}^{1}f(t)g(nt)dt=\int_{0}^{1}f(t)dt\times \int_{0}^{1}g(t)dt.$$ 
+
+\end{enumerate}
+

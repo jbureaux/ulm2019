@@ -1,0 +1,69 @@
+\chapter{Planche 8}
+
+\section{Sujet}
+
+\section{Solution de l'exercice}
+
+$\boxed{i)\Longrightarrow ii)}$\\
+
+On construit une suite strictement croissante $\displaystyle (b_{n})_{n\in\mathbb{N}^{*}}$ tendant vers l'infini et qui vérifie pour tout $n\geq 1$ : $$\mathbb{P}(X\geq b_{n+1})\leq \frac{1}{n} \mbox{ et }\mathbb{P}(X\geq b_{n})>\frac{1}{n}.$$
+
+Soit alors $a>1.$ 
+
+On choisit $a$ proche de $1$ de manière à pouvoir écrire $\displaystyle a\sim 1+\varepsilon$ et $\displaystyle \frac{1}{a}\sim 1-\varepsilon$ où $\varepsilon>0$ est assez petit.
+
+Par $i),$ on a alors $$ \frac{\mathbb{P}(X\geq ab_{n+1})}{\mathbb{P}(X\geq b_{n+1})}\longrightarrow 0 \mbox{ et } \frac{\mathbb{P}(X\geq b_{n})}{\mathbb{P}(X\geq \frac{b_{n}}{a})}\longrightarrow 0.$$
+
+On en déduit alors :  
+\begin{align*}
+n\mathbb{P}(X\geq ab_{n+1}) & = \frac{\mathbb{P}(X\geq ab_{n+1})}{\mathbb{P}(X\geq b_{n+1})}\times n\mathbb{P}(X\geq b_{n+1})\\
+& \leq \frac{\mathbb{P}(X\geq ab_{n+1})}{\mathbb{P}(X\geq b_{n+1})} \longrightarrow 0.\\
+\mbox{ et, } \frac{1}{n\mathbb{P}(X\geq \frac{b_{n}}{a})} & = \frac{\mathbb{P}(X\geq b_{n})}{\mathbb{P}(X\geq \frac{b_{n}}{a})}\times \frac{1}{n\mathbb{P}(X\geq b_{n})}\\
+& \leq \frac{\mathbb{P}(X\geq b_{n})}{\mathbb{P}(X\geq \frac{b_{n}}{a})} \longrightarrow 0\\
+& \mbox{ i.e. } n\mathbb{P}(X\geq \frac{b_{n}}{a}) \longrightarrow +\infty.
+\end{align*}
+
+On a alors en notons pour $n\geq 1,$ $\displaystyle M_{n}=\max_{k=1,\ldots,n}X_{k}$ :
+\begin{align*}
+\mathbb{P}(\frac{b_{n}}{a}< M_{n} \leq ab_{n}) & = \mathbb{P}(M_{n}\leq ab_{n})-\mathbb{P}(M_{n}\leq \frac{b_{n}}{a})\\
+& =\exp\left[ n\ln \big(1-\mathbb{P}(X\geq ab_{n})\big) \right]-\exp\left[ n\ln \left(1-\mathbb{P}(X\geq \frac{b_{n}}{a})\right) \right]\\
+& \mbox{ par indépendance des va en jeu}\\
+& \longrightarrow 1-0=1\\ 
+& \mbox{ car } n\ln\left( 1-\mathbb{P}(X\geq ab_{n}\right)\sim -n\mathbb{P}(X\geq ab_{n})\longrightarrow 0\\
+& \mbox{ et } n\ln \left (1-\mathbb{P}(X\geq \frac{b_{n}}{a})\right)\sim -n\mathbb{P}(X\geq \frac{b_{n}}{a})\longrightarrow -\infty.
+\end{align*}
+
+Ainsi, l'implication désirée est démontrée.
+\\
+
+$\boxed{ii)\Longrightarrow i)}$\\
+
+Il suffit de démontrer $i)$ pour tout $a>1$ proche de $1$ car alors si $b>a,$ $i)$ est clairement satisfaite pour $b$ également.
+
+Soit $a>1$ proche de $1.$ 
+
+En supposant $ii),$ on a d'une part $$1-\left(1-\mathbb{P}(X\geq ab_{n})\right)^{n}=\mathbb{P}(M_{n}\geq ab_{n})\longrightarrow 0.$$
+Mais alors, $\displaystyle -n\mathbb{P}(X\geq ab_{n})\longrightarrow 0.$ 
+
+\textbf{Remarque : } Au pire, si vraiment on veut le prouver  : cette suite est minorée sinon on a une contradiction. On prend alors une valeur d'adhérence. Cette suite bornée n'en a qu'une seule, à savoir $0.$
+
+D'autre part, toujours en utilisant $ii),$ on a $$\left(1-\mathbb{P}(X\geq \frac{b_{n}}{a})\right)^{n}=\mathbb{P}(M_{n}\leq \frac{b_{n}}{a})\longrightarrow 0.$$
+On a ainsi $\displaystyle -n\mathbb{P}(X\geq \frac{b_{n}}{a})\longrightarrow -\infty.$
+
+On procède finalement par encadrement en utilisant la décroissance de la fonction de survie.
+
+Soit $\varepsilon>0$ tel que $\varepsilon\ll 1.$ 
+
+On a alors pour tout $n\gg 1$ : $$\mathbb{P}(X\geq ab_{n})\leq \frac{\varepsilon}{n} \mbox{ et } \mathbb{P}(X\geq \frac{b_{n+1}}{a})\geq \frac{1}{n+1}\geq \frac{1-\varepsilon}{n}.$$
+
+Soit alors $x\in\mathbb{R}^{+}$ tel que $\displaystyle \frac{b_{n}}{a}\leq x\leq \frac{b_{n+1}}{a}.$
+
+On a alors par décroissance de la fonction de survie :
+\begin{align*}
+\mathbb{P}(X\geq a^{2}x) & \leq \mathbb{P}(X\geq ab_{n})\\
+& \leq \frac{\varepsilon}{n}\\
+& \leq \frac{\varepsilon}{1-\varepsilon}\mathbb{P}(X\geq \frac{b_{n+1}}{a})\\
+& \leq \frac{\varepsilon}{1-\varepsilon}\mathbb{P}(X\geq x).
+\end{align*}
+
+L'implication désirée est démontrée (quitte à redéfinir certains paramètres...).

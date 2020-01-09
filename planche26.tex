@@ -1,0 +1,60 @@
+\chapter{Planche 26}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+
+\section{Solution de l'exercice}
+
+On renvoie à la preuve "récente" de B. Nica (inspirée de la simplification de J. Vaïssälä) :
+
+https://arxiv.org/pdf/1306.2380.pdf.\\
+
+Soit $f : E \rightarrow F$ une isométrie surjective entre deux espaces vectoriels normés réels : $(E,\|.\|{E})$ et $(F,\|.\|_{F}).$
+
+On fixe $x,y$ deux points $E$ et on considère le \emph{défaut affine} de $f$ $$A(f)=\|f(\frac{x+y}{2})-\frac{f(x)+f(y)}{2}\|_{F}.$$
+
+D'une part, par l'inégalité triangulaire, on a un contrôle uniforme du défaut affine $$A(f)\leq \frac{1}{2}\|f(\frac{x+y}{2})-f(x)\|_{F}+\frac{1}{2}\|f(\frac{x+y}{2})-f(y)\|_{F}\leq \frac{\|x-y\|_{E}}{2}.$$
+
+D'autre part, considérons la réflexion (ou symétrie) : $\rho : F \rightarrow F$ donnée par $$\rho : z \mapsto f(x)+f(y)-z.$$
+
+Considérons alors $g : E \rightarrow E$ donnée par $$g=f^{-1}\circ \rho\circ f$$ qui est également une \emph{isométrie surjective}. 
+
+On remarque que $g(x)=y$ et $g(y)=x.$
+
+Ainsi, il vient comme $f^{-1}$ est également une isométrie : 
+\begin{align*}
+A(g) & = \|f^{-1}\left( f(x)+f(y)-f(\frac{x+y}{2})\right)-\frac{x+y}{2}\|_{E}\\
+& = \|f(x)+f(y)-f(\frac{x+y}{2})-f(\frac{x+y}{2})\|_{F}\\
+& = 2A(f).
+\end{align*}
+
+Si $A(f)>0$ alors, en itérant le résultat précédent, il existerait une isométrie surjective possédant un défaut affine arbitrairement grand, ce qui contredirait le contrôle uniforme du défaut affine d'une isométrie (seul l'espace source intervient, ici : E).
+
+Ainsi, $A(f)=0$ i.e. $f$ préserve les milieux $$\forall (x,y)\in E^{2},\mbox{ } f(\frac{x+y}{2})=\frac{f(x)+f(y)}{2}.$$
+
+En itérant cette relation, il vient alors pour tout $\lambda\in[0,1]$ dyadique : $$\forall (x,y)\in E^{2},\mbox{ } f(\lambda x + (1-\lambda)y)=\lambda f(x)+(1-\lambda)f(y).$$
+
+Comme $f$ est continue (car $1-$lipschitzienne vu que $f$ est une isométrie), on obtient finalement : $$\forall\lambda\in[0,1],\mbox{ }\forall (x,y)\in E^{2},\mbox{ } f(\lambda x + (1-\lambda)y)=\lambda f(x)+(1-\lambda)f(y).$$
+
+Ainsi, quitte à changer $f$ en $f-f(0),$ $f$ est alors linéaire (les détails de ce fait étant quasi-immédiats... Tout se résume à montrer l'"imparité" de $f$).\\
+
+
+\textbf{Remarque1 :} La surjectivité est \emph{nécessaire} (même si avec l'hypothèse que l'espace de Banach à l'arrivée a une norme strictement convexe, la conclusion du théorème reste vraie) pour pouvoir conclure au caractère affine (ou linéaire à normalisation près...) de l'isométrie.\\
+
+Montrons \textbf{le théorème de plongement de Kuratowski.}\\
+
+Soit $(E,\|.\|)$ un espace de Banach séparable.
+
+Notons $(x_{n})_{n\in\mathbb{N}}$ une famille dense dans $E.$ 
+
+Et, prenons un point $y$ quelconque de $E.$
+
+Considérons alors l'application $\displaystyle \phi : E \rightarrow l^{\infty}(\mathbb{N})$ telle que pour $x\in E,$ $$\phi(x)=(\|x-x_{n}\|-\|y-x_{n}\|)_{n\geq 0}.$$
+
+L'application $\phi$ est alors une \underline{isométrie} qui n'est manifestement ni affine et encore moins linéaire!
+Tout simplement car $\phi$ n'a aucune raison d'être \underline{surjective}!\\
+
+\textbf{Remarque2 : } Le théorème n'est valide que pour les $\mathbb{R}-$espaces vectoriels. 
+
+En effet, la conjugaison complexe est une isométrie surjective mais n'est ni une application affine ni une application linéaire (on parle plutôt de transformation anti-affine ou anti-linéaire).   

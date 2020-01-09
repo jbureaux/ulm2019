@@ -1,0 +1,32 @@
+\chapter{Planche 15}
+
+\section{Sujet}
+
+\section{Solution de l'exercice}
+
+L'équivalence demandée est \textbf{fausse}. 
+
+On peut penser à utiliser $a_{k}=p_{k}$ où $\displaystyle (p_{k})_{k\geq 1}$ désigne la suite des nombres premiers.
+
+Avec les notations de l'énoncé, on a par le théorème des nombres premiers $$A(x)\sim \frac{x}{\ln(x)} \mbox{ et alors } \frac{A(x)}{x}\longrightarrow_{x\rightarrow +\infty} 0.$$
+
+Cependant, on sait que la série de terme général $\displaystyle \frac{1}{p_{k}}$ est divergente.\\
+
+En revanche, une des implications est toujours vraie. Prouvons la tout de même.
+
+On procède alors à une transformation d'Abel (en utilisant le formalisme des intégrales de Lebesgue-Stieljes).
+
+On a pour $x\geq 1,$
+$$\sum_{k\geq x}\frac{1}{a_{k}} = \int_{1}^{+\infty}\frac{dA(t)}{t}.$$
+
+Ainsi, on obtient pour $y>x\geq 1$ et par monotonie des intégrandes :
+\begin{align*} 
+\sum_{x\leq k\leq y}\frac{1}{a_{k}} & =\int_{x}^{y}\frac{dA(t)}{t}.\\
+& \geq \frac{1}{y}\int_{x}^{y}dA(t)\\
+& \geq \frac{A(y)-A(x)}{y}.\\
+\mbox{ Et ainsi, } \frac{A(y)}{y} & \leq \sum_{x\leq k\leq y}\frac{1}{a_{k}}+ \frac{A(x)}{y}.
+\end{align*}
+
+Il vient alors $$\limsup_{y\rightarrow +\infty}\frac{A(y)}{y} \leq \sum_{k\geq x}\frac{1}{a_{k}}.$$
+
+Et en faisant tendre $x$ vers $+\infty$, il vient le résultat escompté (par encadrement, la quantité en jeu est positive) : $$\lim_{y\rightarrow +\infty}\frac{A(y)}{y}=0.$$

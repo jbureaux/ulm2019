@@ -1,0 +1,42 @@
+\chapter{Suite de polynômes à coefficients positifs}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+Soit $(P_n)$ une suite de polynômes à coefficients positifs tels que $(P_n)$ converge simplement sur $\mathbb R$ vers une fonction notée $f$. Montrer que $f$ est $\mathscr C^\infty$.
+
+\section{Solution de l'exercice}
+
+On va montrer que $f$ est développable en série entière avec un rayon de convergence infini. Pour tous $k,n$ entiers naturels, notons $a_k(n)$ le coefficient de degré $k$ du polynôme $P_n$. Par hypothèse, on sait que pour tout réel $r > 0$,
+\[
+P_n(r) = \sum_{k=0}^{+\infty}a_k(n) r^k \xrightarrow[n\to\infty]{} f(r).
+\]
+Puisque les coefficients sont positifs, on a en particulier :
+\[
+    \forall (k,n)\in\mathbb N^2,\quad 0 \leqslant a_k(n) r^k \leqslant M_r,
+    \qquad\text{où}\quad M_r = \sup_{n\in\mathbb N} P_n(r) < +\infty.
+\]
+En prenant $r = 1$, on constate que chacune des suites $n \mapsto a_k(n)$ est bornée, donc admet une valeur d'adhérence dans $\mathbb R_+$. Par extraction diagonale, on dispose alors de $\phi \in \mathbb N^{\mathbb N}$ strictement croissante et d'une suite $b \in \mathbb R^\mathbb N$ telle que :
+\[
+\forall k \in \mathbb N,\quad a_k(\phi(n)) \xrightarrow[n\to\infty]{} b_k.
+\]
+Compte tenu des inégalités précédentes, on a encore $0 \leqslant b_k r^k \leqslant M_r$ quels que soient $r > 0$ et $k\in \mathbb N$, donc la série entière suivante est de rayon de convergence infini :
+\[
+    g(x) = \sum_{k=0}^\infty b_k x^k.
+\]
+
+Il reste à justifier que $f = g$, ce qui se ramène à un résultat de convergence dominée pour les séries qu'on détaille rapidement. Soit $x$ un réel et $\varepsilon > 0$. 
+Considérons un réel $r > 0$ tel que $r \geqslant 2|x|$. Alors pour tous $K \in \mathbb N$, et $n\in \mathbb N$, 
+\[
+\left|P_{\phi(n)}(x) - \sum_{k=0}^K a_k(\phi(n)) x^k\right| \leqslant \sum_{k=K+1}^{+\infty} \frac{M_r}{2^k} = \frac{M_r}{2^K},
+\qquad
+\left|g(x) - \sum_{k=0}^K b_k x^k\right| \leqslant \frac{M_r}{2^K}.
+\]
+Quitte à choisir $K$ assez grand, on aura donc par inégalité triangulaire :
+\[
+\forall n \in \mathbb N,\quad \left|P_{\phi(n)}(x) - g(x)\right| \leqslant \left|\sum_{k=0}^K a_k(\phi(n))x^k - \sum_{k=0}^K b_k x^k\right| + \varepsilon,
+\]
+d'où $|f(x)-g(x)| \leqslant \varepsilon$ par passage à la limite. Ceci étant vrai quel que soit $\varepsilon > 0$, on en déduit que $f(x) = g(x)$.
+
+\paragraph{Remarque}
+Par unicité des coefficients d'une série entière, il n'est pas difficile de montrer que les suites $n \mapsto a_k(n)$ ont une unique valeur d'adhérence, donc qu'elles sont convergentes. En reprenant les arguments précédents on montre alors que, sur tout segment de $\mathbb R$, la suite $(P_n)$ converge uniformément vers $f$ à une vitesse plus rapide que toute suite géométrique. Il en va de même pour les dérivées successives.

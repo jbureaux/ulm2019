@@ -1,15 +1,44 @@
-Dans les deux preuves, on va procéder par récurrence sur le degré $n\geq 1$ de $P.$
-\chapter{Planche 14}
+/\chapter{Planche 14}
 
 \section{Sujet}
 
+
+\section{Solution de l'exercice}
+
+On ne garde de l'inégalité donnée dans l'hypothèse que l'information suivante (car la suite $b$ est positive) : 
+$$\forall k\geq 1,\mbox{ } a_{k+1}-a_{k}\leq c_{k}.$$
+
+Soit $\varepsilon>0.$
+
+Comme la série de terme général $c_{n}$ est convergente, il existe un rang $N\geq 1$ tel que $$\forall n\geq N,\mbox{ } \sum_{k\geq n}c_{k}\leq \varepsilon.$$
+
+En observant un télescopage, on obtient alors
+$$\forall n'\geq n\geq N, \mbox{ } a_{n'+1}-a_{n}\leq \varepsilon \mbox{ (*) }.$$
+
+En particulier, la suite $a$ est donc bornée vu qu 'elle est positive.\\
+
+Notons $l=\liminf a$ (la plus petite valeur d'adhérence de la suite $a$).
+
+Il existe alors une extraction $(\phi(n))$ telle que $(a_{\phi(n)})$ converge vers $l.$
+
+On a donc qu'il existe un rang $N_{1}$ tel que $$\forall n\geq N_{1},\mbox{ } a_{\phi(n)}\leq l+\varepsilon.$$
+
+On a d'une part l'existence d'un rang $N_{2}$ tel que $$\forall n\geq N_{2}, a_{n}\geq l-\varepsilon.$$
+
+D'autre part, par la relation $\mbox{(*)},$ on a également : $$\forall n\geq \max{(\phi(N_{1}),N)},\mbox{ } a_{n}\leq \varepsilon + a_{\phi(N_{2})}\leq l+2\varepsilon.$$
+
+On obtient alors $$\forall n\geq \max{(\phi(N_{1}),N,N_{2})},\mbox{ } \vert a_{n}-l\vert \leq 2\varepsilon.$$
+
+Ainsi, $a$ est convergente.
+
 \paragraph{Deuxième exercice}
-Soit $P(z) = (z-\alpha_1)\cdots(z-\alpha_n)$ avec $\alpha_i$ des nombres complexes avec $|\alpha_i| < 1$.
+Soit $P(z) = (z-\alpha_1)\cdots(z-\alpha_n)$ avec $\alpha_i$ des nombres complexes avec $|\alpha_i| < 1*$.-+
 On suppose que $|P(z)| \leqslant 1$ pour tout $z$ de module $1$.
 Trouver $P$.
 
 \section{Solution du deuxième exercice}
 
+Dans les deux preuves, on va procéder par récurrence sur le degré $n\geq 1$ de $P.$
 Le cas $n=1$ est rapide car alors $$\|P\|_{\infty}:=\sup_{z\in\mathbb{T}}\vert P(z)\vert=1+\vert \alpha_{1} \vert$$ et comme $\|P\|_{\infty}\leq 1,$ il vient $\alpha_{1}=0$ et donc $P(z)=z.$\\
 
 \textbf{Première preuve :}
@@ -42,4 +71,14 @@ On écrit alors $$P(z)=z\prod_{k=2}^{n}(z-\alpha_{k}):=zQ(z).$$
 
 Mais alors, on a $\displaystyle \|Q\|_{\infty}\leq 1.$
 
-On conclut par récurrence que $Q(z)=z^{n-1}$ et donc $P(z)=z^{n}.$
+On conclut par récurrence que $Q(z)=z^{n-1}$ et donc $P(z)=z^{n}.$\\
+
+\textbf{Troisième preuve :} 
+
+Notons $n\geq 1,$ le degré du polynôme $P$ unitaire en jeu.
+
+On remarque comme $P$ est unitaire et borné sur le cercle par $1$ $$1=\big\vert \frac{1}{2\pi}\int_{0}^{2\pi}P(e^{i\theta})e^{-in\theta}d\theta \big\vert \leq 1.$$
+
+Ainsi, par le cas d'égalité de l'inégalité triangulaire intégrale (complexe), on obtient pour tout $\theta\in [0,2\pi],$ $\displaystyle P(e^{i\theta})=e^{in\theta}.$
+
+Et ainsi, $P(z)=z^{n}$ (car ces deux polynômes coïncident sur une partie infinie, ici le cercle unité).

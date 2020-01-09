@@ -1,0 +1,87 @@
+\chapter{Planche 18}
+
+\section{Sujet}
+
+\paragraph{Deuxième exercice}
+
+Soit $f : \left[0,\infty\right[ \to \left[0,\infty\right[$ une fonction continue qui vérifie $\int_0^{+\infty} f^2(x)\,dx < \infty$.
+Trouver
+\[
+\lim_{x\to\infty} \frac{\int_0^x e^t f(t)\,dt}{e^x}.
+\]
+
+\section{Solution de l'exercice}
+
+\begin{enumerate}
+\item On procède par récurrence sur $n\geq 1$ pour montrer l'identité désirée.\\
+
+\textbf{Initialisation :}
+
+Pour $n=1,$ $\displaystyle \mathcal{S}_{1}=\{\mbox{Id}\}$ et $G_{1}(x)=\displaystyle \sum_{\sigma \in \mathcal{S}_{1}}x^{\mbox{inv}(\sigma)}=1.$\\
+
+Pour $n=12,$ $\displaystyle \mathcal{S}_{2}=\{\mbox{Id},(12)\}$ et $\displaystyle G_{2}(x)=\sum_{\sigma \in \mathcal{S}_{2}}x^{\mbox{inv}(\sigma)}=\left( 1+x \right).$\\
+
+\textbf{Hérédité :}
+
+Supposons pour un certain $n\geq 1,$ $$G_{n}(x):=\sum_{\sigma\in \mathcal{S}_{n}}x^{\mbox{inv}(\sigma)}=\prod_{k=1}^{n}\left(\sum_{l=0}^{k-1}x^{l}\right).$$
+
+On partitionne les permutations $\sigma$ de $\mathcal{S}_{n+1}$ suivant les différentes  valeurs de $\sigma(n+1)\in\{1,\ldots,n+1\}$ pour avoir :
+\begin{align*}
+G_{n+1}(x)=\sum_{\sigma\in \mathcal{S}_{n+1}}x^{\mbox{inv}(\sigma)} & = \sum_{k=1}^{n+1}\sum_{\sigma\in \mathcal{S}_{n+1}\mbox{ }|\mbox{ }\sigma(n+1)=k}x^{\mbox{inv}(\sigma)}\\
+& = \sum_{k=1}^{n+1}\sum_{\sigma\in \mathcal{S}_{n}}x^{\mbox{inv}(\sigma)+n+1-k}\\
+& = \sum_{k=1}^{n+1}x^{n+1-k} \times \sum_{\sigma\in \mathcal{S}_{n}}x^{\mbox{inv}(\sigma)}\\
+& = \left( \sum_{l=0}^{n}x^{l} \right) \times \prod_{k=1}^{n}\left(\sum_{l=0}^{k-1}x^{l}\right)\\
+& = \prod_{k=1}^{n+1}\left(\sum_{l=0}^{k-1}x^{l}\right).
+\end{align*}
+
+\item Notons pour $n\geq 1,$ $\displaystyle \omega_{n}=\exp(\frac{2i\pi}{n+1}).$
+
+Par un calcul de double somme, on a d'une part :  $$f(n)=\frac{1}{n+1}\sum_{k=0}^{n}G_{n}(\omega_{n}^{k})=\frac{n!}{n+1}+\frac{1}{n+1}\sum_{k=1}^{n}G_{n}(\omega_{n}^{k}).$$
+
+D'autre part, pour $p\in \mathbb{P}$ où $p\gg1,$ on a pour $k\in \{1,\ldots,p-1\}$ : 
+\begin{align*}
+G_{p-1}(\omega_{p-1}^{k}) & = \prod_{l=1}^{p-1}\left(\sum_{j=0}^{l-1}\omega_{p-1}^{kj}\right)\\
+& = \prod_{l=1}^{p-1}\frac{1-\omega_{p-1}^{kl}}{1-\omega_{p-1}^{k}}\\
+& = \frac{p}{(1-\omega_{p-1}^{k})^{p-1}}\\
+& = pe^{i\pi\frac{k(1-p)}{p}}\left( -2i\sin(\frac{\pi k}{p})\right)^{1-p}\\
+& = (-1)^{\frac{p-1}{2}}p2^{1-p}e^{i\pi\frac{k(1-p)}{p}}\sin^{1-p}\left(\frac{\pi k}{p}\right),
+\end{align*}
+car $$\sum_{j=0}^{p-1}z^{j}=\prod_{l=1}^{p-1}(z-\omega_{p-1}^{l})$$ et pour $k\in\{1,\ldots,p-1\},$ $$\{\omega_{p-1}^{kl};l\in\{1,\ldots,p-1\}\}=\{\omega_{p-1}^{l};l\in\{1,\ldots,p-1\}\}$$ (les racines du polynôme précédent sont simplement permutées ou plus savamment, $l \mapsto kl$ induit une bijection de $\left(\mathbb{Z}/p\mathbb{Z}\right)^{*}$).
+
+On obtient alors par un changement de variables ($\displaystyle k\leftrightarrow p-k$ dans la gamme d'indices $\displaystyle \{\frac{p+1}{2},p\}$)
+\begin{align*}
+f(p-1)-\frac{(p-1)!}{p} &  = (-1)^{\frac{p-1}{2}}p2^{1-p}\sum_{k=1}^{p-1}e^{i\pi\frac{k(1-p)}{p}}\sin^{1-p}\left(\frac{\pi k}{p}\right)\\
+&  = (-1)^{\frac{p-1}{2}}p2^{2-p}\sum_{k=1}^{\frac{p-1}{2}}\cos\left( \frac{\pi k(p-1)}{p}\right)\sin^{1-p}\left(\frac{\pi k}{p}\right).
+\end{align*}
+
+Le terme qui domine dans la dernière somme est alors celui donné pour l'indice $k=1$ (c'est pour cet indice précis que la partie géométrique a la plus grande raison... essentiellement car le sinus est une fonction strictement croissante sur $\displaystyle ]0,\frac{\pi}{2}[$).
+
+Comme $\displaystyle \lim_{p\rightarrow +\infty}\cos\left( \frac{\pi k(p-1)}{p}\right)=-1,$ on constate pour $p\gg1$ que le  signe de $\displaystyle f(p-1)-\frac{(p-1)!}{p}$ est celui de $\displaystyle (-1)^{\frac{p+1}{2}}.$
+
+Il vient alors pour $p\gg 1,$ $$f(p-1)-\frac{(p-1)!}{p}<0 \mbox{ si } p=1[4] \mbox{ et } f(p-1)-\frac{(p-1)!}{p}>0 \mbox{ si } p=3[4]$$
+
+En admettant (on peut adapter la preuve "à la Euclide" de l'infinitude des nombres premiers) qu'il existe une infinité de nombre premiers $p$ tels que $p=1[4]$ et qu'il existe également une infinité de nombres premiers $p$ tels que $p=3[4],$ on obtient alors 
+le résultat demandé.
+\end{enumerate}
+
+
+\section{Solution du deuxième exercice}
+
+Montrons que cette limite est nulle.
+Considérons pour cela un réel $\varepsilon > 0$ et remarquons que,  pour tous réels positifs $a,x$ tels que $a \leqslant x$,
+\[
+\frac1{e^x}\int_0^x e^t f(t)\,dt = \frac1{e^x} \int_0^a e^{t}f(t)\,dt + \int_a^x e^{t-x}f(t)\,dt.
+\]
+On peut majorer le second terme avec l'inégalité de Cauchy-Schwarz :
+\[
+\left|\int_a^x e^{t-x}f(x)\,dt\right| \leqslant {\sqrt{\int_a^x e^{2(t-x)}\,dt}}\sqrt{\int_a^x f(t)^2\,dt} \leqslant \sqrt{\frac12 \int_a^{+\infty} f(t)^2\,dt}.
+\]
+D'après l'hypothèse d'intégrabilité, on dispose donc d'un réel $a \geqslant 0$ tel que, pour tout $x \geqslant a$,
+\[
+\left|\frac1{e^x}\int_0^x e^t f(t)\,dt \right| \leqslant \frac{1}{e^x}\left|\int_0^a e^t f(t)\,dt\right| + \frac{\varepsilon}2.
+\]
+Le premier terme du majorant tend vers $0$ lorsque $x \to \infty$, donc on dispose d'un réel $x_0 \geqslant a$ tel que :
+\[
+\forall x \geqslant x_0,\quad 
+\left|\frac1{e^x}\int_0^x e^t f(t)\,dt \right| \leqslant \varepsilon.
+\]

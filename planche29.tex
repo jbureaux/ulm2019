@@ -1,0 +1,15 @@
+\chapter{Planche 29}
+
+\section{Sujet}
+
+\section{Solution du deuxième exercice}
+
+Par le théorème des valeurs intermédiaires, il existe de proche en proche une suite de points de $[0,1]^{n+1}$ vérifiant : $0=x_{0}<\ldots<x_{n}=1$ telle que pour tout $k\in\{0,\ldots,n\},$ $\displaystyle f(x_{k})=\frac{k}{n}.$
+
+On a d'une part $$\sum_{k=0}^{n-1}\frac{x_{k+1}-x_{k}}{f(x_{k+1})-f(x_{k})}=n\sum_{k=0}^{n-1}\left(x_{k+1}-x_{k}\right)=n(x_{n}-x_{0})=n.$$
+
+D'autre part, par le théorème des accroissements finis, on obtient pour tout $k\in\{0,\ldots,n-1\}$ qu'il existe $y_{k}\in ]x_{k},x_{k+1}[$ tel que $$\frac{f(x_{k+1})-f(x_{k})}{x_{k+1}-x_{k}}=f'(y_{k})\neq 0.$$
+
+Les points $y_{k}$ ainsi générés sont alors deux à deux distincts (car bien séparés).
+
+Il vient alors le résultat désiré, à savoir : $$\sum_{k=0}^{n-1}\frac{1}{f'(y_{k})}=n.$$

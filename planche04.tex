@@ -1,0 +1,42 @@
+\chapter{}
+
+\section{Sujet}
+
+\paragraph{Deuxième exercice}
+
+Soit $f : \mathbb R \to \mathbb R$ une fonction telle que pour tout $a \in \mathbb R,\ \lim_{x\to a} f(x)$ existe.
+Montrer que l'ensemble des points de discontinuité de $f$ est dénombrable.
+
+\section{Solution du deuxième exercice}
+
+Dans le cadre des programmes de CPGE, si $f$ est définie en un réel $a$ et possède une limite en $a$, alors celle-ci vaut nécessairement $f(a)$. En conséquence de quoi l'ensemble des points de discontinuité de $f$ est vide.
+
+On se permettra donc de considérer le cas plus général d'une fonction $f$ qui possède, en tout réel $a$, une limite à droite $\ell(a)$ et on cherchera à montrer que l'ensemble des points de discontinuité de $f$ est dénombrable (ou fini, ce qu'on sous-entendra toujours dans la suite). Quitte à considérer aussi $-f$, ceci revient à montrer la dénombrabilité de l'ensemble :
+\[
+\{a \in \mathbb R \mid f(a) > \ell(a)\} = \bigcup_{n\geqslant 1} \left\{a \in \mathbb R \mid f(a) - \ell(a) > \tfrac1n\right\}.
+\]
+
+Or toute union dénombrable d'ensembles dénombrables est elle-même dénombrable, donc il suffit de montrer, pour tout entier $n \geqslant 1$, la dénombrabilité de :
+\[
+A_n = \{a \in \mathbb R \mid f(a) - \ell(a) > \tfrac1n\}.
+\]
+Soit $a \in A_n$. Notons $b$ la borne inférieure (éventuellement $b = +\infty$) de l'ensemble des $x > a$ tels que $|f(x) - \ell(a)| \geqslant \frac1{2n}$. Par définition de la limite à droite $\ell(a)$, on a nécessairement $b > a$. De plus,
+\[
+\forall x \in \left]a,b\right[,\quad |f(x) - \ell(a)| < \frac1{2n}.
+\]
+Quels que soient $(x,y) \in \left]a,b\right[^2$, on obtient alors $|f(x)-f(y)| < \frac1n$ par inégalité triangulaire, et donc $|f(x) - \ell(x)| \leqslant \frac1n$ par passage à la limite. Ceci montre que $A_n$ est disjoint de $\left]a,b\right[$.
+Lorsque $a$ parcourt $A_n$, les intervalles $\left]a,b\right[$ obtenus sont donc non vides et deux à deux disjoints. En considérant leurs intersections avec $\mathbb Q$, qui sont non vides par densité, ceci implique la dénombrabilité de $A_n$.
+
+\section{Solution de l'exercice supplémentaire}
+
+Notons pour $n\geq 1,$ les deux polynômes suivants : $$P_{n}(z)=\sum_{k=0}^{n}z^{k} \mbox{ et } Q_{n}(z)=\sum_{k=0}^{n-1}(n-k)z^{k}.$$
+
+On remarque pour $z\neq 0,$ $$P_{n}'(z)=z^{n-1}Q_{n}(\frac{1}{z}) \mbox{ i.e. } Q_{n}(z)=z^{n-1}P_{n}'(\frac{1}{z}) $$
+
+Or, pour $z\neq 1,$ $$P_{n}(z)=\frac{z^{n+1}-1}{z-1}.$$ 
+
+Ainsi, les zéros de $P_{n}$ sont les racines $(n+1)$-ième de l'unité différente de $1.$
+
+Comme les zéros de $P_{n}$ sont simples et vivent sur le cercle unité, on obtient par le théorème de Gauss-Lucas que les zéros de $P'_{n}$ sont inclus dans le disque unité (ouvert).
+
+Ainsi, $Q_{n}$ ne s'annule pas sur le disque unité fermé, cette fois-ci ($0$ n'est clairement pas un zéro de $Q_{n}$). Ceci constitue exactement le résultat à prouver.

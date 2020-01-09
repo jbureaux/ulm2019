@@ -35,3 +35,13 @@ S = \sum_{k=1}^N X_k
 \]
 est d'espérance finie et $E(S) = E(N)\,m$.
 \end{lemme}
+
+\section{Solution du deuxième exercice}
+
+On cherche un polynôme annulateur simple de $H.$
+
+Par un calcul direct, on a pour tout $u\in \mathcal{L}(E),$  $$H^{2}(u)=\frac{1}{4}(u\circ p+p\circ u)+\frac{1}{2}p\circ u \circ p \mbox{ et } 
+H^{3}(u)=\frac{1}{8}(u\circ p+p\circ u)+\frac{3}{4}p\circ u \circ p.$$
+
+Ainsi, on obtient : $$2H^{3}-3H^{2}+H=0.$$ 
+Et, $H$ annule donc le polynôme $\displaystyle P(X)=2X^{3}-3X^{2}+X=2X(X-\frac{1}{2})(X-1)$ qui est scindé, à racines simples donc $H$ est diagonalisable.

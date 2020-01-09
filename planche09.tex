@@ -1,0 +1,20 @@
+\chapter{Planche 9}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+
+\section{Solution}
+
+\section{Solution du deuxième exercice}
+
+Vu que $$\mbox{Tr}^{2}(A)=\sum_{k=1}^{n}a_{k,k}^{2}+2\sum_{1\leq i<j\leq n}a_{i,i}a_{j,j}$$ mais aussi $$\mbox{Tr}^{2}(A)=\sum_{k=1}^{n}\lambda_{k}^{2}+2\sum_{1\leq i<j\leq n}\lambda_{i}\lambda_{j}.$$
+L'inégalité à prouver se réduit alors à montrer : $$\sum_{k=1}^{n}a_{k,k}^{2}\leq \sum_{k=1}^{n}\lambda_{k}^{2}.$$
+Or, en notant $(e_{k})_{(k=1,\ldots,n)}$ la base canonique de l'espace ambiant (la base sur laquelle la matrice de $A$ est présentée), il vient
+\begin{align*}
+\sum_{k=1}^{n}a_{k,k}^{2} & = \sum_{k=1}^{n}<Ae_{k},e_{k}>^{2}\\
+& \leq \sum_{k=1}^{n}<Ae_{k},Ae_{k}>\times <e_{k},e_{k}> \mbox{  par l'inégalité de Cauchy-Schwarz }\\
+& \leq \sum_{k=1}^{n}<A^{2}e_{k},e_{k}> \mbox{ car } A \mbox{ est symétrique}\\
+& \leq \mbox{Tr}(A^{2})\\
+& \leq \sum_{k=1}^{n}\lambda_{k}^{2}. 
+\end{align*}

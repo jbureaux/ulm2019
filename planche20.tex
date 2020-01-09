@@ -1,0 +1,110 @@
+\chapter{Planche 20}
+
+\section{Sujet}
+
+\paragraph{Exercice}
+
+\section{Solution de l'exercice}
+
+\begin{enumerate}
+\item Introduisons la suite de Fibonacci ("shiftée") :
+$$F_{1}=1,\mbox { }F_{2}=1 \mbox{ et } \forall n\geq 1,\mbox{ } F_{n+2}=F_{n}+F_{n+1}.$$
+
+Le calcul des premiers termes de la suite $u$ nous invite à conjecturer : $$\forall n\geq 0,\mbox{ } u_{n+2}=\frac{s^{F_{n+1}}}{b_{n}},$$ où $\displaystyle b_{n}=\prod_{k=2}^{n}k^{F_{n+1-k}}.$
+
+Prouvons-le par récurrence double.
+
+\begin{itemize}
+ \item \textbf{Initialisation :}
+
+On a $u_{2}=s$ et $F_{1}=1;\mbox{ }b_{0}=1.$
+
+Et, $u_{3}=s$ et $F_{2}=1;\mbox{ }b_{1}=1.$
+
+\item \textbf{Hérédité : }
+
+Supposons pour un certain $n\geq 0,$ $$u_{n+2}=\frac{s^{F_{n+1}}}{b_{n}} \mbox{ et } u_{n+3}=\frac{s^{F_{n+2}}}{b_{n+1}}.$$
+
+Il vient alors 
+\begin{align*}
+u_{n+4} & =\frac{u_{n+2}u_{n+3}}{n+2}\\
+& =\frac{s^{F_{n+1}+F_{n+2}}}{(n+2)b_{n}b_{n+1}}\\
+& =s^{F_{n+3}}\times \frac{1}{(n+2)\prod_{k=2}^{n}k^{F_{n+1-k}}\prod_{k=2}^{n+1}k^{F_{n+2-k}}}\\
+& = s^{F_{n+3}}\times \frac{1}{(n+1) \times (n+2)\times \prod_{k=2}^{n}k^{F_{n+1-k}+F_{n+2-k}}}\\
+& =\frac{s^{F_{n+3}}}{(n+1)\times (n+2)\times \prod_{k=2}^{n}k^{F_{n+3-k}}}\\
+& =\frac{s^{F_{n+3}}}{\prod_{k=2}^{n+2}k^{F_{n+3-k}}}\\
+& = \frac{s^{F_{n+3}}}{b_{n+2}}.
+\end{align*}
+\end{itemize}
+
+\item Notons alors $$\phi=\frac{1+\sqrt{5}}{2} \mbox{ et } \tau=-\frac{1}{\phi}.$$
+Puis, considérons $$l=\sum_{k=1}^{+\infty}\frac{\ln(k)}{\phi^{k}} \mbox{ et } C=e^{l}.$$
+
+\textbf{But : } Montrons que $\displaystyle b_{n}\sim C^{F_{n+1}}.$
+
+On rappelle tout d'abord : $$\forall n\geq 1,\mbox{ } F_{n}=\frac{\phi^{n}-\tau^{n}}{\sqrt{5}}.$$
+
+Ainsi, il vient pour $n\gg 1,$ : 
+\begin{align*}
+\ln(b_{n}) & = \sum_{k=2}^{n}F^{n+1-k}\ln(k)\\
+& =\frac{1}{\sqrt{5}}\sum_{k=1}^{n}\left(\phi^{n+1-k}-\tau^{n+1-k}\right)\ln(k)\\
+& =\frac{\phi^{n+1}}{\sqrt{5}}\sum_{k=1}^{n}\frac{\ln(k)}{\phi^{k}}-\frac{1}{\sqrt{5}}\sum_{k=1}^{n}\tau^{n+1-k}\ln(k).
+\end{align*}
+
+Or, vu que $\tau\in]-1,0[,$ on a : $$\vert \sum_{k=1}^{n}\tau^{n+1-k}\ln(k) \vert \leq \sum_{k=1}^{n}\ln(k) \leq n\ln(n).$$
+
+Et ainsi, on obtient  : $$\frac{\sqrt{5}\ln(b_{n})}{\phi^{n+1}}\longrightarrow_{n\rightarrow +\infty} l.$$
+
+On tire alors de cette relation : $$\ln(b_{n})\sim l F_{n+1}.$$
+
+\item Ainsi, si $s \neq C,$ il vient : 
+$$\ln(u_{n+2})=\ln(s)F_{n+1}-\ln(b_{n})\sim F_{n+1}\left(\ln(s)-\ln(C)\right)=F_{n+1}\ln(\frac{s}{C}).$$
+
+On conclut alors $\displaystyle \lim_{n\rightarrow +\infty} u_{n}= \left\{ \begin{array}{l}
++\infty \mbox{ si } s>C\\
+0 \mbox{ si } 0<s<C.
+\end{array}\right.$
+
+Pour le cas limite : $s=C,$ on écrit par définition de $l$
+\begin{align*}
+\ln(u_{n}) & =lF_{n+1}-\ln(b_{n})\\
+& = \frac{\phi^{n+1}}{\sqrt{5}}\sum_{k=n+1}^{+\infty}\frac{\ln(k)}{\phi^{k}}-l\frac{l}{\sqrt{5}}\tau^{n+1}+\frac{\tau^{n+1}}{\sqrt{5}}\sum_{k=1}^{n}\frac{\ln(k)}{\tau^{k}}.\\
+& \sim \frac{\phi^{n+1}}{\sqrt{5}}\sum_{k=n+1}^{+\infty}\frac{\ln(k)}{\phi^{k}}\\
+& \geq \frac{\phi}{\sqrt{5}(\phi-1)}\ln(n+1).
+\end{align*}
+
+Et ainsi, on obtient par comparaison pour $s=C,$ $\displaystyle \lim_{n\rightarrow +\infty}u_{n}=+\infty.$
+
+\end{enumerate}
+
+\section{Solution du deuxième exercice}
+
+\begin{enumerate}
+\item Supposons pour tout $k\in\{1,\ldots,n+1\},$ $$A^{k}X=B^{K}Y.$$
+
+On a alors en procédant à des combinaisons linéaires des relations précédentes et en utilisant le théorème de Cayley-Hamilton :  $$O_{n}=A\chi_{A}(A)X=B\chi_{A}(B)Y.$$
+
+Comme $B$ est inversible, il vient en simplifiant $$\chi_{A}(B)Y=O_{n}.$$
+
+Cependant, par hypothèse, on a $$\chi_{A}(B)Y-\mbox{det}(A)Y=\chi_{A}(A)X-\mbox{det}(A)X=-\mbox{det}(A)X,$$ d'où l'on tire $$\mbox{det}(A)(X-Y)=O_{n}.$$
+
+Comme $A$ est inversible (i.e. $\mbox{det}(A)\neq 0$), il vient effectivement $\displaystyle X=Y.$
+
+\item Montrons que le choix de $n+1$ relations consécutives est optimal.\\
+
+En effet, pour le choix $$A= \left( \begin{array}{ll}
+1 & 0\\
+0 & 2
+\end{array} \right); B= \left( \begin{array}{ll}
+\frac{1}{2} & \frac{1}{4}\\
+1 & \frac{3}{2}
+\end{array}\right); X= \left( \begin{array}{ll}
+1 & 0\\
+1 & 0
+\end{array}\right) \mbox{ et }  Y= \left( \begin{array}{ll}
+2 & 0\\
+0 & 0
+\end{array}\right),$$ on a pour tout $k\in\{1,\ldots,n\},$ $\displaystyle A^{k}X=B^{k}Y$ où $A$ et $B$ sont inversibles et pourtant, $X\neq Y.$
+
+
+\end{enumerate}
