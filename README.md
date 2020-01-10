@@ -21,7 +21,7 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 2.
 
-- manque le premier exercice
+- premier exercice à relire par quelqu'un d'autre
 - deuxième exercice à relire
 
 ### Planche 3.
@@ -58,6 +58,7 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 11.
 
+- Calli rédige l'exercice principal
 - compléter la solution du 2e exercice : équivalent, développement asymptotique ?
 
 ### Planche 12.

@@ -1,4 +1,4 @@
-\chapter{}
+\chapter{Droite affine de matrices non inversibles}
 
 \section{Sujet}
 
@@ -8,6 +8,7 @@ Soit $n \geqslant 2$ un entier et $A,B \in \mathscr M_n(\mathbb R)$. Soit $(t_i)
     \item[(a)] pour tout $1 \leqslant i \leqslant n+1,\ \det(A+t_iB) = 0$
     \item[(b)] il existe $V,W$ deux sous espaces vectoriels de $\mathbb R^n$ tels que $A(V) \subset W,\ B(V) \subset W$ et $\dim W < \dim V$.
 \end{enumerate}
+
 \paragraph{Deuxième exercice}
 On considère
 $$
@@ -17,7 +18,24 @@ g(x) = \sum_{k=0}^{\infty} g_k x^k
 $$
 deux séries entières à coefficients strictement positifs de rayons de convergence respectifs $r_f$ et $r_g$.
 On suppose que $0 < r_f < r_g$ et que la suite $f_n/f_{n+1}$ converge.
-Montrer qu'il existe $a,b > 0$ tels que pour tout $n \geqslant 1$ on a $g_n \leqslant a f_n e^{-b_n}$.
+Montrer qu'il existe $a,b > 0$ tels que pour tout $n \geqslant 1$ on a $g_n \leqslant a f_n e^{-bn}$.
+
+\section{Solution de l'exercice}
+
+
+Supposons qu'on dispose de deux sous-espaces vectoriels $V,W$ tels que prescrits par l'assertion (b). Pour tout $t \in \mathbb R$, on obtient alors $(A+tB)(V) \subset W$ et le théorème du rang montre donc $V \cap \operatorname{Ker}(A+tB)$ est de dimension minorée par $1$. En particulier, $A+tB$ n'est pas inversible et son déterminant est donc nul.
+
+Supposons que (a) soit vérifiée. La fonction $t \mapsto \det(A + tB)$ étant polynomiale, de degré majoré par $n$, elle est alors nulle. Autrement dit, les matrices $A+tB$ sont non inversibles. Un exemple simple est le cas où $\operatorname{Ker}(A) \cap \operatorname{Ker}(B)$ est de dimension minorée par $1$. L'assertion (b) est alors satisfaite en prenant pour $V$ cette intersection et $W = \{0\}$. Supposons qu'on ne soit pas dans cette situation :  la matrice $B$ induit alors par restriction un isomorphisme de $\operatorname{Ker}(A)$ sur $B(\operatorname{Ker(A)})$.
+Soient $E'$ et $F'$ des supplémentaires respectifs de ces deux sous-espaces vectoriels dans $\mathbb R^n$. En considérant des bases adaptées aux décompositions $\mathbb R^n = \operatorname{Ker}(A)\oplus E'$ et $\mathbb R^n = B(\operatorname{Ker}(A))\oplus F'$, on dispose de matrices de passage $P,Q$  telles que :
+\[
+PAQ = \begin{pmatrix}0 & *\\0 & A'\end{pmatrix},
+\qquad
+PBQ = \begin{pmatrix}I & *\\0 & B'\end{pmatrix},
+\]
+où $A',B'$ sont des matrices de $\mathscr M_{n'}(\mathbb R)$ avec $n' = \dim(E') = \dim(F') < n$ car $\dim(\operatorname{Ker}(A)) \geqslant 1$.
+On constate alors que $\det(A' + t B') = 0$ pour tout $t\in\mathbb R$, ce qui permet de conclure par récurrence (le cas $n = 1$ est trivial). En effet, si $V',W'$ sont des sous-espaces vectoriels respectifs de $E'$ et $F'$ tels que $A'(V') \subset W'$, $B'(V') \subset W'$ et $\dim(W') < \dim(V')$, alors $A(V') \subset B(\operatorname{Ker}(A)) \oplus W'$ et de même pour $B(V')$, donc il suffit de poser $V = \operatorname{Ker}(A) \oplus V'$ et $W = B(\operatorname{Ker}(A)) \oplus W'$.
+
+\paragraph{Remarque} \textit{Via} le choix des bases, on identifie ici les matrices $A'$ et $B'$ avec les applications linéaires $x \mapsto \pi(A(x))$ et $x \mapsto \pi(B(x))$ de $E'$ vers $F'$, où $\pi$ est la projection sur $F'$ parallèlement à $B(\operatorname{Ker}(A))$. Le concept sous-jacent serait celui de passage au quotient, malheureusement hors-programme en CPGE.
 
 \section{Solution du deuxième exercice}
 
