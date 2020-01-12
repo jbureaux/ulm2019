@@ -2,6 +2,27 @@
 
 \section{Sujet}
 
-\paragraph{Exercice}
+\paragraph{Exercice 1.}
 
-\section{Solution}
+Soient $a, r : [0,\infty[ \to ]0, \infty[$ deux applications continues. On suppose qu'il existe $\varepsilon, M >0$ tels que $x-r(x) \geqslant \varepsilon$ pour tout $x \geqslant M$. On considère une fonction $y : \mathbb{R} \to \mathbb{R}$ dérivable sur $[0,\infty[$ et telle que 
+\[y'(x)=a(x)y(x-r(x)) \text{ pour } x \geqslant 0\,.\]
+Montrer que la fonction $F : x \mapsto y(x) \exp \left(-\int_0^xa(t)\,\mathrm{d}t\right)$ admet une limite finie quand $x \to \infty$. 
+
+\paragraph{Exercice 2.}
+
+Pour un groupe $G$, est-ce que $G$ est fini si et seulement si tous ses sous-groupes sont finis ? Est-ce que $G$ est fini si et seulement si tous ses sous-groupeps stricts sont finis ? 
+
+\section{Solutions}
+
+\paragraph{Exercice 1.}
+
+(Ce passage manque un peu de détails) On commence par remarquer que les valeurs de $y$ sur l'intervalle $]-\infty,0]$ déterminent les valeurs de $y$ sur $]0,\infty[$ car $r<0$. Pour le voir on peut écrire la version intégrale de l'équation différentielle retardée :
+\[y(x)=y(x_0)+\int_{x_0}^xa(t)y(t-r(t))\,\mathrm{d}t\,.\]
+
+Supposons d'abord que $y\geqslant 0$ sur $\mathbb{R}_-$. Alors on a $y \geqslant 0$ sur $\mathbb{R}_+$ d'après l'équation différentielle. La dérivée de $F$ vaut $F'(x)=a(x)(y(x-r(x))-y(x))\exp \left(-\int_0^x a(t)\,\mathrm{d}t\right)$ pour $x \geqslant 0$. Il nous faut donc étudier la position de $y(x-r(x))$ par rapport à $y(x)$. En effet, si on arrive a montrer que $y(x-r(x)-y(x)<0$ pour $x$ assez grand, on aura obtenu que $F$ est positive et ultimement décroissante, donc converge.
+
+Il se trouve que l'équation différentielle montre que $y$ est croissante sur $\mathbb{R}_+$ car $y$ est supposée positive, et comme pour $x$ assez grand, $x-r(x)>0$, cela montre que $y(x-r(x))-y(x)<0$ pour de tels $x$, d'où le résultat. 
+
+Pour le cas général, on écrit $y=y_+-y_-$ sur $]-\infty,0]$ où $y_-, y_+ \geqslant 0$ sont les parties négatives et positives de $y$. Ensuite on prolonge $y_-$ et $y_+$ sur $\mathbb{R}$ satisfaisant l'équation différentielle de l'énoncé. Enfin on se ramène au cas positif en écrivant $F=F_+-F_-$ avec $F_{\pm}(x)=y_{\pm}(x)\exp\left(-\int_0^xa(t)\,\mathrm{d}t\right)$.  
+
+\paragraph{Exercice 2.}

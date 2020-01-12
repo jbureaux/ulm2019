@@ -44,42 +44,42 @@ Sinon, les variables $X,Y$ sont presque sûrement égales à $0$ et le résultat
 
 \textbf{Remarque : } pour une variante plus quantitative du résultat...\\
 
-Il suffit de prouver le résultat pour des $x$ entiers car les variables aléatoires en jeu sont à valeurs dans $\mathbb{N}^{*}.$
+%Il suffit de prouver le résultat pour des $x$ entiers car les variables aléatoires en jeu sont à valeurs dans $\mathbb{N}^{*}.$
 
-On a clairement pur tout $n\gg1,$ $$\mathbb{P}(X\geq n+1)\leq \mathbb{P}(X\geq n).$$
+%On a clairement pur tout $n\gg1,$ $$\mathbb{P}(X\geq n+1)\leq \mathbb{P}(X\geq n).$$
 
-\begin{enumerate}
-    \item \underline{ On va d'abord supposer que $X$ et $Y$ sont à valeurs dans $\mathbb{N}^{*}.$}
+%\begin{enumerate}
+    %\item \underline{ On va d'abord supposer que $X$ et $Y$ sont à valeurs dans $\mathbb{N}^{*}.$}
 
 
-Soit $\varepsilon>0$ tel que $\varepsilon\ll1.$
+%Soit $\varepsilon>0$ tel que $\varepsilon\ll1.$
 
-Pour tout $n\gg1,$ on a alors $$\mathbb{P}(X+Y\geq n+1)\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) \mbox{ et } \mathbb{P}(X\geq n)\leq \varepsilon.$$ 
+%Pour tout $n\gg1,$ on a alors $$\mathbb{P}(X+Y\geq n+1)\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) \mbox{ et } \mathbb{P}(X\geq n)\leq \varepsilon.$$ 
 
-Ensuite, on a en conditionnant pour tout $n\gg1$ :
-\begin{align*}
-\mathbb{P}(X\geq n) & =\mathbb{P}(X\geq n;Y\in\{1,\ldots,n-1\})+\mathbb{P}(X\geq n;Y\geq n)\\
-\mbox{ et } \mathbb{P}(Y\geq n) & =\mathbb{P}(Y\geq n;X\in\{1,\ldots,n-1\})+\mathbb{P}(Y\geq n;X\geq n).
-\end{align*}
+%Ensuite, on a en conditionnant pour tout $n\gg1$ :
+%\begin{align*}
+%\mathbb{P}(X\geq n) & =\mathbb{P}(X\geq n;Y\in\{1,\ldots,n-1\})+\mathbb{P}(X\geq n;Y\geq n)\\
+%\mbox{ et } \mathbb{P}(Y\geq n) & =\mathbb{P}(Y\geq n;X\in\{1,\ldots,n-1\})+\mathbb{P}(Y\geq n;X\geq n).
+%\end{align*}
 
-Comme les Va $X$ et $Y$ sont i.i.d, il vient par somme des deux relations précédentes et pour tout $n\gg1$ :
-\begin{align*}
-2\mathbb{P}(X\geq n) & = \mathbb{P}\big([X\geq n;Y\in\{1,\ldots,n-1\}]\cup[Y\geq n;X\in\{1,\ldots,n-1\}] \big)\\
-&+2\mathbb{P}^{2}(X\geq n)\\
-& \leq \mathbb{P}(X+Y\geq n+1)+2\mathbb{P}^{2}(X\geq n)\\
-& \mbox{ car l'union des évènements en jeu est incluse dans } [X+Y\geq n+1]\\ 
-&\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) +2\varepsilon \mathbb{P}(X\geq n).
-\end{align*}
+%Comme les Va $X$ et $Y$ sont i.i.d, il vient par somme des deux relations précédentes et pour tout $n\gg1$ :
+%\begin{align*}
+%2\mathbb{P}(X\geq n) & = \mathbb{P}\big([X\geq n;Y\in\{1,\ldots,n-1\}]\cup[Y\geq n;X\in\{1,\ldots,n-1\}] \big)\\
+%&+2\mathbb{P}^{2}(X\geq n)\\
+%& \leq \mathbb{P}(X+Y\geq n+1)+2\mathbb{P}^{2}(X\geq n)\\
+%& \mbox{ car l'union des évènements en jeu est incluse dans } [X+Y\geq n+1]\\ 
+%&\leq 2(1+\varepsilon)\mathbb{P}(X\geq n+1) +2\varepsilon \mathbb{P}(X\geq n).
+%\end{align*}
 
-Il vient alors pour tout $n\gg 1,$ $$\mathbb{P}(X\geq n)\leq \frac{1+\varepsilon}{1-\varepsilon}\mathbb{P}(X\geq n+1).$$
+%Il vient alors pour tout $n\gg 1,$ $$\mathbb{P}(X\geq n)\leq \frac{1+\varepsilon}{1-\varepsilon}\mathbb{P}(X\geq n+1).$$
 
-Et ainsi, on a effectivement $\displaystyle \mathbb{P}(X\geq n)\sim_{n\rightarrow +\infty} \mathbb{P}(X\geq n+1).$
+%Et ainsi, on a effectivement $\displaystyle \mathbb{P}(X\geq n)\sim_{n\rightarrow +\infty} \mathbb{P}(X\geq n+1).$
 
-\item \underline{Il reste maintenant à traiter le cas où $X,Y$ sont à valeurs dans $\mathbb{N}.$}
+%\item \underline{Il reste maintenant à traiter le cas où $X,Y$ sont à valeurs dans $\mathbb{N}.$}
 
-Il s'agit juste d'observer dans la preuve précédente une "sorte de compensation" (bootstrap).
+%Il s'agit juste d'observer dans la preuve précédente une "sorte de compensation" (bootstrap).
 
-Soit $\varepsilon>0$ tel que $\varepsilon\ll1$ tel que $\displaystyle P(X=0):=c<1-\varepsilon$ (ce qui est possible si $X$ n'est pas supposée constante ce qui est un cas immédiat!).
+Soit $\varepsilon>0$ tel que $\varepsilon\ll1$ et vérifiant $\displaystyle P(X=0):=c<1-\varepsilon$ (ce qui est possible si $X$ n'est pas supposée constante, ce dernier cas se traitant immédiatement).
 
 On note alors $\displaystyle l=1-c-\varepsilon>0.$
 
@@ -107,8 +107,8 @@ Comme $\displaystyle \mathbb{P}(X\geq n)-\mathbb{P}(X\geq n+1)=\mathbb{P}(X=n),$
 
 Il vient alors pour tout $n\gg 1,$ $$ \mathbb{P}(X=n)\leq \frac{2\varepsilon}{l}\mathbb{P}(X\geq n+1).$$
 
-En écrivant $$\mathbb{P}(X\geq n)=\mathbb{P}(X=n)+\mathbb{P}(X\geq n+1)\leq \left(1+\frac{2\varepsilon}{l}\right)\mathbb{P}(X\geq n+1),$$ on obtient effectivement $$\mathbb{P}(X\geq n)\sim_{n\rightarrow +\infty} \mathbb{P}(X\geq n+1).$$
-\end{enumerate}
+En écrivant $$\mathbb{P}(X\geq n)=\mathbb{P}(X=n)+\mathbb{P}(X\geq n+1)\leq \left(1+\frac{2\varepsilon}{l}\right)\mathbb{P}(X\geq n+1),$$ on obtient effectivement $$\mathbb{P}(X\geq n)\sim \mathbb{P}(X\geq n+1).$$
+%\end{enumerate}
 
 \paragraph{Deuxième exercice}
 
@@ -116,7 +116,7 @@ L'exercice fait appel au caractère multiplicatif des fonctions arithmétiques e
 
 Notons pour $n\geq 1,$ $\displaystyle g(n)=\sum_{d|n}f(d).$ 
 
-La fonction $g$ est multiplicative i.e. si $a,b\geq 1$ et vérifie $a\wedge b=1$ alors $\displaystyle g(ab)=g(a)g(b)$ (ceci découle du lemme de Gauss).
+La fonction $g$ est multiplicative i.e. si $a,b\geq 1$ sont tels que $a\wedge b=1$ alors $\displaystyle g(ab)=g(a)g(b)$ (ceci découle du lemme de Gauss).
 
 Soit $p\in \mathbb{P}.$ 
 

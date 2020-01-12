@@ -49,64 +49,64 @@ Cette écriture étant unique, on a : $$\mathbb{P}(Z_{\alpha}=t)=\mathbb{P}\left
 Ainsi, pour tout $t\in\mathbb{R}$ (dinstinguer les cas $t\in K_{\alpha}$ et $t\notin K_{\alpha}$) : $$\lim_{x\rightarrow t^{+}}F_{\alpha}(x)-\lim_{x\rightarrow t^{-}}F_{\alpha}(x)=P(Z_{\alpha}=t)=0$$ et $F_{\alpha}$ est ainsi continue.\\ 
 
 
-***Pour une preuve plus directe, on peut aussi procéder ainsi.
+%***Pour une preuve plus directe, on peut aussi procéder ainsi.
 
-\underline{Continuité de $F_{\alpha}$ lorsque $\alpha\in]0,\alpha_{0}[$} 
+%\underline{Continuité de $F_{\alpha}$ lorsque $\alpha\in]0,\alpha_{0}[$} 
 
-où $0<\alpha_{0}<\frac{1}{2}$ est à déterminer!
+%où $0<\alpha_{0}<\frac{1}{2}$ est à déterminer!
 
-\textbf{Remarque :} Le point clé est d'obtenir la continuité des $F_{\alpha}$ lorsque $\alpha\in]0,l[$ pour un certain $0<l<1.$
+%\textbf{Remarque :} Le point clé est d'obtenir la continuité des $F_{\alpha}$ lorsque $\alpha\in]0,l[$ pour un certain $0<l<1.$
 
-Soit $t\in\mathbb{R}.$
-\begin{itemize}
-\item \underline{ou $t\notin K_{\alpha}$: } 
+%Soit $t\in\mathbb{R}.$
+%\begin{itemize}
+%\item \underline{ou $t\notin %K_{\alpha}$: } 
 
-vu que $K_{\alpha}$ est compact alors $\displaystyle d(t,K_{\alpha})>0$ et alors il existe $0<\varepsilon\ll1$ tel que $\displaystyle [t-\varepsilon,t+\varepsilon]\cap K_{\alpha}=\emptyset.$
+%vu que $K_{\alpha}$ est compact alors $\displaystyle d(t,K_{\alpha})>0$ et alors il existe $0<\varepsilon\ll1$ tel que $\displaystyle [t-\varepsilon,t+\varepsilon]\cap K_{\alpha}=\emptyset.$
 
-Ainsi, pour tout $\vert h\vert \leq \varepsilon,$ on a $\displaystyle F_{\alpha}(t+h)=F_{\alpha}(t)$ et donc $F_{\alpha}$ est continue en $t$ (car localement constante dans un voisinage de $t$).
+%Ainsi, pour tout $\vert h\vert \leq \varepsilon,$ on a $\displaystyle F_{\alpha}(t+h)=F_{\alpha}(t)$ et donc $F_{\alpha}$ est continue en $t$ (car localement constante dans un voisinage de $t$).
 
-\item \underline{ou $t\in K_{\alpha}$ :} 
+%\item \underline{ou $t\in K_{\alpha}$ :} 
 
-Soit $l\gg1.$ On écrit alors $\displaystyle t=\sum_{k\geq 0}\alpha^{k}\varepsilon_{k}=\sum_{k=0}^{l}\alpha^{k}\varepsilon_{k}+\sum_{k\geq l+1}\alpha^{k}\varepsilon_{k}:=\tilde{t}+\sum_{k\geq l+1}\alpha^{k}\varepsilon_{k}$ où pour tout $k\geq 0,$ $\varepsilon_{k}\in\{-1,1\}.$
+%Soit $l\gg1.$ On écrit alors $\displaystyle t=\sum_{k\geq 0}\alpha^{k}\varepsilon_{k}=\sum_{k=0}^{l}\alpha^{k}\varepsilon_{k}+\sum_{k\geq l+1}\alpha^{k}\varepsilon_{k}:=\tilde{t}+\sum_{k\geq l+1}\alpha^{k}\varepsilon_{k}$ où pour tout $k\geq 0,$ $\varepsilon_{k}\in\{-1,1\}.$
 
-Soit $\displaystyle \vert h \vert \leq \frac{\alpha^{l+1}}{1-\alpha}.$ On a alors : 
-\begin{align*}
-\vert F_{\alpha}(t+h)-F_{\alpha}(t)\vert & \leq \mathbb{P}\left( \vert X_{\alpha} -t\vert \leq \frac{\alpha^{l+1}}{1-\alpha} \right)\\
-& \leq \mathbb{P}\left( \vert X_{\alpha}-\tilde{t}\vert \leq \frac{2\alpha^{l+1}}{1-\alpha} \right)\\
-& \mbox{ par l'inégalité triangulaire, en majorant le reste } \vert t-\tilde{t}\vert\\
-& := \mathbb{P}(A_{l}).
-\end{align*}
+%Soit $\displaystyle \vert h \vert \leq \frac{\alpha^{l+1}}{1-\alpha}.$ On a alors : 
+%\begin{align*}
+%\vert F_{\alpha}(t+h)-F_{\alpha}(t)\vert & \leq \mathbb{P}\left( \vert X_{\alpha} -t\vert \leq \frac{\alpha^{l+1}}{1-\alpha} \right)\\
+%& \leq \mathbb{P}\left( \vert X_{\alpha}-\tilde{t}\vert \leq \frac{2\alpha^{l+1}}{1-\alpha} \right)\\
+%& \mbox{ par l'inégalité triangulaire, en majorant le reste } \vert t-\tilde{t}\vert\\
+%& := \mathbb{P}(A_{l}).
+%\end{align*}
 
-\item Montrons que $\displaystyle A_{l}\subset \bigcap_{k=0}^{l}\{ X_{k}=\varepsilon_{k} \}$. 
+%\item Montrons que $\displaystyle A_{l}\subset \bigcap_{k=0}^{l}\{ X_{k}=\varepsilon_{k} \}$. 
 
-Supposons que ce ne soit pas le cas. 
+%Supposons que ce ne soit pas le cas. 
 
-Il existe alors une réalisation $\omega\in A_{l}$ et un indice $k\in\{0,\ldots,l\}$ tel que $X_{k}(\omega)\neq \varepsilon_{k}(\omega).$ 
+%Il existe alors une réalisation $\omega\in A_{l}$ et un indice $k\in\{0,\ldots,l\}$ tel que $X_{k}(\omega)\neq \varepsilon_{k}(\omega).$ 
 
-On note alors $k_{0}$ l'indice minimal vis à vis de cette dernière propriété.
+%On note alors $k_{0}$ l'indice minimal vis à vis de cette dernière propriété.
 
-On obtient alors par l'inégalité triangulaire inversée, la chaîne suivante d'inégalités :
-$$2\alpha^{k_{0}}-\frac{2\alpha^{k_{0}+1}}{1-\alpha}\leq \vert X_{\alpha}(\omega)-\tilde{t}\vert \leq \frac{2\alpha^{l+1}}{1-\alpha}.$$
-Il vient alors en simplifiant $\displaystyle \alpha^{l+1-k_{0}}\geq 1-2\alpha.$
+%On obtient alors par l'inégalité triangulaire inversée, la chaîne suivante d'inégalités :
+%$$2\alpha^{k_{0}}-\frac{2\alpha^{k_{0}+1}}{1-\alpha}\leq \vert X_{\alpha}(\omega)-\tilde{t}\vert \leq \frac{2\alpha^{l+1}}{1-\alpha}.$$
+%Il vient alors en simplifiant $\displaystyle \alpha^{l+1-k_{0}}\geq 1-2\alpha.$
 
-Comme $k_{0}\in\{0,\ldots,l\},$ on a la minoration suivante : $\displaystyle \alpha^{l+1-k_{0}}\leq \alpha$ (vu que $\alpha\in]0,1[).$
+%Comme $k_{0}\in\{0,\ldots,l\},$ on a la minoration suivante : $\displaystyle \alpha^{l+1-k_{0}}\leq \alpha$ (vu que $\alpha\in]0,1[).$
 
-Mais alors, on obtient $\displaystyle 3\alpha-1\geq 0.$ Ceci est impossible, si on pose $\alpha_{0}:=\frac{1}{3}$ et si on choisit $\alpha\in]0,\alpha_{0}[.$
+%Mais alors, on obtient $\displaystyle 3\alpha-1\geq 0.$ Ceci est impossible, si on pose $\alpha_{0}:=\frac{1}{3}$ et si on choisit $\alpha\in]0,\alpha_{0}[.$
 
-On obtient  ainsi
-\begin{align*}
-\vert F_{\alpha}(t+h)-F_{\alpha}(t)\vert & \leq   \mathbb{P}\left( \bigcap_{k=0}^{l-1}\{ X_{k}=\varepsilon_{k} \} \right)\\
-& \leq \frac{1}{2^{l}} \mbox{ par indépendance des va en jeu.}
-\end{align*}
+%On obtient  ainsi
+%\begin{align*}
+%\vert F_{\alpha}(t+h)-F_{\alpha}(t)\vert & \leq   \mathbb{P}\left( \bigcap_{k=0}^{l-1}\{ X_{k}=\varepsilon_{k} \} \right)\\
+%& \leq \frac{1}{2^{l}} \mbox{ par indépendance des va en jeu.}
+%\end{align*}
 
-Ainsi, $F_{\alpha}$ est continue en $t$ (il est alors aisé à ce stade de vérifier la définition de la continuité de $F_{\alpha}$ au point $t$).
+%Ainsi, $F_{\alpha}$ est continue en $t$ (il est alors aisé à ce stade de vérifier la définition de la continuité de $F_{\alpha}$ au point $t$).
 
-Ainsi, $F_{\alpha}$ est continue sur $\mathbb{R}$ et donc $\mu_{\alpha}$ est sans atomes.
+%Ainsi, $F_{\alpha}$ est continue sur $\mathbb{R}$ et donc $\mu_{\alpha}$ est sans atomes.
 
-\textbf{Remarque  :} Enfin, on peut optimiser la preuve précédente pour la faire fonctionner pour tout $\alpha<\frac{1}{2}$ (et pas seulement dans un voisinage de $0$).
+%\textbf{Remarque  :} Enfin, on peut optimiser la preuve précédente pour la faire fonctionner pour tout $\alpha<\frac{1}{2}$ (et pas seulement dans un voisinage de $0$).
 
-Avec les notations précédentes, il suffit de prouver l'inclusion $\displaystyle A_{l}\subset \bigcap_{k=0}^{l+1-B}\{X_{k}=\varepsilon_{k}\}$ où $B$ est un entier suffisamment grand de manière à avoir $\displaystyle\alpha^{B}\leq \varepsilon$ alors que $\displaystyle \alpha\leq \frac{1-\varepsilon}{2}.$
-\end{itemize}
+%Avec les notations précédentes, il suffit de prouver l'inclusion $\displaystyle A_{l}\subset \bigcap_{k=0}^{l+1-B}\{X_{k}=\varepsilon_{k}\}$ où $B$ est un entier suffisamment grand de manière à avoir $\displaystyle\alpha^{B}\leq \varepsilon$ alors que $\displaystyle \alpha\leq \frac{1-\varepsilon}{2}.$
+%\end{itemize}
 
 \item \underline{Astuce de convolution}
 

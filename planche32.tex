@@ -13,9 +13,10 @@ $$f(a)=\sum_{k\geq 0}\frac{f^{(k)}(x)}{k!}(a-x)^{k}.$$
 
 \textbf{Remarque :} On peut remarquer que la série précédente est absolument convergente pour tout $a\in \mathbb{R},$ car : $$\vert \frac{f^{(k)}(x)}{k!}(a-x)^{k}\vert \sim \frac{\vert g(x) \vert }{k!}\vert x-a\vert^{k},$$ qui est manifestement le terme général d'une série convergente. 
 
-Ainsi, $f$ est DSE en tout point et le rayon de convergence de sa série de Taylor est infini en tout point (et la somme de sa série de Taylor ne peut être que $f$). Ce dernier point n'est d'ailleurs pas si immédiat et nécessite à ma connaissance l'utilisation du théorème de Baire : cette remarque constitue un théorème du à Pringsheim dont une preuve rapide (due à W. Rudin) est fondée sur une variante affaiblie d'un théorème de Bernstein (cf planche 6).
+Ainsi, $f$ est DSE en tout point et le rayon de convergence de sa série de Taylor est infini en tout point (et la somme de sa série de Taylor ne peut être que $f$).\\
+%Ce dernier point n'est d'ailleurs pas si immédiat et nécessite à ma connaissance l'utilisation du théorème de Baire : cette remarque constitue un théorème du à Pringsheim dont une preuve rapide (due à W. Rudin) est fondée sur une variante affaiblie d'un théorème de Bernstein (cf planche 6).
 
-Ainsi, on note encore la limite de la série de Taylor notée (a priori) abusivement $f.$\\
+%Ainsi, on note encore la limite de la série de Taylor notée $f.$\\
 
 Soit $\varepsilon>0.$
 
@@ -33,35 +34,35 @@ Puis, en faisant tendre $\varepsilon$ vers $0,$ il vient : $$\lim_{a\rightarrow 
 
 Comme ce raisonnement est vrai pour tout $x,$ on obtient par unicité des limites $$\forall x\in \mathbb{R},\mbox{ } g(x)e^{-x}=g(0) \mbox{ i.e. } g(x)=g(0)e^{x}.$$
 
-\textbf{Remarque : } On peut également traiter un énoncé légèrement modifié où la fonction $f$ est seulement supposée $C^{\infty}$ mais la limite simple $g$ un peu plus régulière...
+%\textbf{Remarque : } On peut également traiter un énoncé légèrement modifié où la fonction $f$ est seulement supposée $C^{\infty}$ mais la limite simple $g$ un peu plus régulière...
 
-On va utiliser le lemme de Baire et aussi supposer que $g$ est $C^{1}$... 
+%On va utiliser le lemme de Baire et aussi supposer que $g$ est $C^{1}$... 
 
-\begin{itemize}
-\item Soit $R>0.$
+%\begin{itemize}
+%\item Soit $R>0.$
 
-Notons pour $n\geq 1,$ $$A_{n}=\left\{x \in  [-R,R]\mbox{ }|\mbox{ } \forall k\geq 0,\mbox{ } \vert f^{(k)}(x)\vert \leq n \right\}.$$
+%Notons pour $n\geq 1,$ $$A_{n}=\left\{x \in  [-R,R]\mbox{ }|\mbox{ } \forall k\geq 0,\mbox{ } \vert f^{(k)}(x)\vert \leq n \right\}.$$
 
-Par continuité de chacune des applications $f^{(k)},$ $A_{n}$ est donc un fermé de $[-R,R].$
+%Par continuité de chacune des applications $f^{(k)},$ $A_{n}$ est donc un fermé de $[-R,R].$
 
-Comme $\displaystyle \bigcup_{n\geq 1}A_{n}=[-R,R],$ il existe $n_{0}$ tel que $A_{n_{0}}$ soit d'intérieur non vide et même, à nouveau par une application du lemme de Baire, $\mathcal{U}:=\displaystyle \bigcup_{n\geq 1}\mbox{Int}(A_{n})$ est un ouvert dense de $[-R,R].$
+%Comme $\displaystyle \bigcup_{n\geq 1}A_{n}=[-R,R],$ il existe $n_{0}$ tel que $A_{n_{0}}$ soit d'intérieur non vide et même, à nouveau par une application du lemme de Baire, $\mathcal{U}:=\displaystyle \bigcup_{n\geq 1}\mbox{Int}(A_{n})$ est un ouvert dense de $[-R,R].$
 
-\item Soit $x\in\mathcal{U}.$ 
+%\item Soit $x\in\mathcal{U}.$ 
 
-Il existe alors $r>0$ tel que $I_{x}:=[x-r,x+r]\subset A_{n}$ pour un certain $n\geq 1.$
+%Il existe alors $r>0$ tel que $I_{x}:=[x-r,x+r]\subset A_{n}$ pour un certain $n\geq 1.$
 
-Soit $y\in I_{x}.$ 
+%Soit $y\in I_{x}.$ 
 
-On a alors pour tout $k\geq 0,$ $$f^{(k)}(y)-f^{(k)}(x-r)=\int_{x-r}^{y}f^{(k+1)}(t)dt.$$ Par convergence dominée, on obtient alors $\displaystyle g(y)-g(x-r)=\int_{x-r}^{y}g(t)dt.$
+%On a alors pour tout $k\geq 0,$ $$f^{(k)}(y)-f^{(k)}(x-r)=\int_{x-r}^{y}f^{(k+1)}(t)dt.$$ Par convergence dominée, on obtient alors $\displaystyle g(y)-g(x-r)=\int_{x-r}^{y}g(t)dt.$
 
-Il vient alors en dérivant la relation précédente : $g'(y)=g(y).$ 
+%Il vient alors en dérivant la relation précédente : $g'(y)=g(y).$ 
 
-\item On a alors $g'=g$ sur $\mathcal{U}.$ Comme $g$ est $C^{1}$ et que l'ouvert $\mathcal{U}$ est dense dans $[-R,R],$ on obtient $g'=g$ sur $[-R,R].$
+%\item On a alors $g'=g$ sur $\mathcal{U}.$ Comme $g$ est $C^{1}$ et que l'ouvert $\mathcal{U}$ est dense dans $[-R,R],$ on obtient $g'=g$ sur $[-R,R].$
 
-Le raisonnement précédent étant valide pour tout $R>0,$ on a alors $g'=g$ sur $\mathbb{R}.$
+%Le raisonnement précédent étant valide pour tout $R>0,$ on a alors $g'=g$ sur $\mathbb{R}.$
 
-Et ainsi, il existe $\lambda\in \mathbb{C}$ tel que pour tout $x\in\mathbb{R},$ $\displaystyle g(x)=\lambda e^{x}.$
-\end{itemize}
+%Et ainsi, il existe $\lambda\in \mathbb{C}$ tel que pour tout $x\in\mathbb{R},$ $\displaystyle g(x)=\lambda e^{x}.$
+%\end{itemize}
 
 \section{Solution du deuxième exercice}
 

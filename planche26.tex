@@ -10,7 +10,7 @@ On renvoie à la preuve "récente" de B. Nica (inspirée de la simplification de
 
 https://arxiv.org/pdf/1306.2380.pdf.\\
 
-Soit $f : E \rightarrow F$ une isométrie surjective entre deux espaces vectoriels normés réels : $(E,\|.\|{E})$ et $(F,\|.\|_{F}).$
+Soit $f : E \rightarrow F$ une isométrie surjective entre deux espaces vectoriels normés réels : $(E,\|.\|_{E})$ et $(F,\|.\|_{F}).$
 
 On fixe $x,y$ deux points $E$ et on considère le \emph{défaut affine} de $f$ $$A(f)=\|f(\frac{x+y}{2})-\frac{f(x)+f(y)}{2}\|_{F}.$$
 
@@ -40,9 +40,9 @@ Comme $f$ est continue (car $1-$lipschitzienne vu que $f$ est une isométrie), o
 Ainsi, quitte à changer $f$ en $f-f(0),$ $f$ est alors linéaire (les détails de ce fait étant quasi-immédiats... Tout se résume à montrer l'"imparité" de $f$).\\
 
 
-\textbf{Remarque1 :} La surjectivité est \emph{nécessaire} (même si avec l'hypothèse que l'espace de Banach à l'arrivée a une norme strictement convexe, la conclusion du théorème reste vraie) pour pouvoir conclure au caractère affine (ou linéaire à normalisation près...) de l'isométrie.\\
+\textbf{Remarque 1 :} La surjectivité est \emph{nécessaire} (même si lorsque l'espace de Banach à l'arrivée a une norme strictement convexe, la conclusion du théorème reste vraie) pour pouvoir conclure au caractère affine (ou linéaire à normalisation près...) de l'isométrie.\\
 
-Montrons \textbf{le théorème de plongement de Kuratowski.}\\
+A cet effet, montrons \textbf{le théorème de plongement de Kuratowski.}\\
 
 Soit $(E,\|.\|)$ un espace de Banach séparable.
 
@@ -53,8 +53,9 @@ Et, prenons un point $y$ quelconque de $E.$
 Considérons alors l'application $\displaystyle \phi : E \rightarrow l^{\infty}(\mathbb{N})$ telle que pour $x\in E,$ $$\phi(x)=(\|x-x_{n}\|-\|y-x_{n}\|)_{n\geq 0}.$$
 
 L'application $\phi$ est alors une \underline{isométrie} qui n'est manifestement ni affine et encore moins linéaire!
-Tout simplement car $\phi$ n'a aucune raison d'être \underline{surjective}!\\
+Tout simplement car $\phi$ n'a aucune raison d'être \underline{surjective}! 
+Tout simplement car il existe des espaces de Banach qui ne sont pas isomorphe à $\ell^{\infty}$...\\
 
-\textbf{Remarque2 : } Le théorème n'est valide que pour les $\mathbb{R}-$espaces vectoriels. 
+\textbf{Remarque 2 : } Le théorème n'est valide que pour les $\mathbb{R}-$espaces vectoriels. 
 
 En effet, la conjugaison complexe est une isométrie surjective mais n'est ni une application affine ni une application linéaire (on parle plutôt de transformation anti-affine ou anti-linéaire).   

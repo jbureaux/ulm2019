@@ -6,7 +6,7 @@
 
 On lance une pièce équilibrée jusqu'à ce que le nombre de « piles » soit égal au double du nombre de « faces ». Quelle est la probabilité qu'on ne s'arrête jamais ?
 
-\section{Solution}
+\section{Solution} % Siméon
 
 Considérons une suite infinie de lancers de la pièce, mutuellement indépendants. Posons $S_0 = 0$ puis, pour tout $n \in \mathbb N^*$, notons $S_n$ la différence entre le nombre de piles et le double du nombre de faces parmi les $n$ premiers lancers. Les variables aléatoires $X_n = S_n - S_{n-1}$ sont mutuellement indépendantes et suivent la loi uniforme sur $\{1,-2\}$. L'exercice demande de calculer la probabilité $p$ définie par :
 \[
@@ -37,7 +37,6 @@ et le même raisonnement permet d'établir les relations de récurrence suivante
 u(x) = \frac12 u(x-1) + \frac12 u(x+2).
 \]
 
-%\subsection{Deux suites récurrentes linéaires}
 Les suites $(u(x))_{x \geqslant 0}$ et $(u(x))_{x \leqslant 1}$ sont donc récurrentes linéaires d'ordre $3$, de même équation caractéristique
 $t^3 - 2t + 1 = 0$, qui admet trois racines distinctes :
 \[

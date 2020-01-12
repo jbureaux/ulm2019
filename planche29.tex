@@ -2,6 +2,32 @@
 
 \section{Sujet}
 
+\section{Solution du premier exercice}
+
+%Preuve fausse (à modifier!) On peut prouver que l'ensemble des $u_{0}$ admissible est un ouvert dense de $\mathbb{R}^{n}$ en utilisant le théorème de Baire.
+
+%A cet effet, raisonnons par l'absurde en supposant que pour n'importe quelle condition initiale $u_{0}\in \mathbb{R}^{n},$ on a pour tout $n\in \mathbb{N}^{*}$ qu'il existe une paire d'indices $(i_{n},j_{n})\in \mathbb{N}^{2}$ telle que $i_{n}+j_{n}=n$ et vérifiant que la suite $\displaystyle u_{n}=A^{i_{n}}B^{j_{n}}u_{0}$ est bornée.
+
+%Fixons $N\in \mathbb{N}^{*}$ (les matrices en jeu sont en particulier inversibles). 
+%Introduisons alors pour un couple $(i,j)\in \mathbb{N}^{2}$ tel que $i+j\geq 1,$ l'ensemble fermé suivant :   $$C_{i,j}(N)=\left\{u\in \mathbb{R}^{n}\mbox{ }|\mbox{ } \|A^{i}B^{j}u\|\leq N\right\}.$$
+
+%Pour $n\geq 1,$ on sait alors -comme union finie de fermés- que $\displaystyle \bigcup_{i+j=n}C_{i,j}(N)$ est un fermé.
+%Comme intersection de fermés, on sait alors que l'ensemble $\displaystyle D(N):=\bigcap_{n\geq 1}\bigcup_{i+j=n}C_{i,j}(N)$ est un fermé.
+%Or, par hypothèse, on sait également  $\displaystyle \bigcup_{N\geq 1}D(N)=\mathbb{R}^{n}.$
+%Ainsi, par le théorème de Baire, il existe $N_{0}\in\mathbb{N}^{*}$ tel que $\mbox{int}(D(N))\neq \emptyset.$
+
+%On considère alors une boule $B(u_{0},\varepsilon)\subset D(N_{0})$ où $\varepsilon>0$ et $u_{0}\in D(N_{0}).$
+
+%On dispose alors pour tout $n\in \mathbb{N}^{*}$ d'une paire d'indices $(i_{n},j_{n})\in \mathbb{N}^{2}$ telle que $i_{n}+j_{n}=n$ et vérifiant $\displaystyle \|u_{n}=A^{i_{n}}B^{j_{n}}u_{0}\|\leq N_{0}.$
+
+%Une telle boule contient à dilatation et translation près la base canonique de $\mathbb{R}^{n}$ : $\displaystyle (e_{1},\ldots,e_{n})$ vérifiant pour pour tout $k\in \{1,\ldots,n\}$ et pour tout $(i,j)\in \mathbb{N}^{2}$ tel que $i+j\geq 1$ : $$\|A^{i}B^{j}e_{k}\|\leq \frac{2N_{0}}{\varepsilon}.$$
+
+%Il vient alors par l'inégalité d'Hadamard, pour tout $(i,j)\in \mathbb{N}^{2}$ tel que $i+j\geq 1$ :  : $$\mbox{det}(A)^{i}\times \mbox{det}(B)^{j}\leq \left(\frac{2N_{0}}{\varepsilon}\right)^{n}.$$
+
+%Mais alors pour $i+j\gg 1,$ ceci est une contradiction car $\mbox{det}(A),\mbox{det}(B)>1.$
+
+
+
 \section{Solution du deuxième exercice}
 
 Par le théorème des valeurs intermédiaires, il existe de proche en proche une suite de points de $[0,1]^{n+1}$ vérifiant : $0=x_{0}<\ldots<x_{n}=1$ telle que pour tout $k\in\{0,\ldots,n\},$ $\displaystyle f(x_{k})=\frac{k}{n}.$

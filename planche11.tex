@@ -1,9 +1,52 @@
-\chapter{Planche 11}
+\chapter{Partitions impossibles du plan}
 
 \section{Sujet}
 
+\paragraph{Premier exercice}
+Montrer qu'il n'est pas possible de partitionner le plan $\mathbb{R}^2 $ en une union disjointe de cercles de rayon strictement positif.\\
+La question suivante a été parfois posée lorsque la première question a été traitée : par définition, une triade est un sous-ensemble de $\mathbb{R}^2 $ homéomorphe à l'union de trois segments reliant le point $(0, 0)$ aux points $(0, 1)$, $(1, 0)$ et $(1, 1)$. Montrer que $\mathbb{R}^2 $ ne peut pas être partitionné en une union disjointe de triades.
+
 \paragraph{Deuxième exercice}
 Pour $n \geqslant 3$, on note $u_n$ la plus petite solution de l'équation $x = n \ln(x)$ pour $x \in \mathbb R_+^*$. Étudier $u_n$.
+
+\section{Solution du premier exercice (I)} % Calli
+
+Supposons par l'absurde que $\mathbb{R}^2 $ peut être partitionné en cercles non ponctuels. Notons, pour tous $a\in \mathbb{R}^2 $ et $r\geqslant 0$, $\mathscr{C}(a,r)$ le cercle centré en $a$ et de rayon $r$. Construisons par récurrence deux suites $(a_{n} )\in (\mathbb{R}^2 )^{\mathbb{N}}$ et $(r_{n} ) \in  (\mathbb{R}_+^*)^{\mathbb{N}}$ telles que pour tout $n$ :
+\begin{itemize}
+	\item $\mathscr{C}(a_{n} ,r_{n} )$ est dans la partition,
+	\item $B(a_{n+1},r_{n+1}) \subset B(a_{n} ,r_{n} )$,
+	\item et $r_{n+1} <  r_{n} /2$.
+\end{itemize}
+\begin{enumerate}
+	\item On commence par poser respectivement $a_{0}$ et $r_{0}$ le centre et le rayon d'un cercle quelconque de notre partition.
+	\item Puis, si $a_{0} ,\dots ,a_{n}$ et $r_{1} ,\dots ,r_{n}$ sont construits, on pose respectivement $a_{n+1}$ et $r_{n+1}$ le centre et le rayon du cercle de la partition contenant $a_{n}$.\\
+	Montrons que $\mathscr{C}(a_{n+1} ,r_{n+1} )\subset B(a_{n} ,r_{n} )$. Nous savons que $\mathscr{C}(a_{n+1} ,r_{n+1} )$ et $\mathscr{C}(a_{n} ,r_{n} )$ sont disjoints. Donc $\mathscr{C}(a_{n+1} ,r_{n+1} )\not\subset B(a_{n} ,r_{n} )$ impliquerait que l'ensemble \[\mathscr{C}(a_{n+1} ,r_{n+1} ) \cap  B(a_{n} ,r_{n} ) = \mathscr{C}(a_{n+1} ,r_{n+1} ) \cap  \overline{B}(a_{n} ,r_{n} )\] est un ouvert-fermé de $\mathscr{C}(a_{n+1} ,r_{n+1} )$ différent de $\mathscr{C}(a_{n+1} ,r_{n+1} )$, ce qui rentre en contradiction avec la connexité de $\mathscr{C}(a_{n+1} ,r_{n+1} )$. D'où l'affirmation.\\
+	Ceci implique $r_{n+1} <  r_{n} /2$ et $B(a_{n+1},r_{n+1}) \subset B(a_{n} ,r_{n} )$.
+\end{enumerate}
+Ainsi, la suite $(a_{n} )$ est de Cauchy car, en notant $m_{\varepsilon } =\left\lceil \log_{2} \!\left(\frac{2r_{0} }{\varepsilon } \right) \right\rceil$, on a : \[\forall \varepsilon >0, \forall p\geqslant n\geqslant m_{\varepsilon } , \|a_{n} - a_{p} \|\leqslant \|a_{n} - a_{m_{\varepsilon }} \|+ \|a_{m_{\varepsilon }} - a_{p} \| \leqslant  2\, \frac{r_{0} }{2^{m_{\varepsilon }}} \leqslant  \varepsilon \]
+Soit $\mathscr{C}(a,r)$ le cercle de la partition contenant la limite de $(a_{n} )$. Alors, par le même argument de connexité, $\mathscr{C}(a,r)\subset B(a_{n} ,r_{n} )$ et $r\leqslant r_{n}$ pour tout $n$. Or, puisque $r_{n} \longrightarrow  0$, on a $r=0$. C'est absurde.
+
+\section{Solution du premier exercice (II)} % Calli
+
+Supposons par l'absurde que $\mathbb{R}^2 $ peut être partitionné en un ensemble $\mathcal{T}$ de triades. On commence par montrer que cette partition est dénombrable. Pour cela on va construire une application $\Phi  : \mathcal{T} \rightarrow \mathbb{Q}^7$ presque injective. On appelle $T_{0}$ la triade standard $[OA]\cup [OB]\cup [OC]$ où $O,A,B,C$ sont les points du plan de coordonnées respectives $(0,0),(0,1),(1,0)$ et $(1,1)$.\\
+
+Soient $T\in \mathcal{T}$ et un homéomorphisme $f:T_{0} \rightarrow  T$. Par compacité des $f([ON])$, il existe un rationnel $r>0$ inférieur à tous les $d(f(M),f([ON]))$ où $M,N$ sont deux points distincts parmi $A,B,C$. Soient $0<\alpha <1$ (indépendant de $T$) à fixer plus tard et trois points $R_{M} \in  B(f(M),\alpha r)\cap \mathbb{Q}^2 $ pour $M$ parcourant $\{A,B,C\}$. On pose $\Phi (T) = (R_{A} ,R_{B} ,R_{C} ,r)$.\\
+
+Montrons que tout $(R_{A} ,R_{B} ,R_{C} ,r )\in \Phi (\mathcal{T})$ a au plus deux antécédents. Supposons par l'absurde qu'il en a au moins trois : $T_{1} ,T_{2} ,T_{3}$. Soient trois homéomorphismes $f_{i} :T_{0} \rightarrow T_{i}$. Prenons $M,N\in \{A,B,C\}$ distincts et $i\in \{1,2,3\}$. On a alors premièrement
+\[d(R_{M} ,f_{i} ([ON])) \geqslant  d(f_{i} ([ON]), f_{i} (M)) - d(f_{i} (M),R_{M} ) \geqslant  (1-\alpha )r\]
+et deuxièmement
+\[r\leqslant  d(f_{1} (M),f_{1} (N)) \leqslant  d(f_{1} (M ),R_{M} ) + d(R_{M} ,R_{N} ) + d(R_{N} ,f_{1} (N)) \leqslant  2\alpha r+d(R_{M} ,R_{N} ) \]
+donc $d(R_{M} ,R_{N} ) \geqslant  (1-2\alpha )r$.
+
+Soit $\alpha <\beta < \frac{1}{2} -\alpha $ (c'est maintenant qu'on doit convenablement choisir $\alpha $). Alors $B(R_{M} ,\beta r)$ est disjoint :
+\begin{itemize}
+	\item de $f_{i} ([ON])$ car $\beta r < (1-\alpha )r$,
+	\item de $B(R_{N} ,\beta r)$ car $2\beta r <  (1-2\alpha )r$,
+	\item mais pas de $f_{i} ([OM])$ car $\beta r>\alpha r$ (il contient $f_{i} (M)$).
+\end{itemize}
+$\left(\bigcup _{i} T_{i} \right) \cup \left( \bigcup _{M} B(R_{M} ,\beta r)\right)$ est donc dans la configuration des trois maisons de Dudeney (les $f_{i} (O)$ sont les maisons et les $R_{M}$ les usines). On admet qu'une telle configuration est impossible en se laissant convaincre par un dessin (la preuve nécessite le théorème de Jordan). Ainsi, $\mathcal{T}$ est dénombrable.\\
+
+À présent, les triades sont toutes compactes, donc en particulier fermées dans $\mathbb{R}^2 $. Puisque $\bigcup _{T\in \mathcal{T}} T = \mathbb{R}^2 $, le théorème de Baire montre que l'une d'entre elles est d'intérieur non vide. Soit $T$ une telle triade et un homéomorphisme $f:T_{0} \rightarrow T$. $\overset{\;\text{\tiny $\circ$}}{T}$ est infini, donc on peut prendre $x\in  \overset{\;\text{\tiny $\circ$}}{T} \setminus \{f(A),f(B),f(C)\}$. Alors $T \setminus \{x\}$ est connexe, tandis que $f^{-1} (T \setminus \{x\})=T_{0} \setminus \{f^{-1} (x)\}$ ne l'est pas : contradiction.
 
 \section{Solution du deuxième exercice}
 

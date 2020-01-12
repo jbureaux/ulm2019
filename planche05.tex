@@ -17,7 +17,7 @@ Soit $f_n : \mathbb R \to \mathbb R$ une suite de fonctions dérivables telles q
 \paragraph{Exercice additionnel}
 Peut-on trouver un sous-groupe strict de $(\mathbb Q,+)$ non monogène ?
 
-\section{Solution de l'exercice}
+\section{Solution de l'exercice} % BobbyJoe
 
 Soit $f$ un quasi-morphisme multiplicatif (quasi-caractère?) de $G$ dans $\mathbb{C}.$\\
 
@@ -42,16 +42,25 @@ Ainsi, par l'inégalité triangulaire, on a $$\vert f(xy)-f(x)f(y)\vert \leq B_{
 
 D'où le fait que $f$ est un morphisme multiplicatif (caractère) de $G$ i.e. $\displaystyle f(xy)=f(x)f(y).$
 
-\section{Solution du deuxième exercice}
+\section{Solution du deuxième exercice} % Siméon
 
 Soit $x,y$ deux réels. D'après l'inégalité des accroissements finis :
 \[
 \forall n \geqslant 1,\quad |f_n(x) - f_n(y)| \leqslant \|f_n'\|_\infty\,|x-y| \leqslant |x-y|,
 \]
-d'où $|g(x) - g(y)| \leqslant |x-y|$ par passage à la limite. Ceci montre que $g$ est $1$-lipschitzienne, donc en particulier continue.\\
+d'où $|g(x) - g(y)| \leqslant |x-y|$ par passage à la limite. Ceci montre que la fonction $g$ est $1$-lipschitzienne, donc en particulier continue sur $\mathbb R$.
 
-\textbf{Remarque : } En utilisant un théorème de compacité hors-programme (à savoir le théorème d'Ascoli), on peut montrer que la convergence de la suite de fonctions $\displaystyle (f_{n})_{n\geq 0}$ est en fait uniforme (et converge uniformément vers $f$).
+\paragraph{Remarque} Sous ces hypothèses, on peut montrer que la convergence est en fait uniforme sur tout segment $[a,b]$ de $\mathbb R$. Soit $\varepsilon > 0$, et $(x_0,x_1,\dots,x_k)$ une subdivision du segment $[a,b]$, de pas majoré par $\varepsilon/2$. On dispose d'un rang $N$ tel que :
+\[
+\forall n\geqslant N,\forall i \in \{0,\dots,k\},\quad |f_n(x_i) - g(x_i)| < \frac{\varepsilon}2.
+\]
+Pour tout élément $x \in [a,b]$, on peut trouver $i \in \{1,\dots,k\}$ tel que $|x-x_i|\leqslant \varepsilon/4$. Puisque $g$ et les $f_n$ sont $1$-lipschitziennes, l'inégalité triangulaire entraîne alors :
+\[
+\forall n \geqslant N,\forall x \in [a,b],\quad |f_n(x) - g(x)| < \frac{\varepsilon}2 + \frac{\varepsilon}4 + \frac{\varepsilon}4,
+\]
+d'où le résultat annoncé.
 
+Le théorème d'Ascoli (hors-programme) permettrait de montrer que ces conclusions restent vraies lorsqu'on remplace l'hypothèse $\sup_n \|f_n'\|_\infty \leqslant 1$ par une hypothèse plus faible d'équicontinuité.
 
 \section{Solution de l'exercice additionnel}
 
