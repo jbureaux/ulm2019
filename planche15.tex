@@ -1,11 +1,11 @@
-\chapter{Planche 15}
+\chapter{Autour de la densité logarithmique}
 
 \section{Sujet}
 
 \paragraph{Premier exercice}
-Soit $(a_n)_{n>1}$ une suite de nombres entiers strictement positifs, strictement croissante. On pose $A(x) = \mathrm{Card}(\{k > 1 : a_{k} \leqslant  x\})$. A-t-on \[\sum _{k>1} \frac{1}{a_{k}} <\infty  \Longleftrightarrow  \frac{A(x)}{x} \xrightarrow[x\rightarrow \infty ]{} 0 ?\]
+Soit $(a_n)_{n\geqslant1}$ une suite de nombres entiers strictement positifs, strictement croissante. On pose $A(x) = \mathrm{Card}(\{k \geqslant 1 : a_{k} \leqslant  x\})$. A-t-on \[\sum _{k\geqslant1} \frac{1}{a_{k}} <\infty  \iff  \frac{A(x)}{x} \xrightarrow[x\rightarrow \infty ]{} 0 ?\]
 
-\section{Solution de l'exercice}
+\section{Solution du premier exercice}
 
 L'équivalence demandée est \textbf{fausse}. Voici deux contre-exemples :
 \begin{enumerate}
@@ -33,3 +33,9 @@ Ainsi, on obtient pour $y>x\geq 1$ et par monotonie des intégrandes :
 Il vient alors $$\limsup_{y\rightarrow +\infty}\frac{A(y)}{y} \leq \sum_{k>x}\frac{1}{a_{k}}.$$
 
 Et en faisant tendre $x$ vers $+\infty$, il vient le résultat escompté (par encadrement, la quantité en jeu est positive) : $$\lim_{y\rightarrow +\infty}\frac{A(y)}{y}=0.$$
+
+\paragraph{Remarque} % Siméon
+On dispose en revanche toujours de l'égalité suivante dans $[0,+\infty]$ :
+\[
+\sum_{k\geqslant 1} \frac1{a_k} = \int_0^{+\infty} \frac{A(x)}{x^2}\,dx.
+\]

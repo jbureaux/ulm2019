@@ -10,20 +10,43 @@ Notons:$\quad\forall n \in \mathbb N  ,\quad X_n := (Y_{n+1},Y_{n+2}),\quad f,g:
  $ f:(a,b)\mapsto (b,a+b), \quad g:(a,b) \mapsto (b,|a-b|)\quad.$
   
  
-  Soit $V$ l'ensemble des valeurs, autres que $(0,1)$ , que peuvent prendre les $X_n.\quad$ Alors: $\forall (a,b) \in V,\: a\wedge b =1, \quad \exists !\:\: k \in \mathbb N \:\:$ tel que $g^k (a,b) =(1,0).$
- 
-  Notons $k= \varphi (a,b)$ et $Z_n = \varphi (X_n)$
-  La suite $(Z_n) _{n\in \mathbb N} $ est une chaîne de Markov dont l'ensemble des états est $\mathbb N$, telle que pour tout $(i,j)$ dans $\mathbb N^*\times \mathbb N$, la probabilité de passage de l'état $i$ à l'état $j$ est $p_{i,j} = \left\{ \begin{array} {cl} \frac12& \text{si}\: j=i+2 \: \:\text{ou}\:\: j=i-1. \\ 0 &\text{sinon}. \end{array} \right.$
+  Soit $V$ l'ensemble des valeurs, autres que $(0,1)$ , que peuvent prendre les $X_n.\quad$ Alors: $\forall (a,b) \in V,\: a\wedge b =1.$ 
   
-  Pour tout entier naturel $k$, notons enfin $p_k$ la probabilité d'atteindre l'état $0$ à partir de l'état $k$. 
-  Dans ce contexte, la probabilité $P$ que le jeu s'arrête est $P = p_1.$
-  On a; $\quad p_0 =1,\quad \forall k\in \mathbb N^*, \:\: p_k = \dfrac 12 ( p_{k-1} + p_{k+2})$.
+  $ \forall u= (a,b) \in V\setminus\{(1,0)\}\quad,$ notons $|u| = a+b.$
+  
+  Alors:$1\leqslant |g(u)|< |u|\quad$ ou $\quad 1\leqslant  |(g\circ g)(u)| < |u|.$
+  
+  On peut alors définir $ k= \varphi(a,b)$  le plus petit entier tel que $g^k (a,b) =(1,0).$  Soit $Z_n = \varphi (X_n)$:
+  $\quad Z_{n+1} = Z_n-1$ ou $Z_n +2$ selon que $X_{n+1}= g(X_n)$ ou $ f(X_n).$
+  
+  $Z_0 =1$ et la suite $(Z_n) _{n\in \mathbb N} $ est une chaîne de Markov dont l'ensemble des états est $\mathbb N$, telle que $p_{0,1}=1$  et pour tout $(i,j)$ dans $\mathbb N^*\times \mathbb N$, la probabilité de passage de l'état $i$ à l'état $j$ est $p_{i,j} = \left\{ \begin{array} {cl} \frac12& \text{si}\: j=i+2 \: \:\text{ou}\:\: j=i-1. \\ 0 &\text{sinon}. \end{array} \right.$
+  
+  Pour tout entier naturel $k$, notons $p_k$ la probabilité d'atteindre l'état $0$ à partir de l'état initial $k$. 
+  Dans ce contexte,
+  
+  $ \displaystyle \Pr\Big [\bigcup _{n=1}^{+\infty} (Y_n =0) \Big]=\Pr\Big[\bigcup _{n=0}^{+\infty} (X_n=(1,0))\Big] =\Pr\Big[\bigcup _{n=0}^{+\infty} (Z_n =0)\Big]= p_1.$
+  
+  On a: $\quad p_0 =1,\quad \forall k\in \mathbb N^*, \:\: p_k = \dfrac 12 ( p_{k-1} + p_{k+2})$.
  
-  Ainsi la suite $(p_k)$ vérifie une récurrence linéaire dont le polynôme caractéristique est $(X-1)(X-\alpha)(X- \beta)$ avec $\alpha =\dfrac {-1+\sqrt5}2,\:\: \beta = \dfrac{-1-\sqrt 5}2.$
+  Ainsi, la suite $(p_k)$ vérifie une récurrence linéaire dont le polynôme caractéristique est $(X-1)(X-\alpha)(X- \beta)$ avec $\alpha =\dfrac {-1+\sqrt5}2,\:\: \beta = \dfrac{-1-\sqrt 5}2.$
   
   Il existe des réels $r,s,t$ tels que $\forall k \in \mathbb N, \quad p_k =r+s\alpha ^k+t \beta^k.$
-  Le fait que $|\beta| >0 $ et le caractère borné de la suite $(p_k)$ impliquent   que $t=0.$
+   
+   $|\beta| >1,\:\: \displaystyle \lim _{k \to +\infty} \alpha^k =0 $, et le caractère borné de la suite $(p_k)$ font que: 
+   
+   $t=0,\quad \displaystyle r=\lim_{k\to + \infty} p_k.$
   
+  Pour calculer cette limite, on introduit la suite $(U_n)_n$ de variables aléatoires indépendantes telles que: $\forall n \in \mathbb N^*,\: \Pr(U_n=-1) =\Pr(U_n=2) =\dfrac 12.$ et on note enfin : $S_n =\displaystyle \sum_{i=1}^n U_i.$
+  
+  Alors: $\mathbb E \big( (\frac 34)^{S_n} \big ) = \Big(\mathbb E \left((\frac 34)^{U_1}\right) \Big)^n = a ^n \:\:$ où $a =\dfrac12 \left(\dfrac 43 + \dfrac 9{16}\right)= \dfrac {91}{96}.$ Il vient:
+  
+  $p_k = \displaystyle \Pr\Big[\bigcup _{n=1}^{+\infty} (S_n+k =0)\Big]\leqslant \sum_{n=1}^{+\infty} \Pr [S_n +k =0] = \sum_{n=1}^{+\infty} \Pr \left[\left(\frac34\right ) ^{S_n+k} =1\right]$
+  
+  $p_k\leqslant \displaystyle \sum_{n=1}^{+\infty} \mathbb E \left(\left (\frac 34 \right)^{S_n+k}\right) = \left(\frac 34 \right)^k\:\: \sum _{n=1}^{+\infty} a^n.$ 
+  
+  On déduit: $\displaystyle \lim _{k\to + \infty} p_k =0,\:\: r=0,\:$ puis avec $p_0 =1, \:\:\:\: s=1, \quad p_1 = \alpha.$
+  
+  $$ \displaystyle \boxed {\Pr\Big[\bigcap_{n=1}^{+\infty} (Y_n \neq 0) \Big] =1-\alpha = \dfrac {3 -\sqrt 5}2}. $$
   
  
   
@@ -70,7 +93,6 @@ Et, $f$ est constante sur l'ensemble des matrices de rang fixé.
 \item Considérons $r,r'\in \{0,\ldots,n\}$ tels que $r'\geq r.$
 
 On a alors : $$f(M_{r})=f(M_{r}M_{r'})\leq f(M_{r'}).$$
-
 Ainsi, $f$ est croissante en le rang de son argument.
 \item On a alors montré que $f: \displaystyle M\mapsto \phi(\mbox{Rg}(M))$ où $\displaystyle \phi : \{0,\ldots,n\}\rightarrow \mathbb{R}$ est croissante.\\ 
 

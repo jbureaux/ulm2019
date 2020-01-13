@@ -2,7 +2,16 @@
 
 \section{Sujet}
 
-\section{Solution de l'exercice}
+\paragraph{Premier exercice}
+Soit $f : \mathbb{R} \rightarrow  \mathbb{C}$ une fonction développable en série entière en tout point. On suppose que la suite $f^{(n)}$ converge simplement vers $g$ lorsque $n\rightarrow \infty $. Trouver $g$.
+
+\paragraph{Deuxième exercice}
+Soit $n > 2$ un entier. On considère deux matrices $A, B \in  \mathcal{M} _{n} (\mathbb{R})$. On suppose que $B^2  = B$. Montrer que $\operatorname{rg}(AB -BA) \leqslant  \operatorname{rg}(AB + BA)$.
+
+\paragraph{Troisème exercice}
+\emph{L’exercice supplémentaire suivant a parfois été posé :} trouver une condition nécessaire et suffisante pour qu'une fonction $f : [-1, 0] \rightarrow  \mathbb{R}$ soit limite uniforme sur $[-1, 0]$ de polynômes à coefficients positifs.
+
+\section{Solution du premier exercice}
 
 On fixe $x\in \mathbb{R}.$
 
@@ -63,6 +72,24 @@ Comme ce raisonnement est vrai pour tout $x,$ on obtient par unicité des limite
 
 %Et ainsi, il existe $\lambda\in \mathbb{C}$ tel que pour tout $x\in\mathbb{R},$ $\displaystyle g(x)=\lambda e^{x}.$
 %\end{itemize}
+
+\paragraph{Autre solution} %Siméon
+On va montrer que $g$ est partout dérivable, de dérivée $g'=g$, ce qui caractérise les multiples de la fonction exponentielle.
+
+Soit $a \in \mathbb R$. Par hypothèse, il existe un réel $r > 0$ tel que $f$ coïncide avec son développement en série de Taylor sur $\left]a-r,a+r\right[$ :
+\[
+\forall x \in \left]-r,r\right[,\quad f(a+x) = \sum_{k=0}^\infty \frac{f^{(k)}(a)}{k!}x^k,
+\]
+avec un rayon de convergence minoré par $r$. Notons $M$ le réel $\sup_n |f^{(n)}(a)|$. En dérivant terme à terme le développement précédent, on obtient :
+\[
+\forall n\in\mathbb N,\forall x \in \left]-r,r\right[,\quad |f^{(n+2)}(a+x)| \leqslant \sum_{k=0}^\infty \frac{M}{k!}r^k = Me^{r}.
+\]
+L'inégalité de Taylor-Lagrange $\left|f^{(n)}(a+x) - f^{(n)}(a) -  f^{(n+1)}(a)\,x\right| \leqslant \frac{Me^{r}}2 x^2$ donne alors par passage à la limite lorsque $n \to \infty$ :
+\[
+\forall x \in \left]-r,r\right[,\quad g(a+x) = g(a) + g(a) x + O(x^2),
+\]
+d'où le résultat annoncé.
+
 
 \section{Solution du deuxième exercice}
 

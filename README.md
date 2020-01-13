@@ -26,7 +26,7 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 3.
 
-- manque le premier exercice
+- rédaction du premier exercice en cours (Siméon)
 - deuxième exercice à relire
 
 ### Planche 4.
@@ -101,7 +101,6 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 22.
-
 
 ### Planche 23.
 - preuve rapide? ou remarques et méthodes pour traiter ce type de problèmes (avec biblio à l'appui?).
