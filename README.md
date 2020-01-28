@@ -1,4 +1,4 @@
-# Oraux Ulm 2019
+  # Oraux Ulm 2019
 
 ## Références
 
@@ -131,7 +131,6 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 32.
-- la réponse pour l'exo 2 : il n'y pas de condition... 
 
 
 ### Planche 33.
@@ -147,3 +146,4 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 36.
+

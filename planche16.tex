@@ -1,4 +1,4 @@
-\chapter{Planche 16}
+\chapter{Identité sommatoire}
 
 \section{Sujet}
 
@@ -11,7 +11,8 @@ Calculer
 \[
 \sum_{n=0}^\infty p_n \left(\frac\pi6\right)^n.
 \]
-
+\paragraph{ Deuxième exercice}
+Soit $P =\displaystyle \sum _{k=0}^d a_kX^k \in \mathbb R[X]. $ On note $f_P : \mathbb R[X] \to \mathbb R[X]$ l'application définie par $f_P(Q) = \displaystyle \sum _{k=0}^d a_k Q^{(k)}$ où $Q^{(k)}$ désigne la dérivée $k$-ième de $Q$.Est-ce que $f_P$ est un isomorphisme? Est-ce que $ P\longmapsto f_P$ est un isomorphisme?
 \section{Solution de l'exercice}
 
 On définit pour $x\in[0,1],$ $$p_{0}(x)=1;p_{1}(x)=x$$et pour tout $n\geq 2,$ $$p_{n}(x)=\int_{0}^{x}dx_{1}\int_{0}^{1-x_{1}}dx_{2}\ldots\int_{0}^{1-x_{n-1}}dx_{n}.$$
@@ -30,4 +31,19 @@ Comme $\phi_{y}(0)=1$ et $\phi'_{y}(1)=y,$ on obtient : $A=1$ et $\displaystyle 
 La quantité recherchée dans l'énoncé est alors $\displaystyle \phi_{y}(1)=\frac{1+\sin(y)}{\cos(y)}.$
 En particulier pour $\displaystyle y=\frac{\pi}{6},$ il vient la quantité voulue $\displaystyle S:=\phi_{\frac{\pi}{6}}(1)=\sqrt{3}.$
 
-\paragraph{Deuxième exercice}
+\section{ Solution du deuxième exercice}%LOU16
+Si $a_0= 0$, alors $f_P(1) =0,\:\:\text{Ker} f_P \neq \{0\},\:\: f_P\:$ n'est pas injectif.
+
+Si $a_0\neq 0.\quad$ Pour $k>d$, posons $a_k =0$ et considérons la suite $(b_k)_{k\in \mathbb N}$ définie par:   $$b_0 = \dfrac 1 {a_0},\quad \forall  k \in \mathbb N^*,\:\: b_k = - \dfrac 1{a_0}\displaystyle \sum _{i=0}^{k-1}a_{k-i}b_{i} $$ 
+
+(de sorte que $\:\:\forall k \in \mathbb N^*,\:\: \displaystyle \sum_{i=0}^k a_{i} b_{k-i} =0$ ) et l'endomorphisme $g_P$ de $\mathbb R [X]$ défini par: $$  \forall Q \in \mathbb R[X], \quad    g_P(Q) = \displaystyle \sum _{k=0}^{+\infty} b_k Q^{(k)},$$
+cette somme ne contenant qu'un nombre fini de termes non nuls. Alors:
+
+$\displaystyle \left(f_P \circ g_P \right) (Q) = \sum _{k=0}^{+\infty} a_k \sum _{i=0}^{+\infty} b_i Q^{(k+i)} = \sum _{n=0}^{+\infty} \left( \sum_{k+i=n} a_kb_i \right) Q^{(n)} = Q,\:$ et, de la même façon: $\left( g_P \circ f_P \right) (Q) =Q.$ On a prouvé: $$ \boxed {f_P \:\text{ est un isomorphisme }\: \iff a_0 \neq 0.}$$ 
+$ \begin {array} {ccc} \mathbb R[X]& \longrightarrow & \mathcal L(\mathbb R[X]) \\P &\longmapsto & f_P \end{array}$ est un morphisme d'espaces vectoriels, ainsi qu'un morphisme d'anneaux.
+
+
+Soit $h$ l'élément de $\mathcal L (\mathbb R[X])$ défini par: $\forall Q \in \mathbb R[X],\:\: h(Q) = XQ.$
+Ainsi, $\forall P =\displaystyle \sum  _{k=0}^d a_k X^k \in \mathbb R[X],\:\: f_P(1) =a_0\:$ et $ h(1) = X$. Ainsi, 
+$P \longmapsto f_P$ n'est pas surjectif et donc:$$\boxed{ P\longmapsto f_P\: \text{n'est pas un isomorphisme de}\: \mathbb R[X]\: \:\text{sur}\:\: \mathcal L(\mathbb R[X]).}$$ 
+ 

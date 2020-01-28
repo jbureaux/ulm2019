@@ -1,4 +1,4 @@
-\chapter{Planche 5}
+\chapter[Fonction presque multiplicative]{Fonction presque multiplicative sur un groupe}
 
 \section{Sujet}
 
@@ -41,6 +41,24 @@ C_{n}:=\left\vert \frac{f(xyx_{n})}{f(x_{n})}-f(x)f(y) \right\vert & \leq \frac{
 Ainsi, par l'inégalité triangulaire, on a $$\vert f(xy)-f(x)f(y)\vert \leq B_{n}+C_{n}\longrightarrow_{n\rightarrow +\infty}0.$$
 
 D'où le fait que $f$ est un morphisme multiplicatif (caractère) de $G$ i.e. $\displaystyle f(xy)=f(x)f(y).$
+
+\paragraph{Autre solution.} % Siméon
+
+Soient $(x,y,z) \in G^2$. On dispose par hypothèse de $\theta_1,\theta_2,\theta_3$ complexes de modules majorés par $\delta$ tels que \(f(xyz) = f(xy)f(z) + \theta_1\) et :
+\[
+f(xyz) = f(x)f(yz) + \theta_2 = f(x)\bigl(f(y)f(z) + \theta_3 \bigr) + \theta_2 ,
+\]
+donc l'inégalité triangulaire conduit facilement à :
+\[
+\Bigl|\bigl(f(xy)-f(x)f(y)\bigr)f(z) \Bigr| \leqslant \bigl(|f(x)| + 2\bigr) \delta.
+\]
+S'il existe $(x,y) \in G^2$ tels que $f(xy)\neq f(x)f(y)$, on obtient alors :
+\[
+\sup_{z\in G} |f(z)| \leqslant \frac{\bigl(|f(x)|+2\bigr)\delta}{|f(xy)-f(x)f(y)|}.
+\]
+Remarquons que ceci reste vrai pour toute loi de composition interne associative.
+
+
 
 \section{Solution du deuxième exercice} % Siméon
 

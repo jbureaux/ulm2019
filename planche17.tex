@@ -1,10 +1,10 @@
-\chapter{Planche 17}
+\chapter{Mesure uniforme et tiré en arrière exotique}
 
 \section{Sujet}
 
-\paragraph{Exercice}
+\paragraph{Exercice }
 
-\section{Solution}
+\section{Solution du premier exercice}
 
 Soit $f$ une fonction continue sur $[0,1].$
 
@@ -29,5 +29,31 @@ Il vient donc par le changement de variables précedemment indiqué:
 & = -\frac{J}{2}\\
 & \mbox{ par le changement de variables indiqué. }
 \end{align*}
-
 On obtient donc bien l'identité désirée.
+
+$\underline { \text{Une autre solution}}$. %LOU16
+
+Soit $u$ la fonction $x \longmapsto 3x^2 -2x^3.$ L'examen des variations de $u$ montre que $u$ réalise une bijection de chacun des intervalles
+$[ -\frac {1}{2};0],\:[0;1],\:[1;\frac {3}{2}]\:$ sur $\: [0;1]$.
+Notons $v_1,v_2,v_3$ les bijections réciproques des .précédentes. Elles sont  $\mathcal C ^1$ sur $]0;1[$.
+Alors: $\forall t \in [0;1],\:\: v_1(t), v_2(t), v_3(t)\:$ sont les trois solutions (réelles) de l'équation $u(x) = t,$ équivalente à $2x^3 -3x^2 +t =0.$ 
+Les relations entre coefficients et racines entraînent alors: $\forall t \in [0:1],\:\: v_1(t)^2 +v_2(t)^2 +v_3(t)^2 = \left(\frac 32\right) ^2,\:$ puis
+
+$\forall t \in ]0;1[,\:\:\:  v_1(t)v_1'(t)+ v_2(t)v_2'(t) + v_3(t)v_3'(t) = 0.$ 
+En effectuant respectivement sur chacun des intervalles $[-\frac12;0],\:[0;1],\: [1;\frac 32]$  le changement de variable $x=v_1(t),\:x=v_2(t),\:x=v_3(t),\:$  on obtient:
+
+$\displaystyle  2\int_0 ^1 x(f\circ  u)(x)\: \mathrm d x - \int_{-\frac 12}^{\frac 32} x(f\circ u) (x) \:\mathrm d x = \int_0^1 \left(v_1v_1'
++ v_2v_2'+v_3v_3' \right) (t) \:\mathrm d t =0.$ 
+
+\section{ Solution du deuxième exercice} %LOU16
+
+Notons $a_{ij}, \:b_{ij}$ les coefficients de $A$ et de $B$, et ${A_{ij}}, {B_{ij}}$ ceux des comatrices $\text {com}(A)$ et $\text{com}(B).$
+En développant le déterminant de $A_j$ par rapport à la première colonne et celui de $B_j$ par rapport à la $j$-ième colonne, on obtient:
+
+     $\displaystyle \sum _{j=1}^n \det {A_j} \det {B_j} = \sum _{j=1}^n\left(\sum _{i=1}^n  b_{i j}{A_{i 1}}\:\:\sum _{k=1}^n  a_{k1} {B_{k j}}\right)= \sum _{i,k =1}^n a_{k1}{A_{i1}}\:\sum_{j=1}^n b_{ij }{B_{kj}}$. 
+ 
+ Or, en désignant par $\widehat{B_{ik}}$ la matrice obtenue en remplaçant dans $B$ la $k$-ième ligne de $B$ par la $i$-ième ligne de $B$:
+ 
+ $\quad \displaystyle \sum _{j=1}^n  b_{ij}{B_{kj}}= \det {\widehat{B_{ik}}}= \left\{\begin{array} {cl} \det B & \text{si}\:\: i=k\\ 0& \text{sinon} \end{array} \right.$
+ 
+ Ainsi: $\displaystyle \sum _{j=1}^n \det {A_j} \det {B_j}= \det{B}\sum _{k=1}^n a_{k1} A_{k1} = \det {A}\det{B}.$

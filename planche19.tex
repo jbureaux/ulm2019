@@ -1,12 +1,43 @@
-\chapter{Planche 19}
+\chapter{Existence d'un vecteur propre commun}
 
 
 \section{Sujet}
-
+\paragraph{ Exercice}
+Soit $n\geqslant 2$ un entier.  Soient $A$ et $B$ appartenant à $\mathcal M_n (\mathbb C)$. On pose $f(A,B)= AB-BA.$ 
+Soit $L \in \mathcal M_{n(n-1)^2,n} (\mathbb C)$  la matrice par blocs 
+$$L = \begin{pmatrix} f(A,B) \\ f(A,B^2)\\ \vdots \\ f(A^{i},B^j)\\ \vdots \\ f(A^{n-1}, B^{n-1}) \end{pmatrix}$$ 
+Montrer que $A$ et $B$ ont un vecteur propre commun si et seulement si $\text{Rg}(L)<n.$
+Montrer que $\{A \in \mathcal M_n(\mathbb C) \mid A\:\text{et}\: ^tA\: \text{n'ont pas de vecteur propre commun }\}$ est un ouvert dense.
 \paragraph{Deuxième exercice}
 Montrer qu'il n'existe pas de fonction $f : \mathbb R \to \mathbb R$ de classe $\mathscr C^1$ qui vérifie $f(f'(x)) = x$ pour tout $x \in \mathbb R$.
 Y a-t-il une fonction $f : \mathopen]0,\infty\mathclose[ \to \mathopen]0,\infty\mathclose[$ de classe $\mathscr C^1$ qui vérifie la même équation pour $x > 0$ ?
+\section{Solution de l' exercice}%LOU16
 
+ Si $A$ et $B$ possèdent un vecteur propre commun $x$, alors $L\:^tx =0, \:\: x\neq 0 \:$ et cela entraîne $\text{Rg}(L)<n.$
+ 
+ Si $\text{Rg}(L)<n\:\:,$ alors $\exists x \in \mathbb C^n$ tel que  $x\neq 0,\:\:L\:^tx = 0.$ 
+ Il s'ensuit que pour tous les entiers $i$ et $j$ tels que $0\leqslant i,j \leqslant n-1, \:\: A^{i}B^j \:^tx = B^j A^{i}\: ^tx\:$, et cette égalité s'étend à tous les entiers naturels $i,j$ parce que:
+ 
+ $\forall k \in \mathbb N,\:\: A^k \in \text{Vect}\{A^{i} \mid 0\leqslant i \leqslant n-1\}, \quad B^k \in \text{Vect}\{ B^j \mid 0 \leqslant j \leqslant n-1\}.$ 
+   
+  Soit $\:\:E= \text{Vect} \Big\{ A^{i}B^j\:^tx \mid i,j \in \mathbb N\Big \}.\quad$ Alors $A$ et $B$ stabilisent $E$ et leurs restrictions à $E$ commutent. On en déduit que $A$ et $B$ possèdent dans $E$ un vecteur propre commun. On a prouvé:
+   $$ \boxed{A \:\text{et}\: B\:\text{ont un vecteur propre commun}\: \iff\: \text{Rg}(L) <n.}$$ 
+ Soit $\mathcal E$ l'ensemble des matrices $A$  de $\mathcal M_n (\mathbb C)$  telles que $A$ et $\:^t\!A$ n'ont pas de vecteurs propres communs. 
+Pour toute matrice $A$ de $\mathcal M_n(\mathbb C)$ , notons $\varphi(A)$ la matrice de $\mathcal M_{n(n-1)^2, n} (\mathbb C)$  formée par la superposition des $f(A^{i},(^tA)^j)$
+
+$( 1\leqslant i, j \leqslant n-1 )$,   et pour toute partie $X$ à $n$ éléments de $[\![1;n(n-1)^2] \!]$, $d_X(A)$ le déterminant de la matrice constituée par les lignes de $\varphi(A)$ dont l'indice appartient à $X$.  Alors, d'après ce qui précède:
+  
+  $A \in \: \mathcal E \iff \text{Rg}\Big(\varphi (A)\Big ) =n\iff \exists X \in \mathcal P_n([n(n-1)^2]), \quad d_X(A) \neq 0.$ 
+  
+  Les $d_X$ sont des fonctions polynomiales des coefficients de $A$, donc sont des fonctions continues de $\mathcal M_n(\mathbb C)$  dans $\mathbb C.\:$ Alors, $\mathcal E = \displaystyle \bigcup _{X} d_X^{-1} (\mathbb C \setminus\{0\}) $  est un ouvert de $\mathcal M_n(\mathbb C)$ comme réunion d'images réciproques de l'ouvert $\mathbb C \setminus\{0\}$ de $\mathbb C$ par une application continue. Ainsi : $$\boxed {\mathcal E \: \text{est un ouvert de} \: \mathcal M_n(\mathbb C).}$$  
+  Soit $K$ une matrice de $\mathcal M_n(\mathbb C)$ constituée de blocs diagonaux égaux à $\begin {pmatrix} 1&1\\0&1 \end{pmatrix}$ ou à $\begin{pmatrix} 1&1&1\\0&1&1\\0&0&1 \end{pmatrix}$.  Alors $\text{det}(K\:^t\!K - \:^t\!KK) \neq 0.$ 
+  Soient $A \in \mathcal M_n(\mathbb C) , \quad z\in \mathbb C.\:\:$ Alors  $\text{det} \left( [A+zK\:\:; \:\:^t\!(A+zK)] \right )$ est une fonction polynomiale de $z$, de degré  $2n$, le coefficient dominant, égal à $\:\:\text{det}(K\:^t\!K - \:^t\!KK) ,$  n'étant pas nul.
+  
+  Soit $  \varepsilon>0.\: \exists x \in [0;\varepsilon[$  tel que  $\text{det} \left([A+xK\: ;\:^t(A+xK]\right) \neq 0 .\:\:$ 
+  
+  Ainsi, en notant $B = A+ x K,\quad$ on a: $\:\: \|B-A\| <\varepsilon \|K\|\:$ et  $ \: B \in \mathcal E.$ 
+    $$\boxed{\mathcal E \: \text{est dense dans}\: \mathcal M_n(\mathbb C).}$$ 
+  
 \section{Solution du deuxième exercice}
 
 \underline{Le premier cas est non.}
@@ -63,3 +94,33 @@ On trouve alors en réinjectant dans la relation fonctionnelle :  $\displaystyle
 %Montrons alors que $f^{-1}=f'.$
 
 %Soit $x>0.$ On a $a(x)>0$ tel que $f'(a(x))=x$ mais alors en composant par $f$, il vient $f(x)=a(x)$ i.e. $f'\circ f(x)=x.$
+
+\section{Solution du troisième exercice}
+
+On remarque que $1$ n'est pas racine de $A_{n}.$
+
+Ensuite, en notant $p_{0}=1,$ on a pour tout $z\in \mathbb{C}$ $$(z-1)A_{n}(z)=p_{0}z^{n+1}+\sum_{k=1}^{n}\left(p_{n+1-k}-p_{n-k}\right)z^{k}-p_{n}.$$
+
+Supposons alors que $A_{n}$ ait une racine $a\neq 1$ vivant dans le disque unité fermé.
+
+Il vient alors en évaluant en $a$ l'expression précédente puis en utilisant l'inégalité triangulaire : 
+\begin{align*}
+p_{n} & \leq \big\vert p_{0}a^{n+1}+\sum_{k=1}^{n}\left(p_{n+1-k}-p_{n-k}\right)a^{k}\big\vert\\
+& \leq p_{0}+\sum_{k=1}^{n}\vert p_{n+1-k}-p_{n-k}\vert\\
+& \leq p_{0}+ \sum_{k=1}^{n}p_{n+1-k}-p_{n-k}\\
+& \leq p_{0}+p_{n}-p_{0}=p_{n}.
+\end{align*}
+
+Le cas d'égalité de l'inégalité triangulaire est alors réalisé et ainsi, $a$ ne peut valoir que $1,$ ce qui est exclu!\\
+
+Supposons alors $A_{n}=B\times C$ où $B$ et $C$ sont des certains polynômes à coefficients dans $\mathbb{Z},$ de degré au moins $1.$
+
+L'analyse précédente nous montre alors que $\vert B(0) \vert >1$ et $\vert C(0) \vert >1.$
+
+On a d'une part : $B(0)\in \mathbb{Z}$ et $C(0)\in \mathbb{Z}.$ 
+
+D'autre part, en regardant le coefficient constant des polynômes en jeu, on obtient :  $B(0)C(0)=p_{n}\in \mathbb{P}.$
+
+Ainsi, on obtient $\vert B(0) \vert=1$ ou $\vert C(0)\vert =1,$ ce qui constitue la contradiction désirée.
+
+

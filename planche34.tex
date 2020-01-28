@@ -10,6 +10,7 @@ g(n) = \max_{\sigma \in S_n} \min\{k \geqslant 1 : \sigma^k = \operatorname{Id}\
 Trouver les entiers $n \geqslant 1$ tels que $g(n)$ soit impair.
 
 \paragraph{Deuxième exercice}
+Soit $f:\:\: ]\dfrac 14 ; 1 [ \longrightarrow \mathbb R$ une fonction telle que $x^{f(x)} = f(x)$ pour tout $\dfrac 14 <x<1.$ Montrer que $f$ et uniformément continue.
 
 \section{Solution de l'exercice}
 
@@ -20,3 +21,17 @@ On suppose $g(n)$ impair. Soit $p$ un facteur premier de $g(n)$. On va chercher 
 En raisonnant de même, on montre que tout facteur premier $p \geq 11$ vérifie nécessairement $p \leq 23$ (sinon on remplacerait avantageusement le cycle de longueur $p$ par deux cycles de longueurs respectives $3^2$ et $2^\alpha$). Ceci donne déjà une majoration de $g(n)$, et donc de $n$, par des constantes.
 
 On peut affiner la recherche avec le même type d'arguments pour aboutir à l'ensemble des solutions $\{1, 3,8,15\}$. Par exemple : si $g(n)$ est impair et n'est pas divisible par un nombre premier $p \geq 3$, alors il n'a aucun facteur premier $q > p$.
+
+
+\section {Solution du deuxième exercice}% LOU16
+$\forall x \in ]\dfrac 14, 1 [,\quad \forall y \in \mathbb R,\qquad  x^y= y \iff \ln x \in ]-\ln 4;0[, \quad \ln x = \dfrac {\ln y}y.$ 
+
+Soit $\Phi$ la fonction $\mathbb R_+^* \to \mathbb R,\quad x \mapsto \dfrac {\ln x}x\:\:$ L'examen des variations  de $\Phi$  montre que tout $a \in [-\ln 4; 0] $ possède dans $\mathbb R_+^*$ un unique antécédent $b$ par $\Phi$ et que $b \in [\dfrac 12;1].$
+
+Notons $ \Psi $ la réciproque de la restriction de $\Phi$ à $[ \dfrac 12 ; 1 ].$  
+
+$\Psi   \text{est continue sur} \:[ -\ln 4; 0] $ comme réciproque d'une fonction monotone continue sur un segment. Il vient:
+
+$ \forall x \in ]\dfrac 14; 1[\qquad \qquad x^y =y\:\:  \iff y = (\Psi \circ \ln) (x) $. 
+
+Il existe une unique fonction $f$ satisfaisant à  $x ^{f(x)} = f(x) $ et elle coïncide sur $]\dfrac 14;1[$  avec la fonction $\Psi \circ \ln$  qui  est  continue,  donc uniformément continue sur le segment $[\dfrac 14; 1].$ 

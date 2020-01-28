@@ -1,4 +1,4 @@
-\chapter{Planche 32}
+\chapter{Caractérisation de l'exponentielle}
 
 \section{Sujet}
 
@@ -6,7 +6,7 @@
 Soit $f : \mathbb{R} \rightarrow  \mathbb{C}$ une fonction développable en série entière en tout point. On suppose que la suite $f^{(n)}$ converge simplement vers $g$ lorsque $n\rightarrow \infty $. Trouver $g$.
 
 \paragraph{Deuxième exercice}
-Soit $n > 2$ un entier. On considère deux matrices $A, B \in  \mathcal{M} _{n} (\mathbb{R})$. On suppose que $B^2  = B$. Montrer que $\operatorname{rg}(AB -BA) \leqslant  \operatorname{rg}(AB + BA)$.
+Soit $n > 2$ un entier. On considère deux matrices $A, B \in  \mathscr{M} _{n} (\mathbb{R})$. On suppose que $B^2  = B$. Montrer que $\operatorname{rg}(AB -BA) \leqslant  \operatorname{rg}(AB + BA)$.
 
 \paragraph{Troisème exercice}
 \emph{L’exercice supplémentaire suivant a parfois été posé :} trouver une condition nécessaire et suffisante pour qu'une fonction $f : [-1, 0] \rightarrow  \mathbb{R}$ soit limite uniforme sur $[-1, 0]$ de polynômes à coefficients positifs.
@@ -74,7 +74,7 @@ Comme ce raisonnement est vrai pour tout $x,$ on obtient par unicité des limite
 %\end{itemize}
 
 \paragraph{Autre solution} %Siméon
-On va montrer que $g$ est partout dérivable, de dérivée $g'=g$, ce qui caractérise les multiples de la fonction exponentielle.
+On va montrer que $g$ est partout dérivable, de dérivée $g'=g$, en établissant un développement limité à l'odre 1 au voisinage de tout point. Cette équation différentielle caractérise les multiples de la fonction exponentielle.
 
 Soit $a \in \mathbb R$. Par hypothèse, il existe un réel $r > 0$ tel que $f$ coïncide avec son développement en série de Taylor sur $\left]a-r,a+r\right[$ :
 \[
@@ -140,6 +140,19 @@ Ainsi, on obtient : $\displaystyle \sum_{j\in J}\beta_{j}Q(u_{j})=0.$
 Mais, comme $Q(u_{j}))_{j\in J}$ est une base de $Q(E_{0}),$ il s'ensuit : $$\forall j\in J,\mbox{ } \beta_{j}=0.$$  
 
 
+\section{Solution du troisième exercice} % Calli
 
+Nous allons montrer que $f(0) \geqslant  0$ est une condition nécessaire et suffisante.\\
 
+\underline{$\Rightarrow $\,:} Supposons qu'il existe une suite $(P_{n} )$ de polynômes à coefficients positifs qui converge uniformément vers $f$ sur $[-1,0]$. Alors $f(0) =\displaystyle \lim _{n\rightarrow \infty } P_{n} (0) \geqslant 0$ car les $P_{n}$ ont tous un coefficient constant positif.\\
 
+\underline{$\Leftarrow$\,:} Supposons que $f(0) \geqslant 0$. Soit $\varepsilon >0$. D'après le théorème de Weierstrass, il existe $P\in \mathbb{R}[X]$ tel que $\|P-f\|_{\infty } <\varepsilon $. Ecrivons $P = \sum_{k=0}^d a_{k} X^{k}$.
+
+Si $a_{0} <0$, alors en posant $Q = \sum_{k=1}^d a_{k} X^{k}$, on a par positivité de $f(0)$ : \[\|Q -f\|_{\infty } \leqslant  \|Q -P\|_{\infty } + \|P-f\|_{\infty } < |a_{0} | +\varepsilon  \leqslant  f(0)-a_{0}  +\varepsilon  < 2\varepsilon .\]
+Donc, quitte à remplacer $P$ par $Q$, on peut supposer $P(0) \geqslant 0$ et $\|P-f\|_{\infty } <2\varepsilon $.
+
+Il faut maintenant approcher tous les $a_{k} X^{k}$ pour lesquels $a_{k} <0$ et $k>0$ par des polynômes à coefficients positifs. En écrivant $a_{k} X^{k} = -a_{k} X^{k-1} \cdot (-X)$, on voit qu'il suffit d'approcher $-X$ par des polynômes à coefficients positifs. Les polynômes $X(1+X)^{n} -X$ conviennent car, en développant le produit, on constate qu'ils ont bien des coefficients positifs et, par étude de fonction, le maximum de $|x(1+x)^{n} |$ sur $[-1,0]$ vaut $ \frac{1}{n+1} \left( 1- \frac{1}{n+1} \right)^{n} \leqslant  \frac{1}{n+1} \longrightarrow 0$.
+
+Ainsi, il existe des polynômes à coefficients positifs $(R_{k} )$ tels que
+\[\left\|\displaystyle \sum _{1\leqslant k\leqslant d,\,a_{k} <0} |a_{k} |X^{k-1} \cdot R_{k} - \sum _{1\leqslant k\leqslant d,\,a_{k} <0} a_{k} X^{k} \right\|_{\infty } <\varepsilon .\]
+D'où : \[\left\| \left( \sum _{1\leqslant k\leqslant d,\,a_{k} <0} |a_{k} |X^{k-1} \cdot R_{k} + \sum _{1\leqslant k\leqslant d,\,a_{k} \geqslant 0} a_{k} X^{k} \right) - f\, \right\|_{\infty } <3\varepsilon .\]

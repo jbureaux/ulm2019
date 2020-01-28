@@ -1,4 +1,4 @@
-\chapter{Planche 20}
+\chapter{Développement asymptotique et suite de Fibonacci}
 
 \section{Sujet}
 
@@ -7,7 +7,7 @@
 \section{Solution de l'exercice}
 
 \begin{enumerate}
-\item Introduisons la suite de Fibonacci ("shiftée") :
+\item Introduisons la suite de Fibonacci "dacalée" :
 $$F_{1}=1,\mbox { }F_{2}=1 \mbox{ et } \forall n\geq 1,\mbox{ } F_{n+2}=F_{n}+F_{n+1}.$$
 
 Le calcul des premiers termes de la suite $u$ nous invite à conjecturer : $$\forall n\geq 0,\mbox{ } u_{n+2}=\frac{s^{F_{n+1}}}{b_{n}},$$ où $\displaystyle b_{n}=\prod_{k=2}^{n}k^{F_{n+1-k}}.$
@@ -40,7 +40,7 @@ u_{n+4} & =\frac{u_{n+2}u_{n+3}}{n+2}\\
 \item Notons alors $$\phi=\frac{1+\sqrt{5}}{2} \mbox{ et } \tau=-\frac{1}{\phi}.$$
 Puis, considérons $$l=\sum_{k=1}^{+\infty}\frac{\ln(k)}{\phi^{k}} \mbox{ et } C=e^{l}.$$
 
-\textbf{But : } Montrons que $\displaystyle b_{n}\sim C^{F_{n+1}}.$
+\textbf{But : } Montrons "essentiellement" que $\displaystyle b_{n}\sim C^{F_{n+1}}$ (même si un résultat plus faible est suffisant).
 
 On rappelle tout d'abord : $$\forall n\geq 1,\mbox{ } F_{n}=\frac{\phi^{n}-\tau^{n}}{\sqrt{5}}.$$
 
@@ -73,7 +73,7 @@ Pour le cas limite : $s=C,$ on écrit par définition de $l$
 & \geq \frac{\phi}{\sqrt{5}(\phi-1)}\ln(n+1).
 \end{align*}
 
-Et ainsi, on obtient par comparaison pour $s=C,$ $\displaystyle \lim_{n\rightarrow +\infty}u_{n}=+\infty.$
+Et ainsi, on obtient par comparaison dans le cas $s=C,$ $\displaystyle \lim_{n\rightarrow +\infty}u_{n}=+\infty.$
 
 \end{enumerate}
 

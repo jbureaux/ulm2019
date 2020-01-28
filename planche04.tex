@@ -1,17 +1,37 @@
-\chapter{}
+\chapter{Produit de projecteurs}
 
 \section{Sujet}
+\paragraph { Exercice}
 
+Soient $A_1,A_2,\dots A_k \in \mathcal M_n (\mathbb R)$ des matrices telles que $A_j^2 =A_j$ pour $j=1,2,\dots k.$ Montrer que
+$\displaystyle \sum_{j=1} ^k (n- r(A_j)) \geqslant r (\mathrm I_n -A_1A_2\dots A_k)\:$ où $\:\mathrm I_n$ est la matrice identité et $r(A)$ désigne le rang de $A.$
 \paragraph{Deuxième exercice}
 
 Soit $f : \mathbb R \to \mathbb R$ une fonction telle que pour tout $a \in \mathbb R,\ \lim_{x\to a} f(x)$ existe.
 Montrer que l'ensemble des points de discontinuité de $f$ est dénombrable.
 
+\section{Solution de l' exercice} % LOU16
+
+On procède par récurrence sur $k.$
+La propriété à démontrer est vraie pour $k=1$.
+En effet, $A_1$ étant un projecteur, $\mathrm I_n -A_1$ est aussi un projecteur et 
+
+$$r(\mathrm I _n -A_1) = \mathrm{Tr} (\mathrm I_n -A_1) = n -\mathrm{Tr} (A_1) =n -r(A_1).$$
+
+Soit $k>1.\:\:$ Notons $B=A_1A_2 \dots A_{k-1}.$ L'hypothèse de récurrence nous donne l'inégalité:
+$$r( \mathrm I_n - B) \leqslant\displaystyle \sum _{j=1}^{k-1} \big(n- r(A_j)\big) . \qquad (\star)$$ 
+D'autre part, $A_k$ étant un projecteur,$\:\mathrm I_n -B\:$ et $\:\mathrm I_n- BA_k\:$ coïncident sur $\:\text {Im}(A_k)$, donc en notant $s= \text{dim}\Big( (\mathrm I_n -B) (\text{Im}(A_k))\Big) = \text{dim} \Big (( \mathrm I_n - BA_k) (\text {Im} (A_k)) \Big)$, on a:
+
+$ \Big\{  r(\mathrm I_n -B),\: r(\mathrm I_n - BA_k) \Big \} \subset \Big[s;\: s + (n-r(A_k))\Big] \:\:$ puis
+
+$$\left|r(\mathrm I_n -B) - r( \mathrm I_n -BA_k) \right | \leqslant n- r(A_k)\qquad (\star \star)$$ 
+De $(\star)$ et de $(\star\star)$, on déduit: $ \quad r(\mathrm I_n -BA_k) \leqslant \displaystyle \sum_{j=1} ^k \big(n- r(A_j)\big),\:\:$ ce qui est bien l'inégalité recherchée.
+
 \section{Solution du deuxième exercice} % Siméon
 
 Dans le cadre des programmes de CPGE, si $f$ est définie en un réel $a$ et possède une limite en $a$, alors celle-ci vaut nécessairement $f(a)$. En conséquence de quoi l'ensemble des points de discontinuité de $f$ est vide.
 
-On se permettra donc de considérer le cas plus général d'une fonction $f$ qui possède, en tout réel $a$, une limite à droite $\ell(a)$ et on cherchera à montrer que l'ensemble des points de discontinuité de $f$ est dénombrable (ou fini, ce qu'on sous-entendra toujours dans la suite). Quitte à considérer aussi $-f$, ceci revient à montrer la dénombrabilité de l'ensemble :
+On se permettra donc de considérer le cas plus général d'une fonction $f$ qui possède, en tout réel $a$, une limite à droite $\ell(a)$ et on cherchera à montrer que l'ensemble des points de discontinuité à droite de $f$ est dénombrable (ou fini, ce qu'on sous-entendra toujours dans la suite). Quitte à considérer aussi $-f$, ceci revient à montrer la dénombrabilité de l'ensemble :
 \[
 \{a \in \mathbb R \mid f(a) > \ell(a)\} = \bigcup_{n\geqslant 1} \left\{a \in \mathbb R \mid f(a) - \ell(a) > \tfrac1n\right\}.
 \]

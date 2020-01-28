@@ -35,7 +35,29 @@ Il vient alors $$\limsup_{y\rightarrow +\infty}\frac{A(y)}{y} \leq \sum_{k>x}\fr
 Et en faisant tendre $x$ vers $+\infty$, il vient le résultat escompté (par encadrement, la quantité en jeu est positive) : $$\lim_{y\rightarrow +\infty}\frac{A(y)}{y}=0.$$
 
 \paragraph{Remarque} % Siméon
-On dispose en revanche toujours de l'égalité suivante dans $[0,+\infty]$ :
+On dispose cependant toujours de l'égalité suivante dans $[0,+\infty]$ :
 \[
 \sum_{k\geqslant 1} \frac1{a_k} = \int_0^{+\infty} \frac{A(x)}{x^2}\,dx.
 \]
+
+\section{Solution du deuxième exercice}
+
+On sait que le spectre de $A$ est constitué de $n$ éléments distincts deux à deux donc $A$ est diagonalisable sur $\mathbb{C}.$
+
+On écrit donc $A=PDP^{-1}$ où $D$ est une matrice diagonale dont les éléments (sur la diagonale) sont deux à deux distincts.
+
+On peut alors se ramener à résoudre  l'équation matricielle suivante (quitte à changer l'inconnue $X$ en $P^{-1}XP$) : $$DX-XD=X^{p}.$$
+
+Une récurrence directe montre alors que pour tout $k\in \mathbb{N},$ $$DX^{k}-X^{k}D=kX^{p+k-1}.$$
+
+Ainsi, en passant à la trace les différentes relations précédentes, on obtient par une caractérisation bien connue des matrices nilpotentes : $X$ est nilpotente.
+
+Supposons $X$ non nulle et notons $l\geq 2$ l'indice de nilpotence de $X.$
+
+En regardant la relation pour $k=l-1,$ il vient (vu que $p\geq 2$) : $$DX^{l-1}=X^{l-1}D.$$
+
+Enfin, par un calcul matriciel direct, on obtient que le commutant de $D$ est formé des matrices diagonales (car les éléments de la diagonale de $D$ sont deux à deux distincts).
+
+Comme $X^{l-1}$ commute avec $D$ alors $X^{l-1}$ est diagonale. Cependant, $X$ est nilpotente alors $X^{l-1}$ l'est aussi. Ainsi, $X^{l-1}=0$ et ceci contredit la minimalité de $l.$
+
+Ainsi, l'unique solution de l'équation matricielle proposée est la matrice nulle.

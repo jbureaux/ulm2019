@@ -1,6 +1,18 @@
-\chapter{Planche 25}
+\chapter{Une suite de polynômes intrinqués}
 
 \section{Sujet}
+
+\paragraph{Premier exercice}
+On définit récursivement les suites $(P_{i} )$ et $(Q_{i} )$ de fonctions de $[0, 1]$ dans $\mathbb{R}$ comme suit. Les fonctions $P_{0}$ et $Q_{0}$ sont nulles et, pour $i \geqslant 1$ : \[P_{i} (x) := \left( 1 - x + \int _{0} ^{x}  Q_{i-1} (z)\,\mathrm{d}z \right)^2 , \ \ \ Q_{i} (x) := 1 - \left(1 - \int _{0} ^{x} P_{i-1} (z)\,\mathrm{d}z\right)^2 .\]
+Calculer \[\lim _{k\rightarrow \infty } \int _{0} ^{1} \left( 1 - x + \int _{0} ^{x} Q_{k} (z)\,\mathrm{d}z\right)^{3} \,\mathrm{d}x.\]
+
+\paragraph{Deuxième exercice}
+Soit $P \in  \mathbb{R}[X]$. Montrer que les deux assertions suivantes sont équivalentes :
+\begin{enumerate}
+	\item $P$ n'a pas de racine réelle
+	\item pour tout $A \in  \mathcal{M}_{2} (\mathbb{R})$, $\det P(A) = 0$ implique $P(A) = 0$.
+\end{enumerate}
+
 
 \section{Solution de l'exercice}
 

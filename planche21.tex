@@ -1,4 +1,4 @@
-\chapter{Planche 21}
+\chapter{Rigidité des queues de distribution}
 
 \section{Sujet}
 
@@ -19,9 +19,9 @@ Notons $q(x) = P(X \geqslant x)$ la queue de distribution. Les variables $X,Y$ s
 \[
 P(X\geqslant x) + P(Y \geqslant x) - P((X\geqslant x) \cap (Y \geqslant x)) = 2q(x) - q(x)^2.
 \]
-Puisque $P(X+Y \geqslant x) \sim 2q(x)$ et $q(x) \to 0$  lorsque $x \to \infty$, ces deux probabilités sont donc toutes deux équivalentes à $2q(x)$. Autrement dit, la différence des deux 
+Puisque $P(X+Y \geqslant x) \sim 2q(x)$ et $q(x) \to 0$  lorsque $x \to \infty$, ces deux probabilités sont donc toutes deux équivalentes à $2q(x)$. Autrement dit, la différence des deux :
 \[
-P((X + Y \geqslant x) \cap (X < x) \cap (Y < x)) 
+P((X + Y \geqslant x) \cap (X < x) \cap (Y < x)),
 \]
 est négligeable par rapport à $q(x)$. Il en va de même \textit{a fortiori} pour
 \[
@@ -42,7 +42,7 @@ q(x) \leqslant q(x-1) \leqslant q(x-a).
 Sinon, les variables $X,Y$ sont presque sûrement égales à $0$ et le résultat est trivial.\\
 
 
-\textbf{Remarque : } pour une variante plus quantitative du résultat...\\
+\paragraph{Remarque : } pour une variante plus quantitative du résultat...\\
 
 %Il suffit de prouver le résultat pour des $x$ entiers car les variables aléatoires en jeu sont à valeurs dans $\mathbb{N}^{*}.$
 
@@ -110,7 +110,7 @@ Il vient alors pour tout $n\gg 1,$ $$ \mathbb{P}(X=n)\leq \frac{2\varepsilon}{l}
 En écrivant $$\mathbb{P}(X\geq n)=\mathbb{P}(X=n)+\mathbb{P}(X\geq n+1)\leq \left(1+\frac{2\varepsilon}{l}\right)\mathbb{P}(X\geq n+1),$$ on obtient effectivement $$\mathbb{P}(X\geq n)\sim \mathbb{P}(X\geq n+1).$$
 %\end{enumerate}
 
-\paragraph{Deuxième exercice}
+\section{Solution du deuxième exercice}
 
 L'exercice fait appel au caractère multiplicatif des fonctions arithmétiques en jeu (cette idée est très utile pour mieux \emph{dévisser} certains problèmes).\\
 

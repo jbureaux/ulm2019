@@ -1,6 +1,8 @@
-\chapter{Planche 8}
+\chapter{Critère de convergence en probabilité}
 
 \section{Sujet}
+\paragraph{Deuxième exercice}
+Soir $r \in \mathbb Q.$ Montrer qu'il existe $A \in \mathcal M_n(\mathbb Q)$ telle que la somme des entrées de $A$ vaut $r$ et telle que $\min \{k\geqslant 1 \mid A^k = \mathrm{Id}\: \} =6.$
 
 \section{Solution de l'exercice} % BobbyJoe
 
@@ -23,7 +25,7 @@ n\mathbb{P}(X\geq ab_{n+1}) & = \frac{\mathbb{P}(X\geq ab_{n+1})}{\mathbb{P}(X\g
 & \mbox{ i.e. } n\mathbb{P}(X\geq \frac{b_{n}}{a}) \longrightarrow +\infty.
 \end{align*}
 
-On a alors en notons pour $n\geq 1,$ $\displaystyle M_{n}=\max_{k=1,\ldots,n}X_{k}$ :
+On a alors en notant pour $n\geq 1,$ $\displaystyle M_{n}=\max_{k=1,\ldots,n}X_{k}$ :
 \begin{align*}
 \mathbb{P}(\frac{b_{n}}{a}< M_{n} \leq ab_{n}) & = \mathbb{P}(M_{n}\leq ab_{n})-\mathbb{P}(M_{n}\leq \frac{b_{n}}{a})\\
 & =\exp\left[ n\ln \big(1-\mathbb{P}(X\geq ab_{n})\big) \right]-\exp\left[ n\ln \left(1-\mathbb{P}(X\geq \frac{b_{n}}{a})\right) \right]\\
@@ -45,7 +47,7 @@ Soit $a>1$ proche de $1.$
 En supposant $ii),$ on a d'une part $$1-\left(1-\mathbb{P}(X\geq ab_{n})\right)^{n}=\mathbb{P}(M_{n}\geq ab_{n})\longrightarrow 0.$$
 Mais alors, $\displaystyle -n\mathbb{P}(X\geq ab_{n})\longrightarrow 0.$ 
 
-\textbf{Remarque : } Au pire, si vraiment on veut le prouver  : cette suite est minorée sinon on a une contradiction. On prend alors une valeur d'adhérence. Cette suite bornée n'en a qu'une seule, à savoir $0.$
+%\textbf{Remarque : } Au pire, si vraiment on veut le prouver  : cette suite est minorée sinon on a une contradiction. On prend alors une valeur d'adhérence. Cette suite bornée n'en a qu'une seule, à savoir $0.$
 
 D'autre part, toujours en utilisant $ii),$ on a $$\left(1-\mathbb{P}(X\geq \frac{b_{n}}{a})\right)^{n}=\mathbb{P}(M_{n}\leq \frac{b_{n}}{a})\longrightarrow 0.$$
 On a ainsi $\displaystyle -n\mathbb{P}(X\geq \frac{b_{n}}{a})\longrightarrow -\infty.$
@@ -67,3 +69,15 @@ On a alors par décroissance de la fonction de survie :
 \end{align*}
 
 L'implication désirée est démontrée (quitte à redéfinir certains paramètres...).
+\section {Solution du deuxième exercice}%LOU16
+Soit $A = \begin{pmatrix} a&b\\c&d \end{pmatrix} \in \mathcal M_2(\mathbb Q) $  telle que $a+b+c+d = r.$ On a dans $\mathbb Q[X]$ la factorisation $X^6-1 =(X-1)(X+1)(X^2+X+1)(X^2-X+1).$
+
+$X^2-X +1$ est un polynôme qui divise $X^6-1$ et ne divise aucun des polynômes $X-1,\;X^2-1,\:\:X^3-1.$ On  obtient  donc les équivalences:
+ 
+$A\:\text{  est d'ordre }\:6 \:\: \text {dans }\:\mathrm{GL}_2 (\mathbb Q)   \iff  \chi _A (X) = X^2-X+1$ 
+
+$\iff \text{Tr}(A) = \text{Det}(A) =1  \iff \left\{ \begin {array} {l} a+d = 1\\b+c = r-1 \\ ad -bc =1 \end{array} \right.$
+
+$ \iff \left\{ \begin{array} {l} d=1-a\\ c= r-1-b\\ (2b+2a-r)(2b-2a -r+2) = r^2-2r +4 \end{array} \right.\:\:$ 
+En choisissant $a$ et $b$ tels que $2b+2a-r =1$ et $2b-2a -r+2 = r^2-2r+4$, on obtient pour ce système la solution
+ $(a,b,c,d) =\Big( \dfrac{r^2-2r+5}4 ,\: \dfrac {r^2+3}4,\: \dfrac{-r^2+4r-7}4,\:\dfrac {-r^2+2r-1}4 \Big)$  et l'existence d'une matrice ayant les propriétés requises est ainsi assurée.

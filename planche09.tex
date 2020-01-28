@@ -1,11 +1,81 @@
-\chapter{Planche 9}
-
+\chapter{Fractions continues}
 \section{Sujet}
 
-\paragraph{Exercice}
+\paragraph { Exercice}
+Pour une suite $(n_i)_{i\geqslant1}$ d'entiers positifs, on considère la suite $(x_i)_{i\geqslant 1}$ définie par $x_1 =2 + n_1$, et pour $i\geqslant 2,$
 
-\section{Solution}
+$$x_i = 2 +\dfrac {n_1}{2+ \dfrac{n_2}{2+\dfrac {n_3}{\dots + n_i}}}.$$ 
 
+Dans le cas où la suite $(x_i)$ est convergente, on note $[n_1,n_2, \dots ] $ la limite de cette suite.
+
+Soit $\mathcal A$ l'ensemble des nombres réels $x$ qui sont de la forme $x = [n_1,n_2, \dots]$ pour une suite $(n_i)_{i\geqslant 1}$ avec $n_i \in \{5,20\}$ pour tout $i$.
+
+Déterminer $\min (\mathcal A), \: \max (\mathcal A).$ Déterminer $\mathcal A.$
+
+\section{Solution de l' exercice} %LOU16}
+ Désignons par $f_0$ et $f_1$ les fonctions définies sur $\mathbb R^*$ par: 
+ 
+ $\: f_0(x) = 2 +\dfrac 5 x, \:\: f_1(x) = 2+ \dfrac {20}x.$ 
+ $\forall u \in \{0,1\}^{\mathbb N^*} $ , notons  $\:\widehat u$   l'élément de $\mathbb R^{\mathbb N^*}$ défini par:
+ 
+ $\quad \forall n \in \mathbb N^*, \:\: \widehat u_n =\Big(f_{u_1} \circ f_{u_2}\circ \cdots f_{u_n}\Big ) (1).$ 
+ Dans ces conditions, on a:  
+ 
+ $ \mathcal A= \left\{a \in \mathbb R \mid \exists u \in \{ 0,1\}^{\mathbb N^* }\:\: \displaystyle \lim_{n \to + \infty} \widehat u_n = a \right \}.$ 
+Notons enfin $F_n,\:G_n$ les fonctions définies par 
+
+$\left\{\begin{array}{lll} F_n = (f_0 \circ f_1)^{\circ k}& G_n = (f_1 \circ f_0) ^{\circ k} & \text{si} \: n=2k \\ F_n =f_0\circ (f_1\circ f_0)^{\circ k} & G_n = f_1 \circ ( f_0 \circ f_1)^{\circ k} & \text{si} \: n =2k+1 \end{array} \right. $
+On prouve alors par récurrence sur $n$ que:  $$\forall n \in \mathbb N^*,\:\: \forall u \in \{0,1\} ^{\mathbb N^*},  F_n(1) \leqslant \widehat u_n \leqslant G_n(1). \quad (\star)$$  
+
+Les choses sont claires pour $n=1$ .  Si on définit $v\in \{0,1\} ^{\mathbb N^*} $ par $v_k =u_{k+1}$, on a:   
+
+$ \widehat u _{n+1}= f_0 (\widehat v _n)\:\:\text{ou} \:\: \widehat u_{n+1}= f_1 (\widehat v_n).$
+L'hypothèse de récurrence appliquée à $v$ entraîne dans les deux cas  $F_{n+1}(1) \leqslant \widehat u _{n+1} \leqslant G_{n+1}(1).$ 
+Soient $a\in \mathcal A,\:\: u \in\{0,1\} ^{\mathbb N^*}\:$ tels que $\displaystyle \lim_{n \to + \infty} \widehat u_n =a.$  Avec l'inégalité $(\star)$, on obtient: $$\displaystyle \lim_{n\to + \infty} F_{2n }(1) \leqslant a \leqslant\lim_ {n \to + \infty} G_{2n} (1).$$ 
+Les deux suites qui bornent cet encadrement vérifient une relation de récurrence homographique et on prouve facilement qu'elles convergent  en croissant, l'une vers $ \dfrac 52$, l'autre vers $10.$ On déduit:
+$$\quad \forall a \in \mathcal A,\quad\dfrac 52 \leqslant a \leqslant 10. $$ 
+Notons $I=\left [ \dfrac 52\:;\: 10\right].$ On vérifie que $ f_0^{-1} \left( \left[ \dfrac 52 ; 4\right]\right) =I,\quad f_1^{-1} \left(\left[ 4 ; 10\right]\right) =I.$ Ainsi,
+
+$\forall a \in I,\quad \exists i \in \{0,1\}, \:\exists b \in I $ tels que  $a = f_i (b)\:$. Notons $ b =\varphi (a)$ ,  et $\forall n \in \mathbb N $ définissons $a_n$ par
+$a_0 = a , \:\: a_{n+1} = \varphi (a_n)$  et pour $n>0 ,\: u_n \in \{0,1\}$ par $a_n = f_{u_n} (a_{n-1})$. Alors  $a = \left (f_{u_1} \circ f_{u_2} \dots \circ f_{u_n} \right) (a_n)$ .
+
+Démontrons que $\displaystyle  a=\lim_{n \to + \infty} \widehat u_n.$ 
+
+En posant $\Phi _n = f_{u_1}\circ f_{u_2} \dots \circ f_{u_n},\:$ on a: $\widehat u_n = \Phi_n(1),\:\:a = \Phi _n (a_n).$ 
+
+On va utiliser le caractère contractant de $\Phi_n$. 
+Pour cela, on observe d'abord que $f_0$ et $f_1$ stabilisent l'intervalle $J=[2 ; 12].$   
+
+$\widehat u_{n+2} -a = \Phi _n (b) - \Phi _n (b_n)\quad$ 
+
+où $b =\left (f_{u_{n+1}} \circ f_{u_{n+2}}\right) (1) \in J,\quad  b_n =\left(f_{u_{n+1}} \circ f_{u_{n+2}} \right) (a_{n+2} )\in J.$ 
+
+Les calculs suivants permettent de vérifier que pour toute fonction $g$ égale à la composée de quatre fonctions prises dans $\{f_0 , f_1\} $, on a: $\:\forall x \in J, \quad | g'(x) | < \dfrac 9{10} $.  
+ 
+    $$(f_0 \circ f_0)'(x)=\dfrac {25}{(2x +5)^2},\:\: ( f_0 \circ f_1)'(x) = \dfrac {25}{(x+10)^2},\:\: ( f_1 \circ f_1)'(x) = \dfrac {100}{(x+10)^2},\: \:$$  
+    $$(f_1\circ f_0)'(x) = \dfrac {100}{(2x+5)^2},\:\: 
+    (f_1 \circ f_0\circ f_1 \circ f_0)'(x) = \dfrac {10000}{(58x+45)^2}.$$ 
+  
+   
+Avec l'inégalité des accroissements finis, on parvient alors à: 
+
+$|\widehat u _{n+2} -a | < \left(\dfrac 9{10} \right) ^{\lfloor n/4\rfloor} \Big|h (b) - h(b_n) \Big |\:\:$ où $h$ est, selon le reste de la division de $n$ par $4$, la  composée de zéro , une, deux, ou trois fonctions égales $ f_0$  ou à $f_1$.
+Ainsi: $\quad |\widehat u_{n+2} -a |<| 12 - 2| \left(\dfrac 9{10} \right) ^{\lfloor n/4 \rfloor}, \quad \displaystyle \lim_{n \to + \infty} \widehat u_n =a, \qquad \boxed {\mathcal A =\left[ \dfrac 52, 10 \right ].}$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\end{}
 \section{Solution du deuxième exercice}
 
 Vu que $$\mbox{Tr}^{2}(A)=\sum_{k=1}^{n}a_{k,k}^{2}+2\sum_{1\leq i<j\leq n}a_{i,i}a_{j,j}$$ mais aussi $$\mbox{Tr}^{2}(A)=\sum_{k=1}^{n}\lambda_{k}^{2}+2\sum_{1\leq i<j\leq n}\lambda_{i}\lambda_{j}.$$
@@ -18,3 +88,4 @@ Or, en notant $(e_{k})_{(k=1,\ldots,n)}$ la base canonique de l'espace ambiant (
 & \leq \mbox{Tr}(A^{2})\\
 & \leq \sum_{k=1}^{n}\lambda_{k}^{2}. 
 \end{align*}
+ 

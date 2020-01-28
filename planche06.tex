@@ -1,7 +1,6 @@
-\chapter{Fonctions absolument monotones : une variante d'un théorème de Bernstein}
+\chapter{Variante d'un théorème de Bernstein}
 
 \section{Sujet}
-
 
 \paragraph{Premier exercice}
 Soit $f : [0, 1] \rightarrow  \mathbb{R}$ une fonction $\mathcal{C}^{\infty }$ non constante, telle que pour tout $n > 0$ et $x \in [0, 1]$ on a $f^{(n)}(x) \geqslant  0$. Montrer que $f$ ne peut s'annuler qu'au plus une fois. Montrer que $f$ est développable en série entière autour de tout point de $]0, 1[$ \emph{(cette deuxième question a parfois été posée une fois la première question résolue)}.
@@ -9,118 +8,36 @@ Soit $f : [0, 1] \rightarrow  \mathbb{R}$ une fonction $\mathcal{C}^{\infty }$ n
 \paragraph{Deuxième exercice}
 Soit $G$ un groupe. A-t-on $G$ fini si et seulement si le nombre de sous-groupes de $G$ est fini ?
 
-\section{Solution du premier exercice (première version)} % BobbyJoe
+\section{Solution du premier exercice} % Calli
 
-On note par commodité : $\displaystyle I(x,a)=[x-a,x+a],$ l'intervalle centré en $x$ de longueur $2a.$
-
-On introduit également la notation pour $n\in \mathbb{N},$ $\displaystyle M(f^{(n)})(x,a)=\sup_{z\in I(x,a)}\vert f^{(n)}(z)\vert.$
-
-\begin{enumerate}
-\item Soit $x$ appartenant \`{a} $]0,1[.$ 
-
-On choisit $a\ll 1,$ de manière à avoir $I(x,3a)\subset ]0,1[.$
-
-Soit $y$ appartenant \`{a} $I(x,a).$ 
-
-Soit $z$ appartenant \`{a} $I(y,2a).$
-
-Comme $f$ est $\mathcal{C}^{\infty}$ sur $[0,1],$ on a alors par la formule de Taylor avec reste int\'{e}gral que pour tout $n$ appartenant \`{a} $\mathbb{N},$ $$f(z)=\sum_{k=0}^{n}\frac{f^{(k)}(y)}{k!}(z-y)^{k}+\int_{y}^{z}f^{(n+1)}(t)\frac{(z-t)^{n}}{n!}dt.$$
-
-\item Soit $n$ appartenant \`{a} $\mathbb{N}.$ 
-
-En appliquant la formule pr\'{e}c\'{e}dente au point $z=y+2a$ -qui appartient bien \`{a} $I(y,2a)$-, il vient : 
-$$f(y+2a) = \sum_{k=0}^{n}\frac{f^{(k)}(y)}{k!}(2a)^{k}+\int_{y}^{y+2a}f^{(n+1)}(t)\frac{(y+2a-t)^{n}}{n!}dt.$$
-
-Cependant, par hypoth\`{e}se, toutes les d\'{e}riv\'{e}es de $f$ sont positives sur $[0,1].$ 
-
-Ainsi, on obtient :  $$f(y+2a)\geq\int_{y}^{y+2a}f^{(n+1)}(t)\frac{(y+2a-t)^{n}}{n!}dt.$$
-
-Comme $f^{(n+2)}$ est positive sur $[0,1]$ alors $f^{(n+1)}$ est croissante sur $[0,1].$ 
-
-En particulier, pour tout $t$ appartenant \`{a} $[y,y+2a],$ on a $\displaystyle f^{(n+1)}(t)\geq f^{(n+1)}(y).$ 
-
-Ainsi, on obtient par croissance de l'int\'{e}grale 
-\begin{align*}
-f(y+2a) & \geq f^{(n+1)}(y)\int_{y}^{y+2a}\frac{(y+2a-t)^{n}}{n!}dt\\
-& \geq f^{(n+1)}(y)\left[\frac{(y+2a-t)^{n+1}}{(n+1)!}\right]_{t=y}^{t=y+2a}\\
-& \geq f^{(n+1)}(y)\frac{(2a)^{n+1}}{(n+1)!}.
-\end{align*}
-
-\item Si $y$ appartient \`{a} $I(x,a)$ alors par l'in\'{e}galit\'{e} triangulaire $$\vert y+2a-x \vert \leq \vert y-x \vert +2a \leq 3a.$$ Ainsi, $y+2a$ appartient bien \`{a} $I(x,3a).$ 
-\\
-
-Par l'in\'{e}galit\'{e} du point pr\'{e}c\'{e}dent et par l'inclusion d\'{e}montr\'{e}e, on a alors pour tout $y$ appartenant \`{a} $I(x,a)$ 
-\begin{align*}
-f^{(n+1)}(y) & \leq \frac{(n+1)!}{(2a)^{n+1}}f(y+2a)\\
-& \leq \frac{(n+1)!}{(2a)^{n+1}}M(f)(x,3a).
-\end{align*}
-
-Ainsi, on obtient (en passant au sup) $$M(f^{(n+1)})(x,a)\leq \frac{(n+1)!}{(2a)^{n+1}}M(f)(x,3a).$$
-
-\item Soit $y$ appartenant \`{a} $I(x,a).$ 
-
-Comme $f$ est $\mathcal{C}^{\infty}$ sur $[0,1],$ on a -en retranchant la partie principale dans la formule de Taylor avec reste int\'{e}gral et en passant aux valeurs absolues- pour tout $n$ appartenant \`{a} $\mathbb{N},$
-$$R_{n,x}(f)(y):=\left\vert f(y)-\sum_{k=0}^{n}\frac{f^{(k)}(x)}{k!}(y-x)^{k} \right\vert = \left\vert \int_{x}^{y}f^{(n+1)}(t)\frac{(y-t)^{n}}{n!}dt \right\vert.$$
-
-\begin{itemize}
-\item On traite le cas $y\geq x.$ 
-
-On a alors par l'in\'{e}galit\'{e} triangulaire comme $f^{(n+1)}$ est positive sur $[x,y]$ puis en utilisant la croissance de l'int\'{e}grale
-
-\begin{align*}
-\left \vert \int_{x}^{y}f^{(n+1)}(t)\frac{(y-t)^{n}}{n!}dt \right \vert & \leq \int_{x}^{y}f^{(n+1)}(t)\frac{(y-t)^{n}}{n!}dt\\
-& \leq M(f^{(n+1)})(x,a)\int_{x}^{y}\frac{(y-t)^{n}}{n!}dt\\
-& \leq \frac{(y-x)^{n+1}}{(n+1)!}M(f^{(n+1)})(x,a).
-\end{align*}
-
-\item On traite le cas $y\leq x.$ 
-
-On a alors par l'in\'{e}galit\'{e} triangulaire comme $f^{(n+1)}$ est positive sur $[y,x]$ puis en utilisant la croissance de l'int\'{e}grale 
-
-\begin{align*}
-\left\vert \int_{x}^{y}f^{(n+1)}(t)\frac{(y-t)^{n}}{n!}dt \right\vert & \leq \int_{y}^{x}f^{(n+1)}(t)\frac{(t-y)^{n}}{n!}dt\\
-& \leq M(f^{(n+1)})(x,a)\int_{y}^{x}\frac{(t-y)^{n}}{n!}dt\\
-& \leq \frac{ (x-y)^{n+1}}{(n+1)!}M(f^{(n+1)})(x,a).
-\end{align*}
-
-\item Dans tous les cas, on a $$R_{n,x}(f)(y)\leq \frac{ \vert x-y\vert^{n+1}}{(n+1)!}M(f^{(n+1)})(x,a)\leq \frac{a^{n+1}}{(n+1)!}M(f^{(n+1)})(x,a).$$
-Finalement, en utilisant la majoration du point pr\'{e}c\'{e}dent, on obtient $$R_{n,x}(f)(y)\leq \frac{M(f)(x,3a)}{2^{n+1}}.$$
-\end{itemize}
-
-\item Ainsi, (en passant au sup), on obtient $$\sup_{y \in I(x,a)} R_{n,x}(f)(y)\leq \frac{M(f)(x,3a)}{2^{n+1}}.$$ On conclut alors par le th\'{e}or\`{e}me des gendarmes $$\lim_{n\rightarrow +\infty} \left(\sup_{y \in I(x,a)} R_{n,x}(f)(y)\right)=0.$$
-
-Et donc, $f$ est DSE au voisinage de chaque point de $]0,1[.$
-
-\end{enumerate}
-
-
-\section{Solution du premier exercice (deuxième version)} % Calli
-
-Supposons que $f$ admet au moins deux zéros et cherchons une contradiction. On pose $a = \sup \{x\in  [0,1] \mid f(x) = 0 \}$, qui est strictement positif. Par croissance et positivité de $f$, on a : $\forall x\in [0,a],\ 0\leqslant f(x)\leqslant f(a)=0$, donc $f|_{[0,a]} = 0$. D'où : $\forall n\in \mathbb{N}, f^{(n)} (a) = 0$. La formule de Taylor avec reste intégral appliquée en $a$ donne alors : $\forall  x \in  \left]a,1\right[, \forall  n\in \mathbb{N},$
-\begin{eqnarray*}
-0 \,=\, f(a) \,\leqslant \, f(x) &=& \int _{a} ^{x} \frac{(x-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t\\
-&=& \int _{a} ^{x} \left( \frac{x-t}{1-t} \right)^{n} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t\\
-&\leqslant & x^{n} \int _{a} ^{x} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t \ \ (*)\\
-&\leqslant & x^{n} \int _{a} ^{1} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t\\
-&=& x^{n} f(1) \\
-&\text{\makebox[0mm]{$\xrightarrow[n\rightarrow\infty]{}$}} & \ \ 0
-\end{eqnarray*}
-où $(*)$ provient de la décroissance et de la positivité de $t\mapsto\frac{x-t}{1-t}$ sur $[0,x]$. Donc $f|_{[0,1[} =0$ et finalement $f=0$ par continuité en 1, ce qui conclut.
+Supposons que $f$ admette au moins deux zéros et cherchons une contradiction. Dans ce cas, le réel $a = \sup \{x\in  [0,1] \mid f(x) = 0 \}$ est strictement positif et vérifie $f(a) = 0$ par continuité. Puisque $f$ est positive et croissante, on en déduit qu'elle est nulle sur l'intervalle $[0,a]$, d'intérieur non vide, et donc : $\forall n\in \mathbb{N},\  f^{(n)} (a) = 0$. Soit maintenant $x \in \left]a,1\right[$. Alors d'après la formule de Taylor avec reste intégral appliquée en $a$ :
+\[
+\forall  n\in \mathbb{N},\qquad
+f(x) = \int_a^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \,\mathrm dt.
+\]
+En remarquant que $t\mapsto\frac{x-t}{1-t}$ est positive et décroissante sur  $[0,x]$, on en déduit :
+\[
+f(x) \leqslant x^n \int _{a} ^{x} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t
+\leqslant 
+x^n \int _{a} ^{1} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t,
+\]
+d'où $0 \leqslant f(x) \leqslant x^n f(1)$ et finalement $f(x) = 0$ par passage à la limite. Ceci étant vrai quel que soit $x \in \left]a,1\right[$, la fonction $f$ est nulle sur $[0,1[$ et donc constante sur $[0,1]$ par continuité, ce qui est contraire aux hypothèses.\\
 
 En réalité, nous venons de montrer que $f$ est développable en série entière autour de $a$ et que cette série est nulle. Montrons plus généralement que si $f$ satisfait les hypothèses de l'énoncé, alors elle est développable en série entière en tout point de $\left]0,1\right[$ (c'est l'objet de la deuxième partie de la question).
 
-Fixons $a\in \,]0,1[$ et notons $R_{n} (x)$ le reste intégral de Taylor à l'ordre $n$ centré en $a$ et évalué en $x$. On a de même que précédemment : $\forall x\in [a,1[,$
-\begin{eqnarray*}
-0 \;\leqslant \; R_{n} (x) &=& \int _{a} ^{x} \left( \frac{x-t}{1-t} \right)^{n} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t\\
-&\leqslant & x^{n} \int _{a} ^{1} \frac{(1-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t\\
-&=& x^{n} R_{n} (1)\\
-&\leqslant & x^{n} \left(\sum_{k=0}^n \frac{f^{(k)}(a)}{k!} (1-a)^{k} +R_{n} (1)\right)\\
-&=& x^{n} f(1) \\
-&\text{\makebox[0mm]{$\xrightarrow[n\rightarrow\infty]{}$}} & \ \ 0
-\end{eqnarray*}
-Donc : $\forall x\in [a,1[,f(x)=\displaystyle \sum _{n=0} ^{\infty } \frac{f^{(n)}(a)}{n!} (x-a)^{n}$ (et c'est même vrai en $x=1$ car cette série entière est à termes positifs).
-
-De plus : $\forall x\in \,]\max (0,a-(1-a)),a[,$
+Fixons $a\in \,]0,1[$ et notons $R_{n} (x)$ le reste intégral de Taylor à l'ordre $n$ centré en $a$ et évalué en $x$. On a de même que précédemment : 
+\[
+\forall x\in [a,1[,\quad
+0 \;\leqslant \; R_{n} (x) 
+\;\leqslant \;
+ x^{n} R_{n} (1)
+ \;\leqslant \;
+ x^{n} f(1) \;
+ \xrightarrow[n\rightarrow\infty]{} 0,
+\]
+d'où : $f(x)=\displaystyle \sum _{n=0} ^{\infty } \frac{f^{(n)}(a)}{n!} (x-a)^{n}$ (et c'est même vrai en $x=1$ car cette série entière est à termes positifs).
+%
+De plus : $\forall x\in \left]\max (0,a-(1-a)),a\right[,$
 \begin{eqnarray*}
 |R_{n} (x)| &=& \left| \int _{a} ^{x} \frac{(x-t)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t \right|\\
 &=& \int _{x} ^{a} \frac{(t-x)^{n} }{n!} f^{(n+1)}(t) \,\mathrm{d}t\\
@@ -136,6 +53,6 @@ car, la série entière $\displaystyle \sum _{k=0} ^{\infty } \frac{f^{(n+1)}(a)
 Montrons que les deux conditions sont bien équivalentes. On remarque déjà que si 
 $G$ est fini, alors tout sous-groupe de $G$ appartient à l'ensemble $\mathscr P(G)$ des parties de $G$, qui est bien un ensemble fini.
 
-Réciproquement, supposons que le nombre de sous-groupes de $G$ soit fini mais que $G$ soit infini et cherchons une contradiction.
-Par principe des tiroirs, on dispose d'un sous-groupe monogène $H$ et d'une partie infinie $A$ de $G$ telle que tout élément de $A$ engendre $H$.
-Mais alors $H$ est infini donc isomorphe à $(\mathbb Z,+)$. Ainsi, $H$ admet une infinité de sous-groupes et donc $G$ aussi.
+Réciproquement, supposons que le nombre de sous-groupes de $G$ soit fini mais que $G$ soit infini et cherchons une contradiction. Considérons l'application qui associe à tout élément de $G$ son sous-groupe engendré.
+Par principe des tiroirs, on dispose d'un sous-groupe $H$ et d'une partie infinie $A$ de $G$ telle que tout élément de $A$ engendre $H$.
+Mais alors $H$ est monogène et infini, donc isomorphe à $(\mathbb Z,+)$. Or $(\mathbb Z,+)$ admet une infinité de sous-groupes (les $n\mathbb Z$ pour $n \in \mathbb N$) donc $H$ et $G$ aussi.
