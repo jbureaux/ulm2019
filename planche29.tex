@@ -1,6 +1,9 @@
 \chapter{Ping-pong répulsif}
 
 \section{Sujet}
+\paragraph {Exercice}
+Soient $A , B \in \mathcal M_2 (\mathbb R)$  avec $ \det A>1,\det B>1$. On s'intéresse aux suites $\nu_0,\nu_1, \nu_2 \dots$ de vecteurs dans $\mathbb R^2$ telles que $\nu_0 \neq 0$ et pour tout $i \geqslant1$, on a:   $\:\: \nu_i = A\nu_{i-1}$ ou $\nu_i = B \nu_{i-1}$.
+On suppose que $AB = BA$. Montrer qu'il existe $\nu_ 0$ tel que toute suite commençant par $\nu_0$ est non-bornée.
 
 \section{Solution du premier exercice}
 
@@ -27,7 +30,80 @@
 %Mais alors pour $i+j\gg 1,$ ceci est une contradiction car $\mbox{det}(A),\mbox{det}(B)>1.$
 
 
+On se place dans le cas où $AB=BA$. On note $\mu_A,\: \mu_B$ les polynômes minimaux de $A$ et $B$ et $d:= \sqrt{\min \left(\det(A), \det(B)\right)}.$
 
+$( \nu_ n) _n$ désigne une suite quelconque vérifiant les hypothèses de l'énoncé  et qui dépend du choix du terme initial $\nu_ 0.$
+\begin{enumerate} 
+\item $\underline{\mbox {Si}\:  \mu_A \: \mbox   {est scindé à racines distinctes dans}\: \mathbb R[X].}$
+
+Alors $A$ admet deux valeurs propres réelles distinctes , $\alpha$ et $\beta$, associées aux vecteurs propres $u$ et $v$ qui forment une base de $\mathbb R ^2$. La condition $AB=BA$ entraîne que: $\:\exists \gamma, \delta \in \mathbb R$ tels que; $Bu =\gamma u,\:\: Bv = \delta v$. 
+
+On a: $|\alpha \beta | \geqslant d^2, \quad |\gamma\delta |\geqslant d^2.$ 
+
+
+Munissons $\mathbb R^2$ de la norme: $ \forall x,y\in \mathbb R^2,\quad \|xu+yv\| = |x| + |y|.$
+  
+  
+  Soit $\nu_0 = u+v$. Alors: $\forall n \in \mathbb N,\:\exists k \in [\![0;n]\!]$ tel que $\nu_n = \alpha ^k \gamma^{n-k} u + \beta^{k}\delta^{n-k}v$.
+  
+  Alors $\|\nu_ n \|\geqslant | \alpha^k \gamma ^{n-k}|+ \dfrac {d^{2n}}{|\alpha ^k \gamma^{n-k}|}\geqslant d^{n}$ , ce qui, avec $d>1$, montre que la suite $(\nu_n)_n$ n'est pas bornée.
+  \item $ \underline{ \mbox{Si} \:\mu_A \: \mbox { admet une racine double réelle}}.$
+  
+  Alors $\exists P\in \mbox{GL}_2 (\mathbb R), \quad \exists \alpha, p\in \mathbb R$ tels que $P^{-1}AP = \begin {pmatrix} \alpha & p\\0 &\alpha \end{pmatrix}$
+  
+  $\quad (\alpha^2>1, \:p\neq 0)$ et le fait que $AB=BA$ entraîne que $\exists \beta, q \in \mathbb R$ tels que: $P^{-1}BP = \begin{pmatrix} \beta & q \\0& \beta \end{pmatrix} \quad (\beta^2>1).$ 
+  Il s'ensuit que: 
+  
+  $\exists u \in \mathbb R^2$ tel que $u\neq 0,\:\: Au =\alpha u, \:Bu = \beta u.\quad$ Soit $\nu_0 =u \:$. Alors:
+  
+  $\forall n \in \mathbb N, \exists k \in [\![0;n]\!]$ tel que $\|\nu_n\| = |\alpha^k \beta^{n-k}| \: \|u\| \geqslant d^{n} \:\|u\|$, ce qui assure le caractère non borné de la suite $(\nu_n)_n.$  
+ \item  $\underline{\mbox{Si deg}(\mu_A) =1\:\mbox {et}\: \mu_B\:\mbox{ est de degré}\: 2,  \:\mbox{ irréductible dans}\: \mathbb R[X].}$ 
+  
+  $A =\alpha \mathrm I_2,\quad \mu_B =(X -\beta)(X-\overline{\beta}), \quad \beta = \rho \mathrm e^{\mathrm i \theta}, \quad \alpha \in \mathbb R, \quad \rho \in \mathbb R_+^*,\quad$ 
+  
+  $|\alpha|,\:\rho  \geqslant d, \quad 0 <\theta<\pi.$   Soit $\varepsilon$ tel que $0<\varepsilon < \min\left(\dfrac{\theta}2 , \dfrac {\pi - \theta}2\right ),$  de sorte que: $\forall \varphi \in \mathbb R, \: |\cos \varphi| < \cos(\dfrac{\pi}2-  \varepsilon) \implies |\cos (\varphi + \theta) |\geqslant \cos (\dfrac {\pi}2 -\varepsilon )  \quad(1).$ 
+  
+  Soit $u \in \mathbb C^2$ tel que $u\neq 0$ et $Bu = \beta u.$  $u$ possède une coordonnée non nulle, disons l'abscisse , égale à $\kappa \mathrm e^{\mathrm i \tau} \:( \kappa>0, \tau \in \mathbb R ) $. Définissons enfin $\nu_0 \in \mathbb R^2$ par $\nu_0 = u+ \overline {u}$  et notons $x_n$ l'abscisse de $\nu_n.$
+  
+  Soit $K>0.\:\: \exists N \in \mathbb N$ tel que $2\kappa d ^{N} \cos (\dfrac {\pi}2 - \varepsilon) >K.$ 
+  
+  $ \exists k \in [\![0;N]\!]$ tel que $x_N=  2\kappa\alpha ^{N-k}\rho ^k \mathrm \cos(k\theta +\tau)$ 
+  
+  Ainsi: $|x_N|>2\kappa d^{N} \cos (k\theta + \tau).$ 
+  
+  Si $ \cos(k\theta + \tau) \geqslant  \cos \left( \dfrac {\pi}2 - \varepsilon\right) $ , alors $|x_N|>K$ .
+  
+  Dans le cas contraire ,
+  
+  $\bullet$ ou bien $\forall n >N, \:\ \nu_n =A\nu_{n-1}$ et $|x_n|\geqslant |\alpha ^{n-N}x_N|.$ 
+  
+  
+  $\bullet $ ou bien, si l'on note $ p = \inf \{n >N \mid \nu_n =B\nu_{n-1} \} $ , on a , d'après $(1)$ , $|\cos \left((k+1)\theta + \tau\right )| > \cos(\dfrac {\pi}2 - \varepsilon) $  et $|x_p|>d ^{(p-N)} K>K$. 
+   
+   Dans tous les cas, on trouve $n \in \mathbb N$ tel que $|x_n| >K$ et la suite $(\nu_n)_n$ n'est pas bornée.
+\item $\underline {\mbox{Si}\: \mu_A \: \mbox{et}\: \mu_B \: \mbox{sont de degré}\:2\: \mbox{et} \mbox{ irréductibles dans}\:\mathbb R[X].}$ 
+ 
+  Soient $\alpha = \rho \mathrm e^{\mathrm i \theta } ,\:\: \overline{\alpha}$  les valeurs propres de $A, \quad $ $\beta = \sigma \mathrm e ^{\mathrm i \eta},\:\: \overline{\beta}\:$ celles de $B$. 
+  Le fait que $AB=BA$ implique encore une fois l'existence de $u$ non nul dans $\mathbb C^2$  tel que
+  $Au =\alpha u,\:\:Bu = \beta u.$  Comme dans le paragraphe précédent, on considère $ \varepsilon >0 $ tel que:
+  $\forall \varphi \in \mathbb R ,$
+  
+  $ \:\:|\cos \varphi |< \cos(\dfrac{\pi}2 - \varepsilon) \implies |\cos (\varphi + \theta)|, \:|\cos(\varphi + \eta) |\geqslant \cos(\dfrac {\pi}2 - \varepsilon). \quad(2)$    
+  Comme dans $3$, dont on conserve les notations, on choisit $ \nu_0 = u + \overline u$. 
+  
+  Soit $K>0. \quad \exists N \in \mathbb N$ défini comme dans $3: \:\: 2 \kappa d^{N} \cos (\dfrac {\pi}2 - \varepsilon) >K.$
+  
+  Alors $\exists k \in [\![0;N]\!]$ tel que 
+  $|x_N|= 2\kappa \rho ^k \sigma^{N-k} \cos \left( k\theta + (N-k) \eta + \tau \right) $ et 
+  
+  $|x_N|>2 \kappa d ^{N} \cos\left( k\theta + (N-k) \eta + \tau \right).$
+  
+  Si $ \:\:\cos\left(k \theta +(N-k) \eta +\tau \right) \geqslant \cos(\dfrac {\Pi}2 - \varepsilon),\:\:$ alors $|x_N|>K.$
+  
+  Sinon, d'après $ (2),  \quad |x_{N+1}| >d  K>K.$  
+  Cela prouve, qu'encore une fois, la suite $(\nu_n) _n$  n'est pas bornée.
+  
+  \end{enumerate}
 \section{Solution du deuxième exercice}
 
 Par le théorème des valeurs intermédiaires, il existe de proche en proche une suite de points de $[0,1]^{n+1}$ vérifiant : $0=x_{0}<\ldots<x_{n}=1$ telle que pour tout $k\in\{0,\ldots,n\},$ $\displaystyle f(x_{k})=\frac{k}{n}.$
