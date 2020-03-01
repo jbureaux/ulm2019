@@ -24,7 +24,11 @@ Montrer qu'il existe $a,b > 0$ tels que pour tout $n \geqslant 1$ on a $g_n \leq
 
 Supposons qu'on dispose de deux sous-espaces vectoriels $V,W$ tels que prescrits par l'assertion (b). Pour tout $t \in \mathbb R$, on obtient alors $(A+tB)(V) \subset W$ et le théorème du rang montre donc $V \cap \operatorname{Ker}(A+tB)$ est de dimension minorée par $1$. En particulier, $A+tB$ n'est pas inversible et son déterminant est donc nul. En particulier, l'assertion (a) est satisfaite.
 
-Réciproquement, supposons que (a) soit vérifiée. La fonction $t \mapsto \det(A + tB)$ étant polynomiale, de degré majoré par $n$, elle est alors nulle. Autrement dit, les matrices $A+tB$ sont non inversibles. Un premier cas simple est celui où la dimension de $\operatorname{Ker}(A) \cap \operatorname{Ker}(B)$ est minorée par $1$. L'assertion (b) est alors satisfaite en prenant pour $V$ cette intersection et $W = \{0\}$. Supposons qu'on ne soit pas dans cette situation :  la matrice $B$ induit alors par restriction un isomorphisme de $\operatorname{Ker}(A)$ sur $B(\operatorname{Ker(A)})$.
+Réciproquement, supposons que (a) soit vérifiée. La fonction $t \mapsto \det(A + tB)$ étant polynomiale, de degré majoré par $n$, elle est alors nulle. Autrement dit, les matrices $A+tB$ sont non inversibles.
+Un premier cas simple est celui où la dimension de $\operatorname{Ker}(A) \cap \operatorname{Ker}(B)$ est minorée par $1$.
+L'assertion (b) est alors satisfaite en prenant $V=\operatorname{Ker}(A) \cap \operatorname{Ker}(B)$ et $W = \{0\}$.
+Supposons qu'on ne soit pas dans cette situation :  la matrice $B$ induit alors par restriction un isomorphisme de $\operatorname{Ker}(A)$ sur $B(\operatorname{Ker(A)})$.
+
 Soient $E'$ et $F'$ des supplémentaires respectifs de ces deux sous-espaces vectoriels dans $\mathbb R^n$. En considérant des bases adaptées aux décompositions $\mathbb R^n = \operatorname{Ker}(A)\oplus E'$ et $\mathbb R^n = B(\operatorname{Ker}(A))\oplus F'$, on dispose de matrices de passage $P,Q$  telles que :
 \[
 PAQ = \begin{pmatrix}0 & *\\0 & A'\end{pmatrix},
@@ -32,9 +36,12 @@ PAQ = \begin{pmatrix}0 & *\\0 & A'\end{pmatrix},
 PBQ = \begin{pmatrix}I & *\\0 & B'\end{pmatrix},
 \]
 où $A',B'$ sont des matrices de $\mathscr M_{n'}(\mathbb R)$ avec $n' = \dim(E') = \dim(F') < n$ car $\dim(\operatorname{Ker}(A)) \geqslant 1$.
-On constate alors que $\det(A' + t B') = 0$ pour tout $t\in\mathbb R$, ce qui permet de conclure par récurrence (le cas $n = 1$ est trivial). En effet, si $V',W'$ sont des sous-espaces vectoriels respectifs de $E'$ et $F'$ tels que $A'(V') \subset W'$, $B'(V') \subset W'$ et $\dim(W') < \dim(V')$, alors $A(V') \subset B(\operatorname{Ker}(A)) \oplus W'$ et de même pour $B(V')$, donc il suffit de poser $V = \operatorname{Ker}(A) \oplus V'$ et $W = B(\operatorname{Ker}(A)) \oplus W'$.
+On constate alors que l'application $t\mapsto \det(A' + t B')$ est nulle, ce qui va permettre de conclure par récurrence (le cas $n = 1$ est trivial). En effet, 
+le choix des bases permet d'identifier les matrices $A'$ et $B'$ avec les applications linéaires de $E'$ vers $F'$ définies par $x \mapsto \pi(A(x))$ et $x \mapsto \pi(B(x))$, où $\pi$ est la projection sur $F'$ parallèlement à $B(\operatorname{Ker}(A))$.
+Si $V',W'$ sont des sous-espaces vectoriels respectifs de $E'$ et $F'$ tels que $A'(V') \subset W'$, $B'(V') \subset W'$ et $\dim(W') < \dim(V')$, alors $A(V') \subset B(\operatorname{Ker}(A)) \oplus W'$ et de même pour $B(V')$, donc il suffit de poser $V = \operatorname{Ker}(A) \oplus V'$ et $W = B(\operatorname{Ker}(A)) \oplus W'$.
 
-\paragraph{Remarque} \textit{Via} le choix des bases, on identifie ici les matrices $A'$ et $B'$ avec les applications linéaires $x \mapsto \pi(A(x))$ et $x \mapsto \pi(B(x))$ de $E'$ vers $F'$, où $\pi$ est la projection sur $F'$ parallèlement à $B(\operatorname{Ker}(A))$. Le concept sous-jacent est le passage au quotient, malheureusement hors-programme en CPGE.
+\paragraph{Remarque}
+La notion d'espace vectoriel quotient permettrait de travailler de façon plus intrinsèque avec $\tilde E = E/\operatorname{Ker}(A)$,\ $\tilde F = F/B(\operatorname{Ker}(A))$ et les applications linéaires $\tilde A, \tilde B$ de $\tilde E$ dans $\tilde F$, qui se déduisent de $A$ et $B$ par passage au quotient.
 
 \section{Solution du deuxième exercice} % Siméon
 

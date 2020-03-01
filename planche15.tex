@@ -2,8 +2,15 @@
 
 \section{Sujet}
 
-\paragraph{Premier exercice}
+\paragraph{Exercice}
 Soit $(a_n)_{n\geqslant1}$ une suite de nombres entiers strictement positifs, strictement croissante. On pose $A(x) = \mathrm{Card}(\{k \geqslant 1 : a_{k} \leqslant  x\})$. A-t-on \[\sum _{k\geqslant1} \frac{1}{a_{k}} <\infty  \iff  \frac{A(x)}{x} \xrightarrow[x\rightarrow \infty ]{} 0 ?\]
+
+\paragraph{Deuxième exercice}
+
+Soit $n\geqslant 1$ un entier, $A \in \mathscr M_n(\mathbb C)$ une matrice sans valeurs propres multiples et $p \geqslant 2$ un entier. Résoudre l'équation suivante, d'inconnue $X \in \mathscr M_n(\mathbb C)$ :
+\[
+    XA - AX = X^p.
+\]
 
 \section{Solution du premier exercice}
 
@@ -39,6 +46,7 @@ On dispose cependant toujours de l'égalité suivante dans $[0,+\infty]$ :
 \[
 \sum_{k\geqslant 1} \frac1{a_k} = \int_0^{+\infty} \frac{A(x)}{x^2}\,dx.
 \]
+En particulier, la somme converge si et seulement si l'intégrale converge.
 
 \section{Solution du deuxième exercice}
 

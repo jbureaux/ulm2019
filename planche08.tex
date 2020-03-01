@@ -1,6 +1,18 @@
 \chapter{Critère de convergence en probabilité}
 
 \section{Sujet}
+
+\paragraph{Exercice}
+
+Soient $(X_i)_{i\geqslant 1}$ des variables aléatoires i.i.d. à valeurs dans $\mathbb N$. Montrer que les deux assertions suivantes sont équivalentes :
+\begin{enumerate}[label=(\arabic*)]
+    \item $\displaystyle\forall a >1,\  \lim_{x\to\infty} \frac{\mathbb P(X_1 \geqslant ax)}{\mathbb P(X_1 \geqslant x)}=0$.
+    \item il existe une suite $(b_n)_{n\geqslant 1}$ de nombres réels strictement positifs telle que $b_n \to \infty$ et
+    \[
+        \forall \varepsilon > 0,\quad \mathbb P\left(\left|\frac{\max_{1\leqslant i\leqslant n} X_i}{b_n} - 1 \right| > \varepsilon\right) \to 0.
+    \]
+\end{enumerate}
+
 \paragraph{Deuxième exercice}
 Soir $r \in \mathbb Q.$ Montrer qu'il existe $A \in \mathcal M_n(\mathbb Q)$ telle que la somme des entrées de $A$ vaut $r$ et telle que $\min \{k\geqslant 1 \mid A^k = \mathrm{Id}\: \} =6.$
 

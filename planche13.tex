@@ -2,7 +2,8 @@
 
 \section{Sujet}
 
-\begin{enumerate}
+\paragraph{Exercice}
+\begin{enumerate}[label=(\arabic*)]
 \item
 Soit $\mathcal A = \{0,1\}^2$ contenant les quatre points $(0,0)$, $(0,1)$, $(1,0)$, $(1,1)$ de $\mathbb{R}^2$ muni de sa norme $\ell_1$ qu'on note $\lvert\cdot\rvert$. 
 Soit $n\geqslant 2$ un entier et $f : \mathcal A \to \mathbb{R}^n$ une application telle que 
@@ -12,13 +13,20 @@ où $\lVert \cdot \rVert$ désigne la norme euclidienne de $\mathbb{R}^n$.
 Montrer qu'il existe deux points $a,b\in\mathcal A$ qui vérifient
 \[\lVert f(a) - f(b)\rVert \leqslant \frac{\sqrt 2} 2 \lvert a - b\rvert.\]
 \item 
-On considère maintenant l'ensemble $\mathcal B$ constitué des points $(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$ de $\mathbb{R}^3$ muni de sa norme $\ell_1$ qu'on note $\lvert\cdot\rvert$. Soit $n\geqslant 2$ un entier et $f : \mathcal A \to \mathbb{R}^n$ une application telle que 
+\textit{La question suivante n'a pas été posée} : 
+on considère maintenant l'ensemble $\mathcal B$ constitué des points $(0,0,0)$, $(1,0,0)$, $(0,1,0)$, $(0,0,1)$ de $\mathbb{R}^3$ muni de sa norme $\ell_1$ qu'on note $\lvert\cdot\rvert$. Soit $n\geqslant 2$ un entier et $f : \mathcal A \to \mathbb{R}^n$ une application telle que 
 \[\forall x,y\in\mathcal A, \quad \lVert f(x) - f(y) \rVert \leqslant \lvert x - y \rvert,\]
 où $\lVert\cdot\rVert$ désigne la norme euclidienne de $\mathbb{R}^n$.
 
 Montrer qu'il existe deux points $a,b\in\mathcal B$ qui vérifient 
 \[\lVert f(a) - f(b)\rVert \leqslant \frac{\sqrt 3} 2 \lvert a - b\rvert.\]
 \end{enumerate}
+
+\paragraph{Deuxième exercice}
+Trouver
+\[
+\lim_{A\to\infty} \frac1A\int_1^A A^{\frac1x}\,dx.
+\]
 
 \section{Solution du premier exercice}
 
@@ -80,10 +88,6 @@ Pour prouver cette affirmation, on montre l'égalité suivante en développant l
 \end{multline*}
 Il s'ensuit $AB^2 + BC^2 + CA^2 \leqslant 3(OA^2 + OB^2 + OC^2) \leqslant 9$, donc un des trois carrés $AB^2$, $BC^2$ ou $CA^2$ doit être inférieur à $3$, CQFD.
 \end{enumerate}
-
-\section{Sujet}
-
-Calculer $$\lim_{A\rightarrow +\infty}I(A):=\frac{1}{A}\int_{1}^{A}A^{\frac{1}{x}}dx.$$
 
 \section{Solution du deuxième exercice}
 

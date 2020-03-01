@@ -1,4 +1,4 @@
-\chapter{Planche 10}
+\chapter{Séquence impaire de piles}
 
 \section{Sujet}
 \paragraph{Exercice}
@@ -8,33 +8,102 @@ nombre impair de « piles » suivi d'un « face ».
 
 \paragraph{Deuxième exercice}
 
+Soit $E$ un $\mathbb R$-espace vectoriel de dimension finie et $p$ un projecteur. Soit $H:\mathscr L(E) \to \mathscr L(E)$ l’endomorphisme défini par $H(u) =\frac12(u\circ p+p\circ u)$. Est-ce que $H$ est diagonalisable ?
+
 \section{Solution de l'exercice} % Siméon
 
-Soit $p \in \left]0;1\right[$ la probabilité d'obtenir « pile » lors d'un lancer.
-Considérons la suite de variables aléatoires $(R_k)_{k \geq 1}$ définie par
-les rangs successifs des lancers à l'issue desquels la séquence de « piles » en
-cours a une longueur impaire. En notant $T$ le plus petit entier $k$ tel que le lancer de rang $1 + R_k$ donne « face », le nombre moyen recherché est $E(1 + R_T)$.
+%Soit $p \in \left]0;1\right[$ la probabilité d'obtenir « pile » lors d'un lancer.
+%Considérons la suite de variables aléatoires $(R_k)_{k \geq 1}$ définie par
+%les rangs successifs des lancers à l'issue desquels la séquence de « piles » en
+%cours a une longueur impaire. En notant $T$ le plus petit entier $k$ tel que le lancer de rang $1 + R_k$ donne « face », le nombre moyen recherché est $E(1 + R_T)$.
 
-Il est clair que $T$ suit la loi $\mathcal G(1-p)$, tandis que $G_1 = R_1$ suit la loi $\mathcal G(p)$.
-De plus, pour tout $k \in \mathbb N^*$, la variable aléatoire $G_{k+1} = R_{k+1} - R_k - 1$ suit la même loi que $G_1$.
-Par télescopage, on obtient alors :
+%Il est clair que $T$ suit la loi $\mathcal G(1-p)$, tandis que $G_1 = R_1$ suit la loi $\mathcal G(p)$.
+%De plus, pour tout $k \in \mathbb N^*$, la variable aléatoire $G_{k+1} = R_{k+1} - R_k - 1$ suit la même loi que $G_1$.
+%Par télescopage, on obtient alors :
+%\[
+%1 + R_T = \sum_{k=1}^{T} (1 + G_k).
+%\]
+
+%En remarquant que $T$ est indépendante de chacune des variables $(G_k)$, on conclut à l'aide du lemme classique suivant dont la démonstration est rappelée brièvement ci-dessous.
+%\[
+%E(1 + R_T) =
+%E(T)E(1 + G_1) = \frac1{1-p}\left(1+\frac1p\right).
+%\]
+
+%\begin{lemme}[Formule de Wald]
+%Soient $(X_k)_{k\geqslant 1}$ une suite de variables aléatoires de même espérance finie $m$, et $N$ une variable aléatoire à valeur dans $\mathbb N$ d'espérance finie et indépendante de chacune des variables $(X_k)_{k\geqslant 1}$. Alors la variable aléatoire définie par :
+%\[
+%S = \sum_{k=1}^N X_k
+%\]
+%est d'espérance finie et $E(S) = E(N)\,m$.
+%\end{lemme}
+
+\def\pile{\ensuremath{\bullet}}
+\def\face{\ensuremath{\circ}}
+Soit $p \in \left]0;1\right[$ la probabilité d'obtenir pile lors d'un lancer (l'énoncé suggère $p = \tfrac12$ mais la solution est plus facile à suivre dans le cas général).
+Notons \pile{} pour pile, \face{} pour face, et $(X_i)_{i\in \mathbb N^*}$ la suite de variable aléatoires à valeurs dans $\{\pile, \face\}$ qui représente les résultats successifs des lancers.
+
+\paragraph{Étape 1. Décomposition du temps d'attente}
+Soit $T$ la variable aléatoire qui donne le rang du premier \face{} vérifiant la condition de l'énoncé. On remarque que les seules valeurs possibles pour $T$ sont les entiers $k \in \mathbb N^*$ tels que l'évènement \og les tirages $1$ à $k-1$ se terminent par une séquence impaire de \pile{} \fg{} se réalise.
+%\[
+%    \forall i \in \mathbb N,\quad R_{i+1} = \inf\left\{k \in\mathbb N^* \mid k > R_i \text{ et } A_k\right\}.
+%\]
+Ces entiers forment une suite croissante de rangs aléatoires $(R_i)_{i\in\mathbb N^*}$. Soient par ailleurs $R_0 = 0$ et $S$ le plus petit entier $i \in \mathbb N^*$ tel que le lancer de rang $R_i$ donne \face{}. On a alors clairement $T = R_S$, d'où : 
 \[
-1 + R_T = \sum_{k=1}^{T} (1 + G_k).
+T = \sum_{i=1}^{S} (R_{i} - R_{i-1}).
 \]
 
-En remarquant que $T$ est indépendante de chacune des variables $(G_k)$, on conclut à l'aide du lemme classique suivant dont la démonstration est rappelée brièvement ci-dessous.
+\paragraph{\'Etape 2. Lois jointes des variables aléatoires}
+La variable aléatoire $R_1 - 1$ donne le rang du premier \pile{}. Elle suit donc clairement la loi géométrique $\mathscr G(p)$. Montrons maintenant que :
+\begin{itemize}
+    \item chacune des variables $(R_i-R_{i-1})_{i\geqslant 2}$ suit la même loi que $R_1$ ;
+    \item la variable $S$ suit la loi $\mathscr G(1-p)$ ;
+    \item les variables $(S,R_1,R_2-R_1,\dots)$ sont mutuellement indépendantes.
+\end{itemize}
+% puisque, par indépendance,
+% \[
+% \forall k \in \mathbb N^*,\quad P(R_0 = k) = P\left((X_1 = \pile) \cap \cdots \cap  (X_{k-1} = \pile) \cap  (X_{k} = \face)\right) = p^{k-1}(1-p).
+% \]
+Quels que soient les entiers $r \geqslant 2$ et $k \geqslant 2$, l'évènement $(R_1=r)$
+ne dépend que de $(X_1,\dots,X_{r-1})$ et $R_2 - 1$ est le premier rang d'apparition d'un \pile{} à partir de $R_1 + 1$, quel que soit le résultat du lancer $R_1$.
+Par indépendance des $(X_i)_{i\in\mathbb N^*}$, on obtient donc  :
+\begin{align*}
+P(R_2 - R_1 = k \mid R_1 = r) &= P\left((X_{r+1} = \face) \cap \cdots \cap (X_{r+k-2} = \face) \cap (X_{r+k-1}=\pile)\right)\\
+    & = P\left((X_{1} = \face) \cap \cdots \cap (X_{k-2} = \face) \cap (X_{k-1}=\pile)\right)\\
+    & = P(R_1 =k).
+\end{align*}
+En considérant toutes les valeurs de $r$, la formule des probabilités totales montre alors que $R_2 - R_1$ suit la même loi $R_1$, et ces deux variables aléatoires sont de plus indépendantes.
+Quels que soient $n\in \mathbb N^*$ et les entiers $(k_1,\dots,k_n)$, on constate alors de proche en proche, à l'aide de la formule des probabilités composées, que l'évènement 
 \[
-E(1 + R_T) =
-E(T)E(1 + G_1) = \frac1{1-p}\left(1+\frac1p\right).
+E_n = (R_1 = k_1) \cap (R_2-R_1 = k_2) \cap \cdots \cap (R_n - R_{n-1} = k_n)
 \]
+vérifie $P(E_n) = P(R_1=k_1) P(R_1=k_2)\cdots P(R_1=k_n)$.
+De plus, cet évènement $E_n$ est indépendant des variables aléatoires $(X_{k_1},X_{k_1+k_2},\dots,X_{k_1+\cdots + k_n})$, ce qui entraîne pour tout $s \in \llbracket1,n\rrbracket$,
+\begin{align*}
+P(S = s\mid E_n) &= P\left((X_{k_1} = \pile{}) \cap \cdots \cap (X_{k_1+\cdots+k_{s-1}}= \pile{})\cap (X_{k_1+\cdots + k_s} = \face{})\right)\\
+&= p^{s-1}(1-p).
+\end{align*}
+Les affirmations annoncées découlent directement des deux points précédents.
 
-\begin{lemme}[Formule de Wald]
-Soient $(X_k)_{k\geqslant 1}$ une suite de variables aléatoires de même espérance finie $m$, et $N$ une variable aléatoire à valeur dans $\mathbb N$ d'espérance finie et indépendante de chacune des variables $(X_k)_{k\geqslant 1}$. Alors la variable aléatoire définie par :
+\paragraph{Étape 3. Calcul de l'espérance}
+En conditionnant selon les valeurs possibles de $S$, on en déduit classiquement l'égalité suivante :
 \[
-S = \sum_{k=1}^N X_k
+E(T) = E(S)E(G+1) = \frac1{1-p}\left(\frac1p+1\right) = \frac{1+p}{p(1-p)},\quad\text{d'où }  E(T) = 6 \text{ pour } p=\tfrac12.
 \]
-est d'espérance finie et $E(S) = E(N)\,m$.
-\end{lemme}
+En effet, pour tout $k \in \mathbb N$, la variable $T\,\mathbf 1_{(S=k)} = \sum_{i=1}^k (R_i-R_{i-1})\,\mathbf 1_{(S=k)}$ est une somme finie de variables qui admettent des espérances finies. De même pour $T \,\mathbf 1_{(S\leqslant n)} = \sum_{k=1}^n T\,\mathbf 1_{(S=k)}$ quel que soit $n \in \mathbb N$. Puisque $S$ est indépendante des $(R_i - R_{i-1})_{i\in\mathbb N^*}$, la linéarité de l'espérance conduit facilement à :
+\[
+E(T\,\mathbf 1_{(S \leqslant n)}) = \sum_{i=1}^k E(R_i-R_{i-1}) P(S=k) = \left(\frac1{p}+1\right)\sum_{i=1}^n k P(S=k).
+\]
+Lorsque $n \to \infty$, le membre de droite tend vers l'expression annoncée. Or $T$ est à valeurs dans $\mathbb N^*$, donc :
+\begin{align*}
+\lim_{n\to \infty} E(T \,\mathbf 1_{(S\leqslant n)})
+&= \sup_{n\in\mathbb N} E(T \,\mathbf 1_{(S\leqslant n)})\\
+&= \sup_{n\in \mathbb N} \sup_{K \in \mathbb N} \sum_{k=1}^K kP((T=k) \cap (S\leqslant n))\\
+& = \sup_{K \in \mathbb N} \sum_{k=1}^K kP(T=k)\\
+& = E(T),
+\end{align*}
+la deuxième et la quatrième égalités se justifiant par définition de l'espérance d'une variable aléatoire discrète positive, et la troisième égalité par continuité croissante de $P$ (les deux $\sup$ commutent).
+
 
 \section{Solution du deuxième exercice}
 

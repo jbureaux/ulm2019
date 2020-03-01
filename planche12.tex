@@ -7,34 +7,39 @@ Soit $f : \mathbb R^n \to \mathbb R$ une fonction continue dont la restriction s
 Montrer qu'il existe une forme linéaire $\phi : \mathbb R^n \to \mathbb R$ et une fonction monotone $h : \mathbb R \to \mathbb R$ telles que $f = h \circ \phi$.
 
 \paragraph{Deuxième exercice}
+Calculer
+\[
+\lim_{x\to\infty} \left(\sum_{n=1}^\infty \left(\frac xn\right)^n\right)^{\frac1x}.
+\]
 
 \section{Solution de l'exercice}
 
 Le résultat est clair si $f$ est constante sur toute droite.
 On supposera donc qu'on dispose d'une droite $\mathcal D$ sur laquelle $f$ n'est pas constante.
 
-Il existe alors un point $O \in \mathcal D$ tel que $O$ est l'unique antécédent de $f(O)$ sur $\mathcal D$. En effet, dans le cas contraire, le théorème des valeurs intermédiaires entraînerait l'existence d'une injection de l'intervalle non trivial $f(\mathcal D)$ dans $\mathbb Q$.
-Quitte à ajouter une constante à $f$, on peut supposer que $f(O)=0$.
+Il existe alors un point $a_0 \in \mathcal D$ tel que $a_0$ est l'unique antécédent de $f(a_0)$ sur $\mathcal D$. En effet, dans le cas contraire, le théorème des valeurs intermédiaires entraînerait l'existence d'une injection de l'intervalle non trivial $f(\mathcal D)$ dans $\mathbb Q$.
+Quitte à ajouter une constante à $f$, on peut supposer que $f(a_0)=0$.
 
-L'ensemble $\mathbb R^n \setminus\{O\}$ est connexe par arcs et son image par $f$ contient à la fois des réels positifs et des réels négatifs.
-Par continuité de $f$, il existe donc un point $A_1 \in \mathbb R^n \setminus \mathcal D$ tel que $f(A_1) = 0$.
-En raisonnant par récurrence sur la dimension, on obtient ainsi des points $A_1,A_2,\dots,A_{n-1}$ tels que $\{O,A_1,\dots,A_{n-1}\}$ engendre un hyperplan affine $\mathcal H$ de $\mathbb R^n$ et $f(A_i) = 0$ pour tout $i\in \{1,\dots,n-1\}$.
+L'ensemble $\mathbb R^n \setminus\{a_0\}$ est connexe par arcs et son image par $f$ contient à la fois des réels positifs et des réels négatifs.
+Par continuité de $f$, il existe donc un point $a_1 \in \mathbb R^n \setminus \mathcal D$ tel que $f(a_1) = 0$.
+En raisonnant par récurrence sur la dimension, on obtient ainsi des points $a_1,a_2,\dots,a_{n-1}$ tels que $\{a_0,a_1,\dots,a_{n-1}\}$ engendre un hyperplan affine $\mathcal H$ de $\mathbb R^n$ et $f(a_i) = 0$ pour tout $i\in \{1,\dots,n-1\}$.
 
-Montrons que $f$ est nulle sur $\mathcal H$. Compte tenu de l'hypothèse sur $f$, il suffit de prouver la nullité sur chacune des droites $(OA_i)$ puisque tout élément de $\mathcal H$ est barycentre d'éléments de ces droites.
-Plaçons-nous dans le plan $\mathcal P_i$ engendré par $\mathcal D$ et $(OA_i)$, pour un $i \in \{1,\dots,n-1\}$ quelconque.
-Le point $O$ sépare $\mathcal D$ en deux demi-droites sur lesquelles $f$ est respectivement strictement positive et strictement négative.
-Puisque $f(A_i) = 0$, la condition de monotonie entraîne alors que la droite $(OA_i)$ sépare $\mathcal P_i$ en deux demi-plans ouverts sur lesquels $f$ est respectivement positive et négative (faire un dessin).
-On en déduit la nullité de $f$ sur $(OA_i)$ par continuité.
+Montrons que $f$ est nulle sur $\mathcal H$. Compte tenu de l'hypothèse sur $f$, il suffit de prouver la nullité sur chacune des droites $(a_0a_i)$ puisque tout élément de $\mathcal H$ est combinaison convexe d'éléments de ces droites.
+Plaçons-nous dans le plan $\mathcal P_i$ engendré par $\mathcal D$ et $(a_0a_i)$, pour un $i \in \{1,\dots,n-1\}$ quelconque.
+Le point $a_0$ sépare $\mathcal D$ en deux demi-droites sur lesquelles $f$ est respectivement strictement positive et strictement négative.
+Puisque $f(a_i) = 0$, la condition de monotonie entraîne alors que la droite $(a_0a_i)$ sépare $\mathcal P_i$ en deux demi-plans ouverts sur lesquels $f$ est respectivement positive et négative (faire un dessin).
+On en déduit la nullité de $f$ sur $(a_0a_i)$ par continuité.
 
-Soit maintenant $M$ un point quelconque de $\mathcal D\setminus \{O\}$, et $\mathcal H_M$ l'hyperplan parallèle à $\mathcal H$ passant par $M$.
-Toute droite passant par $M$ et n'appartenant pas à $\mathcal H_M$ intersecte $\mathcal H$.
-Quitte à échanger les signes, on peut supposer que $f(M) > 0$.
-La condition de monotonie entraîne alors que $f$ est à valeurs dans $[0;f(M)]$ entre les deux hyperplans (strictement), et à valeurs dans $\left[f(M);+\infty\right[$ sur le demi-espace ouvert délimité par $\mathcal H_M$ qui ne contient pas $\mathcal H$ (faire un dessin). Par continuité, on en déduit que $f$ est constante sur $\mathcal H_M$.
+Soit maintenant $x$ un point quelconque de $\mathcal D\setminus \{a_0\}$, et $\mathcal H_x$ l'hyperplan parallèle à $\mathcal H$ passant par $x$.
+Toute droite passant par $x$ et n'appartenant pas à $\mathcal H_x$ intersecte $\mathcal H$.
+Quitte à échanger les signes, on peut supposer que $f(x) > 0$.
+La condition de monotonie entraîne alors que $f$ est à valeurs dans $[0;f(x)]$ entre les deux hyperplans (strictement), et à valeurs dans $\left[f(x);+\infty\right[$ sur le demi-espace ouvert délimité par $\mathcal H_x$ qui ne contient pas $\mathcal H$ (faire un dessin). Par continuité, on en déduit que $f$ est constante sur $\mathcal H_x$.
 
 Considérons maintenant $D$ et $H$ les directions vectorielles respectives de $\mathcal D$ et $\mathcal H$.
-Le projecteur sur $D$ parallèlement à $H$ est de la forme $\pi : x \mapsto \phi(x)u$ où $\phi$ est une forme linéaire de noyau $H$ et $u$ est un vecteur directeur de $D$.
+Le projecteur sur $D$ parallèlement à $H$ est de la forme $\pi : x \mapsto \varphi(x)u$ où $\varphi$ est une forme linéaire de noyau $H$ et $u$ est un vecteur directeur de $D$.
 D'après tout ce qui précède, on sait que $f = f \circ \pi$.
-L'application $h : t \mapsto f(tu)$, qui est monotone par hypothèse sur $f$, vérifie donc bien l'égalité $f = h \circ \phi$.
+L'application $g : t \mapsto f(tu)$, qui est continue et monotone par hypothèses sur $f$, vérifie donc bien l'égalité $f = g \circ \varphi$.
+
 
 \section{Solution du deuxième exercice}
 

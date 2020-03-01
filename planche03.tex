@@ -2,6 +2,29 @@
 
 \section{Sujet}
 
+\paragraph{Exercice}
+
+Soit $A \in \mathscr M_n(\mathbb R)$ et notons
+\[
+P(X) := \det(X\mathrm I_n - A) = X^n + c_1 X^{n-1} + c_2 X^{n-2} + \cdots + c_{n-1} X + c_n
+\]
+sont polynôme caractérisitque.
+\begin{enumerate}[label = \arabic*)]
+    \item En notant $\lambda_1,\dots,\lambda_n$ les racines de $P$, calculer $\sum_{k=1}^n \frac{P(X)}{X-\lambda_k}$ de deux manières différentes.
+    \item Montrer que pour tout $1 \leqslant k \leqslant n$,
+    \newcommand{\tr}[1]{\operatorname{tr}(#1)}
+    \[
+    c_k = \frac{(-1)^k}{k!}\begin{vmatrix}
+         \tr{A} & 1 & 0 & 0 & \cdots & 0  \\
+         \tr{A^2} & \tr{A} & 2 & 0 & \cdots & 0\\ 
+         \tr{A^3} & \tr{A^2} & \tr{A} & 3 & \ddots & 0\\
+         \vdots & \vdots & \vdots & \ddots & \ddots & 0\\
+         \tr{A^{k-1}} & \tr{A^{k-2}} & \cdots & \cdots & \tr{A} & k-1\\
+         \tr{A^k} & \tr{A^{k-1}} & \cdots & \cdots & \tr{A^2} & \tr{A}
+    \end{vmatrix}.
+    \]
+\end{enumerate}
+
 \paragraph{Deuxième exercice}
 
 Trouver toutes les fonctions $f : \mathbb R_+ \to \mathbb R$ dérivables telles que $f(1)=1$ et $f(x)f(y) \leq f(xy)$ pour tous $x,y \geqslant 0$.
@@ -12,8 +35,7 @@ Trouver toutes les fonctions $f : \mathbb R_+ \to \mathbb R$ dérivables telles 
 
 \section{Solution du deuxième exercice} % BobbyJoe
 
-Soit $y>0.$
-
+Soit $y>0$
 Comme $f$ est dérivable, on a pour $x$ proche de $1$ : 
 $$f(x)=f(1)+(x-1)f'(1)+o(x-1)=1+(x-1)f'(1)+o(x-1)$$ mais aussi $$ f(xy)=f(y)+(x-1)yf'(y)+o(x-1).$$
 Ainsi, on obtient : $$f(x)f(y)-f(xy)=(x-1)\left( f'(1)f(y)-yf'(y) \right)+o(x-1)\leq 0.$$

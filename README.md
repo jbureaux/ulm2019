@@ -26,26 +26,27 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 3.
 
-- rédaction du premier exercice en cours (Siméon)
+- manque la solution du premier exercice
 - deuxième exercice à relire
 
 ### Planche 4.
 
-- manque le premier exercice
 - deuxième exercice à relire
 
 ### Planche 5.
 
-- deuxième exercice à compléter
+- solution incomplète pour l'exercice principal !
 
 ### Planche 6.
 
 
 ### Planche 7.
+
 - à relire
 
 ### Planche 8.
-- exo 2 : à faire (je m'y colle?)
+
+- exo 2 : à faire (je m'y colle?) -> fini ?
 
 
 ### Planche 9.
@@ -53,54 +54,51 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 10.
 
-- solution de l'exercice à compléter, notamment avec une preuve élémentaire du lemme (sans convergence monotone, dominée, Fubini, ...)
-- manque le deuxième exercice
+- solution à relire
 
 ### Planche 11.
 
-- Calli rédige l'exercice principal
 - compléter la solution du 2e exercice : équivalent, développement asymptotique ?
 
 ### Planche 12.
 
-- solution de l'exercice à compléter avec des figures
-
+- solution de l'exercice à compléter avec des figures ?
 
 ### Planche 13.
 
-
 ### Planche 14.
-- à relire!
 
 ### Planche 15.
-- correction à finaliser (je suis en cours)
+
+- correction à finaliser (je suis en cours) -> est-ce bon ?
 
 ### Planche 16.
-- (recentrer?).
 - relire l'exercice
-- manque le deuxième exercice
 
 ### Planche 17.
 
 
 ### Planche 18.
-- exo intéressant : je m'y colle?
 
+- ajouter l'énoncé de l'exercice principal
 
 ### Planche 19.
 
+- ajouter l'énoncé de l'exercice supplémentaire
 
 ### Planche 20.
-- exo 2 : à finaliser
 
+- ajouter les énoncés
+- exo 2 : à finaliser -> est-ce fait ?
 
 ### Planche 21.
 
 - exercice à relire
-- autre preuve (plus quantitative ajoutée).
-
+- ajouter l'énoncé du deuxième exercice
 
 ### Planche 22.
+
+- ajouter les énoncés
 
 ### Planche 23.
 - preuve rapide? ou remarques et méthodes pour traiter ce type de problèmes (avec biblio à l'appui?).
@@ -109,26 +107,32 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 
 ### Planche 25.
-- énoncé.
 
 ### Planche 26.
+
+- ajouter les énoncés
 - référence d'une preuve rapide ajoutée (je n'ai fait que traduire le papier)
 
 
 ### Planche 27.
 
+- manque une solution du deuxième exercice
 
 ### Planche 28.
 
+- ajouter les énoncés
 
 ### Planche 29.
 
+- ajouter la question supplémentaire
+- ajouter l'énoncé du deuxième exercice
 
 ### Planche 30.
 
-
 ### Planche 31.
 
+- ajouter l'énoncé du deuxième exercice
+- manque une solution du deuxième exercice 
 
 ### Planche 32.
 
@@ -143,7 +147,9 @@ Lister ici toute convention autre que vous auriez été amené à prendre :
 
 ### Planche 35.
 - exercice à relire
+- ajouter l'énoncé du deuxième exercice
 
 
 ### Planche 36.
 
+- ajouter l'énoncé du deuxième exercice
