@@ -2,6 +2,14 @@
 
 \section{Sujet}
 
+Soit \( n \geq 1 \) un entier. Soit \( \mathcal S_n \) l'ensemble des permutations d'un ensemble à \( n \) éléments. Pour une permutation \( \sigma \in \mathcal S_n \), on note \( \text{inv\,}(\sigma) = \text{Card\,}(\{(i, j) : 1 \leq i < j \leq n \text{ et } \sigma(i) > \sigma(j)\}) \) le nombre d'inversions de \( \sigma \). 
+\begin{enumerate}
+\item  Montrer que \( \sum\limits_{\sigma \in \mathcal S_n} x^{\text{inv\,}(\sigma)} = 
+(1+x) (1+x + x^2) \ldots (1+x + \ldots + x^{n-1}) \). 
+\item  On note \( f(n) \) le nombre de permutations \( \sigma \in \mathcal S_n \) telles que \( \text{inv\,}(\sigma) \) est divisible par \( n + 1 \). Montrer qu'il y a une infinité de nombres premiers \( p \) avec \( f (p-1) > \dfrac{(p-1)!}{p} \) et une infinité 
+de nombres premiers \( p \) avec \( f (p-1) < \dfrac{(p-1)!}{p} \).
+\end{enumerate}
+
 \paragraph{Deuxième exercice}
 
 Soit $f : \left[0,\infty\right[ \to \left[0,\infty\right[$ une fonction continue qui vérifie $\int_0^{+\infty} f^2(x)\,dx < \infty$.

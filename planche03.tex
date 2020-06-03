@@ -8,7 +8,7 @@ Soit $A \in \mathscr M_n(\mathbb R)$ et notons
 \[
 P(X) := \det(X\mathrm I_n - A) = X^n + c_1 X^{n-1} + c_2 X^{n-2} + \cdots + c_{n-1} X + c_n
 \]
-sont polynôme caractérisitque.
+son polynôme caractéristique.
 \begin{enumerate}[label = \arabic*)]
     \item En notant $\lambda_1,\dots,\lambda_n$ les racines de $P$, calculer $\sum_{k=1}^n \frac{P(X)}{X-\lambda_k}$ de deux manières différentes.
     \item Montrer que pour tout $1 \leqslant k \leqslant n$,
@@ -29,9 +29,151 @@ sont polynôme caractérisitque.
 
 Trouver toutes les fonctions $f : \mathbb R_+ \to \mathbb R$ dérivables telles que $f(1)=1$ et $f(x)f(y) \leq f(xy)$ pour tous $x,y \geqslant 0$.
 
-\section{Solution du premier exercice} % Siméon
+\section{Solution du premier exercice} % ev
 
-(en cours)
+\begin{enumerate}
+ 
+\item 
+ 
+On a la \og décomposition en éléments simples \fg{} \( \dfrac{P'(X)}{P(X)} = \displaystyle\sum_{k=1}^n \dfrac{1}{X-z_k} \) qui est une vraie décomposition en éléments simples lorsque les racines \( (z_k)_{1\leqslant k \leqslant n} \) sont simples.
+On en déduit que \( \displaystyle\sum_{k=1}^n \dfrac{P(x)}{x-z_k} = P'(x) \).
+ 
+D'autre part, pour tout entier \( m \in [\![0,n]\!], \; z_k^m \) est valeur propre de \( A^m \) et \( S_m = \sum\limits_{k=1}^n z_k^m = \operatorname{tr}(A^m) \).
+On écrit alors pour \( \vert x \vert > \vert z_k \vert \) (donc \( x \neq 0\)),
+\begin{align*}
+\dfrac{P(x)}{x-z_k} &= \dfrac{P(x)}{x\left(1-\frac{z_k}{x}\right) }\\
+&= \dfrac{P(x)}{x} \sum_{m=0}^{+\infty}\dfrac{z_k^m}{x^m}.
+\end{align*}
+ 
+En sommant pour \( k \) allant de \( 1 \) à \( n \), on trouve
+ 
+\[ \sum_{k=1}^n \dfrac{P(x)}{x-z_k} = P(x) \sum_{m=0}^{+\infty}\dfrac{S_m}{x^{m+1}}. \]
+ 
+\item 
+ 
+En posant \( c_0 = 1 \), l'égalité précédente s'écrit \( P'(x) = P(x) \sum\limits_{m=0}^{+\infty}\dfrac{S_m}{x^{m+1}} \) ou\\
+ 
+\( \sum\limits_{k=0}^{n-1} (n-k)c_kx^{n-k-1}  = \left( \sum\limits_{k=0}^{n} c_kx^{n-k} \right) \left( \sum\limits_{m=0}^{+\infty}\dfrac{S_m}{x^{m+1}} \right) \) et ce pour tout \( x > \vert z_k \vert \).
+ 
+Il appert donc que le membre de droite est un polynôme malgré un aspect manifestement rébarbatif. Autrement dit les coefficients des \( x^{-k} \) sont nuls pour \( k > 0 \). On se souvient que \( S_0 = n \).
+ 
+Soit \( k \in [\![1,n]\!] \).
+ 
+\[ \begin{array}{rrrrrrrrrrrrrr}
+\text{coeff. de}&x^{n-2}&:&(n-1)c_1&=&S_1c_0&+&S_0c_1& &      & & & &
+\\
+\text{coeff. de}&x^{n-3}&:&(n-2)c_2&=&S_2c_0&+&S_1c_1&+&S_0c_2& & & &
+\\
+                     &       & & & \vdots &      & &      & &      & & & &
+\\
+\text{coeff. de}&x^{n-k}&:&(n-k+1)c_{k-1}&=&S_{k-1}c_0&+&S_{k-2}c_1&+&\ldots&+&S_0c_{k-1}& &
+\\
+\text{coeff. de}&x^{n-k-1}&:&(n-k)c_{k}&=&S_{k}c_0&+&S_{k-1}c_1&+&\ldots&+&S_1c_{k-1}&+&S_0c_{k}
+\end{array} \]
+ 
+On soustrait le membre de gauche dans le membre de droite sauf pour la dernière ligne, où l'on ne soustrait que \( nc_k \) pour obtenir les \( k \) lignes.
+ 
+\[ \begin{array}{rrrrrrrrr}
+0&=&S_1c_0&+&c_1& &      & & 
+\\
+0&=&S_2c_0&+&S_1c_1&+&2c_2& & 
+\\
+& \vdots  &      & &      & &      & & 
+\\
+0&=&S_{k-1}c_0&+&S_{k-2}c_1&+&\ldots&+&(k-1)c_{k-1}
+\\
+-kc_{k}&=&S_{k}c_0&+&S_{k-1}c_1&+&\ldots&+&S_1c_{k-1}
+\end{array} \tag{$\star$}\]
+ 
+On considère pour \( k \in [\![1,n]\!] \) la proposition \( \mathcal P_k \) :
+ 
+\[
+\forall p \in [\![1,k]\!] \,, \quad
+c_{p}=\frac{(-1)^{p}}{p !}\left|\begin{array}{ccccc}
+S_1 & {1} & {0} & {\cdots} & {0} \\
+S_2 & S_1 & {2} & {\ddots} & {\vdots} \\
+{\vdots} & {\ddots} & {\ddots} & {\ddots} & {0} \\
+S_{p-1} & {} & {\ddots} & {\ddots} & {p-1} \\
+S_p & S_{p-1} & {\cdots} & S_2 & S_1
+\end{array}\right|. \]
+ 
+La proposition \( \mathcal P_1 \) est claire.
+ 
+
+ 
+Soit \( k \in [\![2,n]\!] \) pour lequel on a \( \mathcal P_{k-1} \). 
+ 
+
+ 
+\( \bullet \) Si on a
+ 
+\[ A_k = \left(\begin{array}{ccccc}
+S_1 & {1} & {0} & {\cdots} & {0} \\
+S_2 & S_1 & {2} & {\ddots} & {\vdots} \\
+{\vdots} & {\ddots} & {\ddots} & {\ddots} & {0} \\
+S_{k-1} & {} & {\ddots} & {\ddots} & {k-1} \\
+S_k & S_{k-1} & {\cdots} & S_2 & S_1
+\end{array}\right)
+\quad\text{et}\quad
+\Delta_k = \det(A_k) \neq 0, \]
+ 
+alors le système \( (\star) \) d'inconnue \( (c_0,c_1, \ldots, c_{k-1}) \in \mathbb C^k \) est de Cramér.\\ 
+ 
+En particulier on a la formule de Cramér 
+\( c_0 = \dfrac{N_k}{\Delta_k}, \) avec 
+ 
+\[ N_k = \left|\begin{array}{ccccc}
+0 & {1} & {0} & {\cdots} & {0} \\
+0 & S_1 & {2} & {\ddots} & {\vdots} \\
+{\vdots} & {\ddots} & {\ddots} & {\ddots} & {0} \\
+0 & {} & {\ddots} & {\ddots} & {k-1} \\
+-kc_k & S_{k-1} & {\cdots} & S_2 & S_1
+\end{array}\right| = (-1)^{k-1}(-kc_k)\left|\begin{array}{cccc}
+ {1} & {0} & {\cdots} & {0} \\
+ S_1 & {2} & {\ddots} & {\vdots} \\
+{\vdots}  & {\ddots} & {\ddots} & {0} \\
+ S_{k-2} & {\ldots} & S_1 & {k-1} 
+\end{array}\right|.  \]
+ 
+Donc \( N_k = (-1)^{k}kc_k\times(k-1)! = (-1)^{k}k!c_k \) et on a bien 
+ 
+\[ c_k = (-1)^{k}c_0\dfrac{\Delta_k}{k!} = (-1)^{k}\dfrac{\Delta_k}{k!} \]
+ 
+puisque \( c_0 = 1 \).\\
+ 
+
+ 
+\( \bullet \) Si on a \( \Delta_k = 0 \) alors les \( k-1 \) premières lignes de \( A_k \) sont indépendantes donc la dernière ligne est combinaison linéaire des \( k-1 \) premières~: \( L_k = \sum\limits_{p=1}^{k-1} \lambda_p \). 
+ 
+Soit \( f_p \) la forme linéaire définie par la \( p \)-ième ligne de \( A_k = (a_{p,\ell})_{1\leqslant p,\ell \leqslant k} \)~:
+\[ f_p~;~(x_0,x_1, \ldots, x_{k-1}) \longmapsto  a_{p,1}x_0 + a_{p,2}x_1 + \ldots + a_{p,k}x_{k-1}. \]
+ 
+Comme le membre de gauche des \( k-1 \) premières lignes de \( A_k \) est nul, on a
+\( (c_0,c_1, \ldots, c_{k-1}) \in \ker f_p \) pour \( 1\leqslant p < k \), 
+donc \( (c_0,c_1, \ldots, c_{k-1}) \in \ker f_k \). Autrement dit 
+ 
+\[ -kc_k = f_k(c_0,c_1, \ldots, c_{k-1}) = 0. \]
+ 
+C'est bien dire que \( c_k = 0 = (-1)^{k}c_0\dfrac{\Delta_k}{k!} \).
+ 
+
+ 
+Dans les deux cas, on a bien \( \mathcal P_{k} \).
+ 
+
+ 
+En se souvenant que \( S_p = \operatorname{tr}\left(A^{p}\right) \), on a ainsi démontré par récurrence finie que 
+ 
+\[ \forall k \in[\![1,n]\!], \; c_{k}=\frac{(-1)^{k}}{k !}\left|\begin{array}{ccccc}
+{\operatorname{tr}(A)} & {1} & {0} & {\cdots} & {0} \\
+{\operatorname{tr}\left(A^{2}\right)} & {\operatorname{tr}(A)} & {2} & {\ddots} & {\vdots} \\
+{\vdots} & {\ddots} & {\ddots} & {\ddots} & {0} \\
+{\operatorname{tr}\left(A^{k-1}\right)} & {} & {\ddots} & {\ddots} & {k-1} \\
+{\operatorname{tr}\left(A^{k}\right)} & {\operatorname{tr}\left(A^{k-1}\right)} & {\cdots} & {\operatorname{tr}\left(A^{2}\right)} & {\operatorname{tr}(A)}
+\end{array}\right|. \]
+ 
+\end{enumerate}
+
 
 \section{Solution du deuxième exercice} % BobbyJoe
 
